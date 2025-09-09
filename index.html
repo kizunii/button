@@ -1,110 +1,70 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Glow Counter</title>
+<title>kizunii's button</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
   body {
-    background-color: #0c0d14; /* noch dunkler */
-    font-family: 'Roboto', sans-serif;
+    background-color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     height: 100vh;
-    color: #fff;
+    font-family: Arial, sans-serif;
   }
 
   h1 {
-    color: #00bfff;
-    font-size: 3rem;
-    margin-bottom: 20px;
-    text-shadow: 0 0 20px #00bfff, 0 0 40px #00bfff;
+    margin-bottom: 50px;
   }
 
-  .counter {
-    font-size: 5rem;
-    margin-bottom: 40px;
-    color: #00bfff;
-    text-shadow: 0 0 10px #00bfff, 0 0 30px #00bfff, 0 0 50px #00bfff;
-    transition: all 0.2s ease-in-out;
+  #counter {
+    font-size: 2rem;
+    margin-bottom: 30px;
   }
 
-  .btn {
-    background-color: #0a0b11;
-    color: #00bfff;
-    border: 2px solid #00bfff;
-    padding: 15px 50px;
+  #chanceButton {
+    background-color: red;
+    border: none;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
     font-size: 1.5rem;
+    color: white;
     cursor: pointer;
-    border-radius: 15px;
-    transition: all 0.2s ease-in-out;
-    box-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff;
+    transition: transform 0.1s;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
   }
 
-  .btn:hover {
-    background-color: #00bfff;
-    color: #0a0b11;
-    transform: scale(1.1);
-    box-shadow: 0 0 20px #00bfff, 0 0 40px #00bfff;
-  }
-
-  .info {
-    margin-top: 20px;
-    font-size: 1rem;
-    color: #aaa;
-    text-shadow: 0 0 5px #00bfff;
-  }
-
-  /* Animation beim Hochzählen */
-  .glow {
-    animation: glowAnim 0.5s ease-in-out;
-  }
-
-  @keyframes glowAnim {
-    0% { text-shadow: 0 0 10px #00bfff, 0 0 30px #00bfff, 0 0 50px #00bfff; transform: scale(1); }
-    50% { text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 60px #00ffff; transform: scale(1.2); }
-    100% { text-shadow: 0 0 10px #00bfff, 0 0 30px #00bfff, 0 0 50px #00bfff; transform: scale(1); }
+  #chanceButton:active {
+    transform: scale(0.9);
   }
 </style>
 </head>
 <body>
 
-<h1>Glow Counter</h1>
-<div class="counter" id="counter">0</div>
-<button class="btn" id="incrementBtn">Hochzählen</button>
-<div class="info" id="info">Chance zum Hochzählen: 50%</div>
+<h1>Chance Button</h1>
+<div id="counter">0</div>
+<button id="chanceButton">Press me!</button>
 
 <script>
-  const counterEl = document.getElementById('counter');
-  const btn = document.getElementById('incrementBtn');
-  const infoEl = document.getElementById('info');
-
+  const button = document.getElementById('chanceButton');
+  const counterDisplay = document.getElementById('counter');
   let counter = 0;
 
-  function calculateChance(n) {
-    return Math.max(50 - n, 1);
-  }
-
-  btn.addEventListener('click', () => {
-    const chance = calculateChance(counter);
-    const roll = Math.random() * 100;
+  button.addEventListener('click', () => {
+    // Calculate chance based on current counter
+    let chance = Math.max(50 - counter, 1); // 0->1: 50%, 1->2: 49%, etc.
+    let roll = Math.random() * 100;
 
     if (roll < chance) {
       counter++;
-      // Glow-Effekt
-      counterEl.classList.remove('glow');
-      void counterEl.offsetWidth; // Reflow trick um Animation zu triggern
-      counterEl.classList.add('glow');
     } else {
       counter = 0;
     }
 
-    counterEl.textContent = counter;
-    infoEl.textContent = `Chance zum Hochzählen: ${calculateChance(counter)}%`;
+    counterDisplay.textContent = counter;
   });
 </script>
 
