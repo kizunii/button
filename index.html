@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" type="image/png" href="button.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chance Button</title>
+<title>kizunii's button</title>
 <style>
   body {
     background-color: white;
@@ -192,13 +193,13 @@
         button.style.backgroundColor = 'blue';
         button.style.boxShadow = '0 8px #000099, 0 12px 20px rgba(0,0,0,0.2)';
       } else if (color === 'rainbow') {
-        const rainbowColors = ['red','orange','yellow','green','blue','purple'];
+        const rainbowColors = ['#ff0008','#ff7700','#bdbd00','#1e7d21','#1e3e7d','#5921a3'];
         let i = 0;
         rainbowInterval = setInterval(() => {
           button.style.backgroundColor = rainbowColors[i];
           button.style.boxShadow = `0 8px ${rainbowColors[i]}, 0 12px 20px rgba(0,0,0,0.2)`;
           i = (i + 1) % rainbowColors.length;
-        }, 500);
+        }, 100);
       }
 
       colorMenu.style.display = 'none';
