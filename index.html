@@ -8,54 +8,45 @@
   body {
     background-color: white;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
     font-family: Arial, sans-serif;
-  }
-
-  h1 {
-    margin-bottom: 50px;
-  }
-
-  #counter {
-    font-size: 2rem;
-    margin-bottom: 30px;
+    margin: 0;
   }
 
   #chanceButton {
     background-color: red;
     border: none;
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    font-size: 1.5rem;
+    width: 180px;
+    height: 180px;
+    font-size: 2.5rem;
     color: white;
     cursor: pointer;
-    transition: transform 0.1s;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 8px #b30000, 0 12px 20px rgba(0,0,0,0.2);
+    transition: transform 0.1s, box-shadow 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   #chanceButton:active {
-    transform: scale(0.9);
+    transform: translateY(4px);
+    box-shadow: 0 4px #b30000, 0 6px 10px rgba(0,0,0,0.2);
   }
 </style>
 </head>
 <body>
 
-<h1>Chance Button</h1>
-<div id="counter">0</div>
-<button id="chanceButton">Press me!</button>
+<button id="chanceButton">0</button>
 
 <script>
   const button = document.getElementById('chanceButton');
-  const counterDisplay = document.getElementById('counter');
   let counter = 0;
 
   button.addEventListener('click', () => {
-    // Calculate chance based on current counter
-    let chance = Math.max(50 - counter, 1); // 0->1: 50%, 1->2: 49%, etc.
+    let chance = Math.max(50 - counter, 1); // 0->1:50%, 1->2:49%, etc.
     let roll = Math.random() * 100;
 
     if (roll < chance) {
@@ -64,7 +55,7 @@
       counter = 0;
     }
 
-    counterDisplay.textContent = counter;
+    button.textContent = counter;
   });
 </script>
 
