@@ -154,26 +154,34 @@ body.dark #highscore {
 
 <script>
   const button = document.getElementById('chanceButton');
-  const switcher = document.getElementById('modeSwitcher');
-  const menuButton = document.getElementById('menuButton');
-  const colorMenu = document.getElementById('colorMenu');
-  const colorOptions = document.querySelectorAll('.colorOption');
-  let counter = 0;
-  let rainbowInterval = null;
+const switcher = document.getElementById('modeSwitcher');
+const menuButton = document.getElementById('menuButton');
+const colorMenu = document.getElementById('colorMenu');
+const colorOptions = document.querySelectorAll('.colorOption');
+const highscoreDisplay = document.getElementById('highscore'); // dein Highscore-Element
+let counter = 0;
+let highscore = 0; // Variable für den Highscore
+let rainbowInterval = null;
 
-  // Chance button logic
-  button.addEventListener('click', () => {
-    let chance = Math.max(50 - counter, 1); // 0->1:50%, 1->2:49%, etc.
-    let roll = Math.random() * 100;
+// Chance button logic
+button.addEventListener('click', () => {
+  let chance = Math.max(50 - counter, 1);
+  let roll = Math.random() * 100;
 
-    if (roll < chance) {
-      counter++;
-    } else {
-      counter = 0;
-    }
+  if (roll < chance) {
+    counter++;
+  } else {
+    counter = 0;
+  }
 
-    button.textContent = counter;
-  });
+  button.textContent = counter;
+
+  // hier Highscore-Check einfügen
+  if (counter > highscore) {
+    highscore = counter;
+    highscoreDisplay.textContent = "Highscore: " + highscore;
+  }
+});
 
   // Dark/Light mode toggle
   switcher.addEventListener('click', () => {
