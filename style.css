@@ -1,15 +1,1 @@
-#highscore {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: gray;
-  transition: color 0.3s;
-}
-
-body.dark #highscore {
-  color: white;
-}
-
+ 
