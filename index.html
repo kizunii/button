@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NoRisk Counter</title>
+<title>Glow Counter</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
   body {
-    background-color: #0f1117;
+    background-color: #0c0d14; /* noch dunkler */
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
@@ -19,45 +19,61 @@
   }
 
   h1 {
-    color: #00d8ff;
+    color: #00bfff;
     font-size: 3rem;
     margin-bottom: 20px;
+    text-shadow: 0 0 20px #00bfff, 0 0 40px #00bfff;
   }
 
   .counter {
-    font-size: 4rem;
+    font-size: 5rem;
     margin-bottom: 40px;
-    color: #fff;
-    text-shadow: 0 0 10px #00d8ff;
-  }
-
-  .btn {
-    background-color: #1b1f2a;
-    color: #00d8ff;
-    border: 2px solid #00d8ff;
-    padding: 15px 40px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    border-radius: 12px;
+    color: #00bfff;
+    text-shadow: 0 0 10px #00bfff, 0 0 30px #00bfff, 0 0 50px #00bfff;
     transition: all 0.2s ease-in-out;
   }
 
+  .btn {
+    background-color: #0a0b11;
+    color: #00bfff;
+    border: 2px solid #00bfff;
+    padding: 15px 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff;
+  }
+
   .btn:hover {
-    background-color: #00d8ff;
-    color: #1b1f2a;
+    background-color: #00bfff;
+    color: #0a0b11;
     transform: scale(1.1);
+    box-shadow: 0 0 20px #00bfff, 0 0 40px #00bfff;
   }
 
   .info {
     margin-top: 20px;
     font-size: 1rem;
     color: #aaa;
+    text-shadow: 0 0 5px #00bfff;
+  }
+
+  /* Animation beim Hochzählen */
+  .glow {
+    animation: glowAnim 0.5s ease-in-out;
+  }
+
+  @keyframes glowAnim {
+    0% { text-shadow: 0 0 10px #00bfff, 0 0 30px #00bfff, 0 0 50px #00bfff; transform: scale(1); }
+    50% { text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 60px #00ffff; transform: scale(1.2); }
+    100% { text-shadow: 0 0 10px #00bfff, 0 0 30px #00bfff, 0 0 50px #00bfff; transform: scale(1); }
   }
 </style>
 </head>
 <body>
 
-<h1>NoRisk Counter</h1>
+<h1>Glow Counter</h1>
 <div class="counter" id="counter">0</div>
 <button class="btn" id="incrementBtn">Hochzählen</button>
 <div class="info" id="info">Chance zum Hochzählen: 50%</div>
@@ -70,7 +86,6 @@
   let counter = 0;
 
   function calculateChance(n) {
-    // Chance sinkt um 1% pro Schritt, Minimum 1%
     return Math.max(50 - n, 1);
   }
 
@@ -80,6 +95,10 @@
 
     if (roll < chance) {
       counter++;
+      // Glow-Effekt
+      counterEl.classList.remove('glow');
+      void counterEl.offsetWidth; // Reflow trick um Animation zu triggern
+      counterEl.classList.add('glow');
     } else {
       counter = 0;
     }
