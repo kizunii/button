@@ -190,6 +190,50 @@ button.addEventListener('click', () => {
     }
 });
 
+  // Array mit Katzenbildern oder nur ein Bild, hier als Beispiel
+const catSrc = "https://i.imgur.com/JlUvsxa.png"; // niedliche Katze
+
+function spawnCat() {
+    const cat = document.createElement("img");
+    cat.src = catSrc;
+    cat.style.position = "absolute";
+    cat.style.width = "50px";  // Größe der Katze
+    cat.style.height = "50px";
+    cat.style.pointerEvents = "none"; // Damit man sie nicht anklicken kann
+    cat.style.zIndex = "1000";
+
+    // Zufällige Position innerhalb des Fensters
+    const x = Math.random() * (window.innerWidth - 50);
+    const y = Math.random() * (window.innerHeight - 50);
+    cat.style.left = x + "px";
+    cat.style.top = y + "px";
+
+    document.body.appendChild(cat);
+
+    // Optional: Katze nach 5 Sekunden wieder entfernen
+    setTimeout(() => {
+        cat.remove();
+    }, 5000);
+}
+
+// Innerhalb deines Button-Click-Listeners:
+button.addEventListener('click', () => {
+    let chance = Math.max(50 - counter, 1);
+    let roll = Math.random() * 100;
+
+    if (roll < chance) {
+        counter++;
+    } else {
+        counter = 0;
+    }
+
+    button.textContent = counter;
+
+    // Spawn Katze bei jedem 10er
+    if (counter > 0 && counter % 10 === 0) {
+        spawnCat();
+    }
+
 // Dark/Light mode toggle
 switcher.addEventListener('click', () => {
     document.body.classList.toggle('dark');
