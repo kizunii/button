@@ -181,10 +181,6 @@ button.addEventListener('click', () => {
     }
 
     button.textContent = counter;
-
-    const newSize = 180 + counter;
-    button.style.fontsize = newSize + "px";
-    button.style.padding = (10 + counter / 2) + "px" + (20 + counter / 2) + "px"+
     
     // Highscore prüfen & speichern
     if (counter > highscore) {
