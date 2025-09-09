@@ -133,9 +133,6 @@
   <div class="colorOption" data-color="blue">Blue</div>
 </div>
 
-<!-- 🎵 Click Sound -->
-<audio id="clickSound" src="click.mp3"></audio>
-
 <script>
   const button = document.getElementById('chanceButton');
   const switcher = document.getElementById('modeSwitcher');
@@ -158,9 +155,6 @@
 
     button.textContent = counter;
 
-    // 🎵 Play click sound
-    clickSound.currentTime = 0;
-    clickSound.play().catch(e => console.log("Sound konnte nicht abgespielt werden:", e));
   });
 
   // Dark/Light mode toggle
