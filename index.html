@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chance Button</title>
+<title>GAMBA</title>
 <style>
   body {
     background-color: white;
@@ -31,7 +31,7 @@
     color: white;
     cursor: pointer;
     box-shadow: 0 8px #b30000, 0 12px 20px rgba(0,0,0,0.2);
-    transition: transform 0.1s, box-shadow 0.1s;
+    transition: transform 0.1s, box-shadow 0.1s, background-color 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,16 +59,85 @@
     background-color: #444;
     color: white;
   }
+
+  /* Menu button */
+  #menuButton {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #ccc;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  body.dark #menuButton {
+    background-color: #444;
+    color: white;
+  }
+
+  /* Menu */
+  #colorMenu {
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    background-color: #eee;
+    border-radius: 10px;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s;
+  }
+
+  body.dark #colorMenu {
+    background-color: #333;
+  }
+
+  .colorOption {
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #ddd;
+    text-align: center;
+    transition: background-color 0.3s;
+  }
+
+  body.dark .colorOption {
+    background-color: #555;
+    color: white;
+  }
+
+  .colorOption:hover {
+    background-color: #bbb;
+  }
+
+  body.dark .colorOption:hover {
+    background-color: #777;
+  }
 </style>
 </head>
 <body>
 
 <button id="chanceButton">0</button>
 <button id="modeSwitcher">Dark Mode</button>
+<button id="menuButton">Menu</button>
+
+<div id="colorMenu">
+  <div class="colorOption" data-color="red">Red</div>
+  <div class="colorOption" data-color="green">Green</div>
+  <div class="colorOption" data-color="blue">Blue</div>
+</div>
 
 <script>
   const button = document.getElementById('chanceButton');
   const switcher = document.getElementById('modeSwitcher');
+  const menuButton = document.getElementById('menuButton');
+  const colorMenu = document.getElementById('colorMenu');
+  const colorOptions = document.querySelectorAll('.colorOption');
   let counter = 0;
 
   // Chance button logic
@@ -93,6 +162,30 @@
     } else {
       switcher.textContent = 'Dark Mode';
     }
+  });
+
+  // Menu toggle
+  menuButton.addEventListener('click', () => {
+    colorMenu.style.display = colorMenu.style.display === 'flex' ? 'none' : 'flex';
+  });
+
+  // Change button color
+  colorOptions.forEach(option => {
+    option.addEventListener('click', () => {
+      const color = option.getAttribute('data-color');
+      button.style.backgroundColor = color;
+
+      // Update shadow based on color
+      if(color === 'red') {
+        button.style.boxShadow = '0 8px #b30000, 0 12px 20px rgba(0,0,0,0.2)';
+      } else if(color === 'green') {
+        button.style.boxShadow = '0 8px #006600, 0 12px 20px rgba(0,0,0,0.2)';
+      } else if(color === 'blue') {
+        button.style.boxShadow = '0 8px #000099, 0 12px 20px rgba(0,0,0,0.2)';
+      }
+
+      colorMenu.style.display = 'none';
+    });
   });
 </script>
 
