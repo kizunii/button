@@ -1,79 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Counter Button</title>
+<title>NoRisk Counter</title>
 <style>
-  /* Seite */
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
   body {
-    margin: 0;
-    padding: 0;
-    background-color: #0a0a0a; /* dunkler Hintergrund */
-    color: #ffffff;
-    font-family: 'Courier New', monospace;
+    background-color: #0f1117;
+    font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    gap: 20px;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
   }
 
   h1 {
-    text-align: center;
-    font-size: 1.5rem;
+    color: #00d8ff;
+    font-size: 3rem;
+    margin-bottom: 20px;
   }
 
-  /* Button */
-  #clickBtn {
-    background-color: #1a1a1a;
-    color: #ffffff;
-    border: none;
+  .counter {
+    font-size: 4rem;
+    margin-bottom: 40px;
+    color: #fff;
+    text-shadow: 0 0 10px #00d8ff;
+  }
+
+  .btn {
+    background-color: #1b1f2a;
+    color: #00d8ff;
+    border: 2px solid #00d8ff;
     padding: 15px 40px;
-    font-size: 1.2rem;
-    border-radius: 12px;
+    font-size: 1.5rem;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    position: relative;
-    box-shadow: none;
+    border-radius: 12px;
+    transition: all 0.2s ease-in-out;
   }
 
-  #clickBtn:hover {
-    box-shadow: 0 0 20px #ffffff, 0 0 40px rgba(255, 102, 204, 0.6);
-    transform: scale(1.05);
+  .btn:hover {
+    background-color: #00d8ff;
+    color: #1b1f2a;
+    transform: scale(1.1);
   }
 
-  /* Counteranzeige */
-  #counter {
-    font-size: 2rem;
-    color: #ffffff;
-    text-align: center;
+  .info {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #aaa;
   }
-
 </style>
 </head>
 <body>
 
-<h1>Click the button and see the counter!</h1>
-<button id="clickBtn">Click me!</button>
-<div id="counter">0</div>
+<h1>NoRisk Counter</h1>
+<div class="counter" id="counter">0</div>
+<button class="btn" id="incrementBtn">Hochzählen</button>
+<div class="info" id="info">Chance zum Hochzählen: 50%</div>
 
 <script>
+  const counterEl = document.getElementById('counter');
+  const btn = document.getElementById('incrementBtn');
+  const infoEl = document.getElementById('info');
+
   let counter = 0;
 
-  const btn = document.getElementById('clickBtn');
-  const display = document.getElementById('counter');
+  function calculateChance(n) {
+    // Chance sinkt um 1% pro Schritt, Minimum 1%
+    return Math.max(50 - n, 1);
+  }
 
   btn.addEventListener('click', () => {
-    // Wahrscheinlichkeit berechnen
-    const chance = Math.max(50 - counter, 1); // Chance sinkt mit jedem Klick, min 1%
-    const random = Math.random() * 100; // 0-100
+    const chance = calculateChance(counter);
+    const roll = Math.random() * 100;
 
-    if(random < chance) {
+    if (roll < chance) {
       counter++;
-      display.textContent = counter;
+    } else {
+      counter = 0;
     }
+
+    counterEl.textContent = counter;
+    infoEl.textContent = `Chance zum Hochzählen: ${calculateChance(counter)}%`;
   });
 </script>
 
