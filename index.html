@@ -154,7 +154,7 @@ body.dark #highscore {
 </div>
 
 <script>
- const button = document.getElementById('chanceButton');
+const button = document.getElementById('chanceButton');
 const switcher = document.getElementById('modeSwitcher');
 const menuButton = document.getElementById('menuButton');
 const colorMenu = document.getElementById('colorMenu');
@@ -164,94 +164,76 @@ const highscoreDisplay = document.getElementById('highscore');
 let counter = 0;
 let rainbowInterval = null;
 
-// 🔹 Highscore aus localStorage laden (oder 0, wenn noch keiner gespeichert ist)
+// Highscore aus localStorage laden
 let highscore = parseInt(localStorage.getItem("highscore")) || 0;
 highscoreDisplay.textContent = "Highscore: " + highscore;
 
-// Chance button logic
+// 🔹 Chance Button Logic
 button.addEventListener('click', () => {
-  let chance = Math.max(50 - counter, 1);
-  let roll = Math.random() * 100;
+    let chance = Math.max(50 - counter, 1);
+    let roll = Math.random() * 100;
 
-  if (roll < chance) {
-    counter++;
-  } else {
-    counter = 0;
-  }
-
-  button.textContent = counter;
-
-  // 🔹 Highscore prüfen & speichern
-  if (counter > highscore) {
-    highscore = counter;
-    highscoreDisplay.textContent = "Highscore: " + highscore;
-    localStorage.setItem("highscore", highscore); // speichert den Wert
-  }
-});
-
-  button.addEventListener('click', () => {
-  let chance = Math.max(50 - counter, 1);
-  let roll = Math.random() * 100;
-
-  if (roll < chance) {
-    counter++;
-
-  // Highscore-Check & speichern
-  if (counter > highscore) {
-    highscore = counter;
-    highscoreDisplay.textContent = "Highscore: " + highscore;
-    localStorage.setItem("highscore", highscore);
-  }
-});
-
-  // Dark/Light mode toggle
-  switcher.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    if(document.body.classList.contains('dark')) {
-      switcher.textContent = 'Light Mode';
+    if (roll < chance) {
+        counter++;
     } else {
-      switcher.textContent = 'Dark Mode';
+        counter = 0;
     }
-  });
 
-  // Menu toggle
-  menuButton.addEventListener('click', () => {
+    button.textContent = counter;
+
+    // Highscore prüfen & speichern
+    if (counter > highscore) {
+        highscore = counter;
+        highscoreDisplay.textContent = "Highscore: " + highscore;
+        localStorage.setItem("highscore", highscore);
+    }
+});
+
+// Dark/Light mode toggle
+switcher.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    switcher.textContent = document.body.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
+});
+
+// Menu toggle
+menuButton.addEventListener('click', () => {
     colorMenu.style.display = colorMenu.style.display === 'flex' ? 'none' : 'flex';
-  });
+});
 
-  // Change button color
-  colorOptions.forEach(option => {
+// Change button color
+colorOptions.forEach(option => {
     option.addEventListener('click', () => {
-      const color = option.getAttribute('data-color');
+        const color = option.getAttribute('data-color');
 
-      // Stop rainbow if running
-      if (rainbowInterval) {
-        clearInterval(rainbowInterval);
-        rainbowInterval = null;
-      }
+        // Stop rainbow if running
+        if (rainbowInterval) {
+            clearInterval(rainbowInterval);
+            rainbowInterval = null;
+        }
 
-      if (color === 'red') {
-        button.style.backgroundColor = 'red';
-        button.style.boxShadow = '0 8px #b30000, 0 12px 20px rgba(0,0,0,0.2)';
-      } else if (color === 'green') {
-        button.style.backgroundColor = 'green';
-        button.style.boxShadow = '0 8px #006600, 0 12px 20px rgba(0,0,0,0.2)';
-      } else if (color === 'blue') {
-        button.style.backgroundColor = 'blue';
-        button.style.boxShadow = '0 8px #000099, 0 12px 20px rgba(0,0,0,0.2)';
-      } else if (color === 'rainbow') {
-        const rainbowColors = ['#ff0008','#ff7700','#bdbd00','#1e7d21','#1e3e7d','#5921a3'];
-        let i = 0;
-        rainbowInterval = setInterval(() => {
-          button.style.backgroundColor = rainbowColors[i];
-          button.style.boxShadow = `0 8px ${rainbowColors[i]}, 0 12px 20px rgba(0,0,0,0.2)`;
-          i = (i + 1) % rainbowColors.length;
-        }, 100);
-      }
+        if (color === 'red') {
+            button.style.backgroundColor = 'red';
+            button.style.boxShadow = '0 8px #b30000, 0 12px 20px rgba(0,0,0,0.2)';
+        } else if (color === 'green') {
+            button.style.backgroundColor = 'green';
+            button.style.boxShadow = '0 8px #006600, 0 12px 20px rgba(0,0,0,0.2)';
+        } else if (color === 'blue') {
+            button.style.backgroundColor = 'blue';
+            button.style.boxShadow = '0 8px #000099, 0 12px 20px rgba(0,0,0,0.2)';
+        } else if (color === 'rainbow') {
+            const rainbowColors = ['#ff0008','#ff7700','#bdbd00','#1e7d21','#1e3e7d','#5921a3'];
+            let i = 0;
+            rainbowInterval = setInterval(() => {
+                button.style.backgroundColor = rainbowColors[i];
+                button.style.boxShadow = `0 8px ${rainbowColors[i]}, 0 12px 20px rgba(0,0,0,0.2)`;
+                i = (i + 1) % rainbowColors.length;
+            }, 100);
+        }
 
-      colorMenu.style.display = 'none';
+        colorMenu.style.display = 'none';
     });
-  });
+});
+
 </script>
 
 </body>
