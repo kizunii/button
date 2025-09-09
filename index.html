@@ -1,127 +1,81 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>GAMBA</title>
-  <style>
-    :root {
-      --black: #000000;
-      --gray: #3b3b3b;
-      --bg: #212121;
-      --card: #ffffff;
-      --text: #bfbfbf;
-      --fail: #ff4d6d;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Counter Button</title>
+<style>
+  /* Seite */
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #0a0a0a; /* dunkler Hintergrund */
+    color: #ffffff;
+    font-family: 'Courier New', monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    gap: 20px;
+  }
 
-    body {
-      background-color: black;
-      font-family: "Poppins", Cursive;
-      text-align: center;
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(180deg, var(--black), #919191);
-    }
+  h1 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
 
-    .card {
-      background: var(--card);
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-      width: 320px;
-      transition: transform 0.2s ease;
-    }
+  /* Button */
+  #clickBtn {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    box-shadow: none;
+  }
 
-    .card:hover {
-      transform: translateY(-4px);
-    }
+  #clickBtn:hover {
+    box-shadow: 0 0 20px #ffffff, 0 0 40px rgba(255, 102, 204, 0.6);
+    transform: scale(1.05);
+  }
 
-    h1 {
-      font-size: 22px;
-      margin-bottom: 16px;
-      color: var(--text);
-    }
+  /* Counteranzeige */
+  #counter {
+    font-size: 2rem;
+    color: #ffffff;
+    text-align: center;
+  }
 
-    #counter {
-      font-size: 60px;
-      font-weight: bold;
-      margin: 20px 0;
-      color: var(--white);
-      transition: color 0.3s, transform 0.3s;
-    }
-
-    /* fail effect */
-    #counter.fail {
-      color: var(--fail);
-      transform: scale(1.2);
-    }
-
-    #clickBtn {
-      background-color: #ffffff
-      font-size: 20px;
-      padding: 14px 28px;
-      border: none;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--black), var(--black));
-      color: white;
-      cursor: pointer;
-      box-shadow: none;
-      transition: all 0.3s ease;
-    }
-    
-    #clickBtn:hover {
-  box-shadow: 0 0 20px #ffffff, 0 0 40px rgba(255,255,255,0.6);
-  transform: scale(1.05);
-}
-
-    #clickBtn:active {
-      transform: scale(0.90);
-    }
-
-    .note {
-      margin-top: 16px;
-      font-size: 12px;
-      color: #7a5b73;
-    }
-  </style>
+</style>
 </head>
 <body>
-  <div class="card">
-    <h1>Lucky Counter</h1>
-    <div id="counter">0</div>
-    <button id="clickBtn">Click</button>
-    <div class="note">Higher number → lower chance</div>
-  </div>
 
-  <script>
-    let count = 0;
-    const counterEl = document.getElementById("counter");
-    const btn = document.getElementById("clickBtn");
+<h1>Click the button and see the counter!</h1>
+<button id="clickBtn">Click me!</button>
+<div id="counter">0</div>
 
-    function updateDisplay() {
-      counterEl.textContent = count;
+<script>
+  let counter = 0;
+
+  const btn = document.getElementById('clickBtn');
+  const display = document.getElementById('counter');
+
+  btn.addEventListener('click', () => {
+    // Wahrscheinlichkeit berechnen
+    const chance = Math.max(50 - counter, 1); // Chance sinkt mit jedem Klick, min 1%
+    const random = Math.random() * 100; // 0-100
+
+    if(random < chance) {
+      counter++;
+      display.textContent = counter;
     }
+  });
+</script>
 
-    btn.addEventListener("click", () => {
-      if (count === 0) {
-        count++;
-      } else {
-        const chance = 50 - count; 
-        const roll = Math.random() * 100;
-        if (roll < chance) {
-          count++;
-        } else {
-          count = 0;
-          counterEl.classList.add("fail");
-          setTimeout(() => counterEl.classList.remove("fail"), 400);
-        }
-      }
-      updateDisplay();
-    });
-
-    updateDisplay();
-  </script>
 </body>
 </html>
