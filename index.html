@@ -163,46 +163,22 @@ const colorOptions = document.querySelectorAll('.colorOption');
 const highscoreDisplay = document.getElementById('highscore'); 
 
 let counter = 0;
-let rainbowInterval = null;
-
-// Highscore aus localStorage laden
 let highscore = parseInt(localStorage.getItem("highscore")) || 0;
-highscoreDisplay.textContent = "Highscore: " + highscore;
-
-// 🔹 Chance Button Logic
-button.addEventListener('click', () => {
-    let chance = Math.max(50 - counter, 1);
-    let roll = Math.random() * 100;
-
-    if (roll < chance) {
-        counter++;
-    } else {
-        counter = 0;
-    }
-
-    button.textContent = counter;
-    
-    // Highscore prüfen & speichern
-    if (counter > highscore) {
-        highscore = counter;
-        highscoreDisplay.textContent = "Highscore: " + highscore;
-        localStorage.setItem("highscore", highscore);
-    }
-});
-
-  // Array mit Katzenbildern oder nur ein Bild, hier als Beispiel
+let rainbowInterval = null;
 const catSrc = "https://i.imgur.com/JlUvsxa.png"; // niedliche Katze
 
+highscoreDisplay.textContent = "Highscore: " + highscore;
+
+// Funktion Katze spawnen
 function spawnCat() {
     const cat = document.createElement("img");
     cat.src = catSrc;
     cat.style.position = "absolute";
-    cat.style.width = "50px";  // Größe der Katze
+    cat.style.width = "50px";
     cat.style.height = "50px";
-    cat.style.pointerEvents = "none"; // Damit man sie nicht anklicken kann
+    cat.style.pointerEvents = "none";
     cat.style.zIndex = "1000";
 
-    // Zufällige Position innerhalb des Fensters
     const x = Math.random() * (window.innerWidth - 50);
     const y = Math.random() * (window.innerHeight - 50);
     cat.style.left = x + "px";
@@ -210,13 +186,10 @@ function spawnCat() {
 
     document.body.appendChild(cat);
 
-    // Optional: Katze nach 5 Sekunden wieder entfernen
-    setTimeout(() => {
-        cat.remove();
-    }, 5000);
+    setTimeout(() => cat.remove(), 5000);
 }
 
-// Innerhalb deines Button-Click-Listeners:
+// 🔹 Click-Listener für Button
 button.addEventListener('click', () => {
     let chance = Math.max(50 - counter, 1);
     let roll = Math.random() * 100;
@@ -229,28 +202,35 @@ button.addEventListener('click', () => {
 
     button.textContent = counter;
 
-    // Spawn Katze bei jedem 10er
+    // Katze bei jedem 10er
     if (counter > 0 && counter % 10 === 0) {
         spawnCat();
     }
 
-// Dark/Light mode toggle
+    // Highscore prüfen
+    if (counter > highscore) {
+        highscore = counter;
+        highscoreDisplay.textContent = "Highscore: " + highscore;
+        localStorage.setItem("highscore", highscore);
+    }
+});
+
+// 🔹 Dark/Light Mode
 switcher.addEventListener('click', () => {
     document.body.classList.toggle('dark');
     switcher.textContent = document.body.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
 });
 
-// Menu toggle
+// 🔹 Menu toggle
 menuButton.addEventListener('click', () => {
     colorMenu.style.display = colorMenu.style.display === 'flex' ? 'none' : 'flex';
 });
 
-// Change button color
+// 🔹 Button-Farbe ändern
 colorOptions.forEach(option => {
     option.addEventListener('click', () => {
         const color = option.getAttribute('data-color');
 
-        // Stop rainbow if running
         if (rainbowInterval) {
             clearInterval(rainbowInterval);
             rainbowInterval = null;
@@ -278,6 +258,7 @@ colorOptions.forEach(option => {
         colorMenu.style.display = 'none';
     });
 });
+
 
 </script>
 
