@@ -165,7 +165,7 @@ const highscoreDisplay = document.getElementById('highscore');
 let counter = 0;
 let highscore = parseInt(localStorage.getItem("highscore")) || 0;
 let rainbowInterval = null;
-const catSrc = "https://i.imgur.com/JlUvsxa.png"; // niedliche Katze
+const catSrc = "https://imgur.com/RzTEKCB"; // niedliche Katze
 
 highscoreDisplay.textContent = "Highscore: " + highscore;
 
@@ -174,8 +174,8 @@ function spawnCat() {
     const cat = document.createElement("img");
     cat.src = catSrc;
     cat.style.position = "absolute";
-    cat.style.width = "50px";
-    cat.style.height = "50px";
+    cat.style.width = "100px";
+    cat.style.height = "100px";
     cat.style.pointerEvents = "none";
     cat.style.zIndex = "1000";
 
