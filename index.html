@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/png" href="button.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GAMBA</title>
+<title>Chance Button</title>
 <style>
   body {
     background-color: white;
@@ -131,6 +130,7 @@
   <div class="colorOption" data-color="red">Red</div>
   <div class="colorOption" data-color="green">Green</div>
   <div class="colorOption" data-color="blue">Blue</div>
+  <div class="colorOption" data-color="rainbow">🌈 Rainbow</div>
 </div>
 
 <script>
@@ -139,12 +139,12 @@
   const menuButton = document.getElementById('menuButton');
   const colorMenu = document.getElementById('colorMenu');
   const colorOptions = document.querySelectorAll('.colorOption');
-  const clickSound = document.getElementById('clickSound');
   let counter = 0;
+  let rainbowInterval = null;
 
   // Chance button logic
   button.addEventListener('click', () => {
-    let chance = Math.max(50 - counter, 1);
+    let chance = Math.max(50 - counter, 1); // 0->1:50%, 1->2:49%, etc.
     let roll = Math.random() * 100;
 
     if (roll < chance) {
@@ -154,7 +154,6 @@
     }
 
     button.textContent = counter;
-
   });
 
   // Dark/Light mode toggle
@@ -176,14 +175,30 @@
   colorOptions.forEach(option => {
     option.addEventListener('click', () => {
       const color = option.getAttribute('data-color');
-      button.style.backgroundColor = color;
 
-      if(color === 'red') {
+      // Stop rainbow if running
+      if (rainbowInterval) {
+        clearInterval(rainbowInterval);
+        rainbowInterval = null;
+      }
+
+      if (color === 'red') {
+        button.style.backgroundColor = 'red';
         button.style.boxShadow = '0 8px #b30000, 0 12px 20px rgba(0,0,0,0.2)';
-      } else if(color === 'green') {
+      } else if (color === 'green') {
+        button.style.backgroundColor = 'green';
         button.style.boxShadow = '0 8px #006600, 0 12px 20px rgba(0,0,0,0.2)';
-      } else if(color === 'blue') {
+      } else if (color === 'blue') {
+        button.style.backgroundColor = 'blue';
         button.style.boxShadow = '0 8px #000099, 0 12px 20px rgba(0,0,0,0.2)';
+      } else if (color === 'rainbow') {
+        const rainbowColors = ['red','orange','yellow','green','blue','purple'];
+        let i = 0;
+        rainbowInterval = setInterval(() => {
+          button.style.backgroundColor = rainbowColors[i];
+          button.style.boxShadow = `0 8px ${rainbowColors[i]}, 0 12px 20px rgba(0,0,0,0.2)`;
+          i = (i + 1) % rainbowColors.length;
+        }, 500);
       }
 
       colorMenu.style.display = 'none';
