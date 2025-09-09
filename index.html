@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <link rel="icon" type="image/png" href="button.png">
-  <audio id="clickSound" src="click.mp3"></audio>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GAMBA</title>
@@ -134,17 +133,21 @@
   <div class="colorOption" data-color="blue">Blue</div>
 </div>
 
+<!-- 🎵 Click Sound -->
+<audio id="clickSound" src="click.mp3"></audio>
+
 <script>
   const button = document.getElementById('chanceButton');
   const switcher = document.getElementById('modeSwitcher');
   const menuButton = document.getElementById('menuButton');
   const colorMenu = document.getElementById('colorMenu');
   const colorOptions = document.querySelectorAll('.colorOption');
+  const clickSound = document.getElementById('clickSound');
   let counter = 0;
 
   // Chance button logic
   button.addEventListener('click', () => {
-    let chance = Math.max(50 - counter, 1); // 0->1:50%, 1->2:49%, etc.
+    let chance = Math.max(50 - counter, 1);
     let roll = Math.random() * 100;
 
     if (roll < chance) {
@@ -154,6 +157,10 @@
     }
 
     button.textContent = counter;
+
+    // 🎵 Play click sound
+    clickSound.currentTime = 0;
+    clickSound.play().catch(e => console.log("Sound konnte nicht abgespielt werden:", e));
   });
 
   // Dark/Light mode toggle
@@ -177,7 +184,6 @@
       const color = option.getAttribute('data-color');
       button.style.backgroundColor = color;
 
-      // Update shadow based on color
       if(color === 'red') {
         button.style.boxShadow = '0 8px #b30000, 0 12px 20px rgba(0,0,0,0.2)';
       } else if(color === 'green') {
