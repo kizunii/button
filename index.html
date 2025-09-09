@@ -153,15 +153,19 @@ body.dark #highscore {
 </div>
 
 <script>
-  const button = document.getElementById('chanceButton');
+ const button = document.getElementById('chanceButton');
 const switcher = document.getElementById('modeSwitcher');
 const menuButton = document.getElementById('menuButton');
 const colorMenu = document.getElementById('colorMenu');
 const colorOptions = document.querySelectorAll('.colorOption');
-const highscoreDisplay = document.getElementById('highscore'); // dein Highscore-Element
+const highscoreDisplay = document.getElementById('highscore'); 
+
 let counter = 0;
-let highscore = 0; // Variable für den Highscore
 let rainbowInterval = null;
+
+// 🔹 Highscore aus localStorage laden (oder 0, wenn noch keiner gespeichert ist)
+let highscore = parseInt(localStorage.getItem("highscore")) || 0;
+highscoreDisplay.textContent = "Highscore: " + highscore;
 
 // Chance button logic
 button.addEventListener('click', () => {
@@ -176,10 +180,11 @@ button.addEventListener('click', () => {
 
   button.textContent = counter;
 
-  // hier Highscore-Check einfügen
+  // 🔹 Highscore prüfen & speichern
   if (counter > highscore) {
     highscore = counter;
     highscoreDisplay.textContent = "Highscore: " + highscore;
+    localStorage.setItem("highscore", highscore); // speichert den Wert
   }
 });
 
