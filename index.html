@@ -2,17 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Counter with Glow</title>
+  <title>Lucky Counter ✨</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       text-align: center;
       margin-top: 100px;
+      background: #fff0f8;
     }
 
     #counter {
       font-size: 48px;
       margin-bottom: 20px;
+      color: #7b2a66;
     }
 
     #clickBtn {
@@ -26,7 +28,6 @@
       transition: all 0.3s ease;
     }
 
-    /* ✨ Glow beim Hover ✨ */
     #clickBtn:hover {
       box-shadow: 0 0 20px #ff7ac6, 0 0 40px #ffb3e6;
       transform: scale(1.05);
@@ -42,13 +43,30 @@
     const counterEl = document.getElementById("counter");
     const btn = document.getElementById("clickBtn");
 
-    btn.addEventListener("click", () => {
-      count++;
+    function updateDisplay() {
       counterEl.textContent = count;
+    }
+
+    btn.addEventListener("click", () => {
+      if (count === 0) {
+        // immer +1
+        count++;
+      } else {
+        // Chance berechnen
+        const chance = 51 - count; // bei 1 = 50%, bei 2 = 49%, ...
+        const roll = Math.random() * 100; // Zahl zwischen 0-100
+        if (roll < chance) {
+          count++;
+        } else {
+          count = 0;
+        }
+      }
+      updateDisplay();
     });
+
+    updateDisplay();
   </script>
 </body>
 </html>
-
     render();
   </script>
