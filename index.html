@@ -7,11 +7,6 @@
 <title>kizunii's button</title>
 <style>
 
-  #chanceButton.grow {
-  transform: scale(1.2); /* 20% größer */
-  transition: transform 0.2s;
-}
-
   body {
     background-color: white;
     display: flex;
@@ -200,15 +195,6 @@ button.addEventListener('click', () => {
 
   if (roll < chance) {
     counter++;
-    // Button wachsen lassen
-    button.classList.add('grow');
-  } else {
-    counter = 0;
-    // Button wieder auf Standardgröße
-    button.classList.remove('grow');
-  }
-
-  button.textContent = counter;
 
   // Highscore-Check & speichern
   if (counter > highscore) {
