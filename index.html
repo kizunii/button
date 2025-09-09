@@ -21,7 +21,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(180deg, var(--bg), #212121);
+      background: linear-gradient(180deg, var(--bg), #919191);
     }
 
     .card {
@@ -47,7 +47,7 @@
       font-size: 60px;
       font-weight: bold;
       margin: 20px 0;
-      color: var(--pink);
+      color: var(--white);
       transition: color 0.3s, transform 0.3s;
     }
 
@@ -62,7 +62,7 @@
       padding: 14px 28px;
       border: none;
       border-radius: 12px;
-      background: linear-gradient(135deg, var(--pink), var(--pink-light));
+      background: linear-gradient(135deg, var(--black), var(--gray));
       color: white;
       cursor: pointer;
       box-shadow: 0 6px 18px rgba(255,122,198,0.3);
@@ -70,7 +70,7 @@
     }
 
     #clickBtn:hover {
-      box-shadow: 0 0 20px var(--pink), 0 0 40px var(--pink-light);
+      box-shadow: 0 0 20px var(--black), 0 0 40px var(--gray);
       transform: scale(1.05);
     }
 
@@ -90,7 +90,7 @@
     <h1>Lucky Counter</h1>
     <div id="counter">0</div>
     <button id="clickBtn">Click</button>
-    <div class="note">Higher number → lower chance ✨</div>
+    <div class="note">Higher number → lower chance</div>
   </div>
 
   <script>
