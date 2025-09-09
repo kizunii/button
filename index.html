@@ -13,6 +13,12 @@
     height: 100vh;
     font-family: Arial, sans-serif;
     margin: 0;
+    transition: background-color 0.3s;
+  }
+
+  /* Dark mode */
+  body.dark {
+    background-color: #222;
   }
 
   #chanceButton {
@@ -35,16 +41,37 @@
     transform: translateY(4px);
     box-shadow: 0 4px #b30000, 0 6px 10px rgba(0,0,0,0.2);
   }
+
+  /* Dark/Light mode switcher */
+  #modeSwitcher {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #ccc;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  body.dark #modeSwitcher {
+    background-color: #444;
+    color: white;
+  }
 </style>
 </head>
 <body>
 
 <button id="chanceButton">0</button>
+<button id="modeSwitcher">Dark Mode</button>
 
 <script>
   const button = document.getElementById('chanceButton');
+  const switcher = document.getElementById('modeSwitcher');
   let counter = 0;
 
+  // Chance button logic
   button.addEventListener('click', () => {
     let chance = Math.max(50 - counter, 1); // 0->1:50%, 1->2:49%, etc.
     let roll = Math.random() * 100;
@@ -56,6 +83,16 @@
     }
 
     button.textContent = counter;
+  });
+
+  // Dark/Light mode toggle
+  switcher.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    if(document.body.classList.contains('dark')) {
+      switcher.textContent = 'Light Mode';
+    } else {
+      switcher.textContent = 'Dark Mode';
+    }
   });
 </script>
 
