@@ -165,30 +165,9 @@ const highscoreDisplay = document.getElementById('highscore');
 let counter = 0;
 let highscore = parseInt(localStorage.getItem("highscore")) || 0;
 let rainbowInterval = null;
-const catSrc = "https://i.imgur.com/RzTEKCB.png"; // niedliche Katze
 
 highscoreDisplay.textContent = "Highscore: " + highscore;
 
-// Funktion Katze spawnen
-function spawnCat() {
-    const cat = document.createElement("img");
-    cat.src = catSrc;
-    cat.style.position = "absolute";
-    cat.style.width = "50px";
-    cat.style.height = "50px";
-    cat.style.pointerEvents = "none";
-    cat.style.zIndex = "1000";
-
-    const x = Math.random() * (window.innerWidth - 50);
-    const y = Math.random() * (window.innerHeight - 50);
-    cat.style.left = x + "px";
-    cat.style.top = y + "px";
-
-    document.body.appendChild(cat);
-
-   setTimeout(() => cat.remove(), 5000);
-
-}
 
 // 🔹 Click-Listener für Button
 button.addEventListener('click', () => {
@@ -207,11 +186,6 @@ button.addEventListener('click', () => {
     button.style.width = size + "px";
     button.style.height = size + "px";
     button.style.fontSize = (2.5 + counter * 0.2) + "rem";
-
-    // Katze bei jedem 10er
-    if (counter > 0 && counter % 5 === 0) {
-        spawnCat();
-    }
 
     // Highscore prüfen
     if (counter > highscore) {
