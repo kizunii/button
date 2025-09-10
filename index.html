@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>kizunii's button</title>
 <style>
-
   body {
     background-color: white;
     display: flex;
@@ -17,32 +16,53 @@
     margin: 0;
     transition: background-color 0.3s;
   }
+  body.dark { background-color: #222; }
 
-  /* Dark mode */
-  body.dark {
-    background-color: #222;
-  }
-
-  #chanceButton {
-    background-color: red;
-    border: none;
-    border-radius: 50%;
+  /* Button Wrapper */
+  #buttonWrapper {
+    position: relative;
     width: 180px;
     height: 180px;
-    font-size: 2.5rem;
-    color: white;
-    cursor: pointer;
-    box-shadow: 0 8px #b30000, 0 12px 20px rgba(0,0,0,0.2);
-    transition: transform 0.1s, box-shadow 0.1s, background-color 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Arial, sans-serif;
   }
 
-  #chanceButton:active {
-    transform: translateY(4px);
-    box-shadow: 0 4px #b30000, 0 6px 10px rgba(0,0,0,0.2);
+  /* Unteres Bild */
+  #buttonBase {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+    pointer-events: none; /* nur Deko, nicht klickbar */
+  }
+
+  /* Oberes Bild (klickbar) */
+  #chanceButtonTop {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: transform 0.1s;
+    user-select: none;
+    object-fit: cover;
+  }
+
+  #chanceButtonTop:active {
+    transform: translateY(8px);
+  }
+
+  /* Overlay-Zähler */
+  #buttonText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+    pointer-events: none;
+    text-shadow: 0 0 6px rgba(0,0,0,0.6);
   }
 
   /* Dark/Light mode switcher */
@@ -57,27 +77,19 @@
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
   }
+  body.dark #modeSwitcher { background-color: #444; color: white; }
 
-  body.dark #modeSwitcher {
-    background-color: #444;
-    color: white;
+  #highscore {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: gray;
+    transition: color 0.3s;
   }
-
-  #highscore{
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: gray;
-  transition: color 0.3s;
-}
-
-body.dark #highscore {
-  color: white;
-}
-
+  body.dark #highscore { color: white; }
 
   /* Menu button */
   #menuButton {
@@ -91,11 +103,7 @@ body.dark #highscore {
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
   }
-
-  body.dark #menuButton {
-    background-color: #444;
-    color: white;
-  }
+  body.dark #menuButton { background-color: #444; color: white; }
 
   /* Menu */
   #colorMenu {
@@ -111,10 +119,7 @@ body.dark #highscore {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     transition: background-color 0.3s;
   }
-
-  body.dark #colorMenu {
-    background-color: #333;
-  }
+  body.dark #colorMenu { background-color: #333; }
 
   .colorOption {
     padding: 5px 10px;
@@ -124,38 +129,35 @@ body.dark #highscore {
     text-align: center;
     transition: background-color 0.3s;
   }
-
-  body.dark .colorOption {
-    background-color: #555;
-    color: white;
-  }
-
-  .colorOption:hover {
-    background-color: #bbb;
-  }
-
-  body.dark .colorOption:hover {
-    background-color: #777;
-  }
+  body.dark .colorOption { background-color: #555; color: white; }
+  .colorOption:hover { background-color: #bbb; }
+  body.dark .colorOption:hover { background-color: #777; }
 </style>
 </head>
 <body>
 
   <div id="highscore">Highscore: 0</div>
 
-<button id="chanceButton">0</button>
-<button id="modeSwitcher">Dark Mode</button>
-<button id="menuButton">Menu</button>
+  <!-- Neuer Button -->
+  <div id="buttonWrapper">
+    <img id="buttonBase" src="button_base.png" alt="Button Base">
+    <img id="chanceButtonTop" src="button_top.png" alt="Button">
+    <div id="buttonText">0</div>
+  </div>
 
-<div id="colorMenu">
-  <div class="colorOption" data-color="red">Red</div>
-  <div class="colorOption" data-color="green">Green</div>
-  <div class="colorOption" data-color="blue">Blue</div>
-  <div class="colorOption" data-color="rainbow">Rainbow</div>
-</div>
+  <button id="modeSwitcher">Dark Mode</button>
+  <button id="menuButton">Menu</button>
+
+  <div id="colorMenu">
+    <div class="colorOption" data-color="red">Red</div>
+    <div class="colorOption" data-color="green">Green</div>
+    <div class="colorOption" data-color="blue">Blue</div>
+    <div class="colorOption" data-color="rainbow">Rainbow</div>
+  </div>
 
 <script>
-const button = document.getElementById('chanceButton');
+const button = document.getElementById('chanceButtonTop');
+const buttonText = document.getElementById('buttonText');
 const switcher = document.getElementById('modeSwitcher');
 const menuButton = document.getElementById('menuButton');
 const colorMenu = document.getElementById('colorMenu');
@@ -169,7 +171,7 @@ let rainbowInterval = null;
 let highscore = parseInt(localStorage.getItem("highscore")) || 0;
 highscoreDisplay.textContent = "Highscore: " + highscore;
 
-// 🔹 Chance Button Logic
+// Chance-Logik
 button.addEventListener('click', () => {
     let chance = Math.max(50 - counter, 1);
     let roll = Math.random() * 100;
@@ -180,9 +182,8 @@ button.addEventListener('click', () => {
         counter = 0;
     }
 
-    button.textContent = counter;
+    buttonText.textContent = counter;
 
-    // Highscore prüfen & speichern
     if (counter > highscore) {
         highscore = counter;
         highscoreDisplay.textContent = "Highscore: " + highscore;
@@ -201,12 +202,11 @@ menuButton.addEventListener('click', () => {
     colorMenu.style.display = colorMenu.style.display === 'flex' ? 'none' : 'flex';
 });
 
-// Change button color
+// Change button color (nur oberes Bild einfärben)
 colorOptions.forEach(option => {
     option.addEventListener('click', () => {
         const color = option.getAttribute('data-color');
 
-        // Stop rainbow if running
         if (rainbowInterval) {
             clearInterval(rainbowInterval);
             rainbowInterval = null;
@@ -214,19 +214,15 @@ colorOptions.forEach(option => {
 
         if (color === 'red') {
             button.style.backgroundColor = 'red';
-            button.style.boxShadow = '0 8px #b30000, 0 12px 20px rgba(0,0,0,0.2)';
         } else if (color === 'green') {
             button.style.backgroundColor = 'green';
-            button.style.boxShadow = '0 8px #006600, 0 12px 20px rgba(0,0,0,0.2)';
         } else if (color === 'blue') {
             button.style.backgroundColor = 'blue';
-            button.style.boxShadow = '0 8px #000099, 0 12px 20px rgba(0,0,0,0.2)';
         } else if (color === 'rainbow') {
             const rainbowColors = ['#ff0008','#ff7700','#bdbd00','#1e7d21','#1e3e7d','#5921a3'];
             let i = 0;
             rainbowInterval = setInterval(() => {
                 button.style.backgroundColor = rainbowColors[i];
-                button.style.boxShadow = `0 8px ${rainbowColors[i]}, 0 12px 20px rgba(0,0,0,0.2)`;
                 i = (i + 1) % rainbowColors.length;
             }, 100);
         }
@@ -234,7 +230,6 @@ colorOptions.forEach(option => {
         colorMenu.style.display = 'none';
     });
 });
-
 </script>
 
 </body>
