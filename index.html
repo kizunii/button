@@ -3,9 +3,37 @@
 <head>
   <meta charset="UTF-8">
     <meta name="viewport" content>
-  <title></title>  
+  <title>Flower clicker</title>  
+  <style>
+    .button { /*Button stats*/
+      display: inline-block;
+      border: none;
+      background: none;
+      cursor: pointer;
+      padding: 0;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+/*größe von image*/
+    .button img {
+      width: 250px;
+    }
+/*wenn man drauf hovert*/
+    .button:hover {
+      transform: scale(1.2);
+      filter: brightness(1.3);
+    }
+/*wenn man klickt*/
+    .button:active {
+      transform: scale(0.9);
+    }
+      
+  </style>
 </head>
 <body>
+
+  <button class="button" onclick="alert('click')
+    <img src="flower.png" alt="Flower Button">
+  </button>
   
 </body>
 </html>
