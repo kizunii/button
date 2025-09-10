@@ -40,10 +40,22 @@
   </style>
 </head>
 <body>
-
+<!-- Button texture -->
   <button class="button">
     <img src="flower.png" alt="Flower Button">
   </button>
+<!-- Klick sound -->
+  <audio id="click_sound" src="click.mp3"></audio>
+
+  <script>
+    const button = document.getElementById('button');
+    const sound = document.getElementById('click_sound');
+
+    button.addEventListener('click', () => {
+      sound.currentTime = 0;
+      sound.play(),
+    ));
+  </script>
   
 </body>
 </html>
