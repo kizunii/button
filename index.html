@@ -21,37 +21,25 @@
   /* Button Wrapper */
   #buttonWrapper {
     position: relative;
-    width: 240px;   /* größer */
-    height: 180px;  /* größer */
+    width: 180px;
+    height: 180px;
   }
 
-  /* Oberes Bild (hinter der Base) */
+ 
+  /* Oberes Bild (klickbar) */
   #chanceButtonTop {
     position: absolute;
     top: 0;
-    left: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
     cursor: pointer;
     transition: transform 0.1s;
-    z-index: 1; /* hinter der Base */
+    user-select: none;
     object-fit: cover;
   }
 
   #chanceButtonTop:active {
     transform: translateY(8px);
-  }
-
-  /* Unteres Bild (Deko/Base) */
-  #buttonBase {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    z-index: 2; /* vor dem Top */
-    pointer-events: none; /* nur Deko */
-    object-fit: cover;
   }
 
   /* Overlay-Zähler */
@@ -60,7 +48,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: white;
     font-weight: bold;
     pointer-events: none;
@@ -140,10 +128,10 @@
 
   <div id="highscore">Highscore: 0</div>
 
-  <!-- Button mit Base und Top-Bild -->
+  <!-- Neuer Button -->
   <div id="buttonWrapper">
-    <img id="chanceButtonTop" src="button_top.png" alt="Top Button">
-    <img id="buttonBase" src="button_base.png" alt="Base">
+    <img id="buttonBase" src="button_base.png" alt="Button Base">
+    <img id="chanceButtonTop" src="button_top.png" alt="Button">
     <div id="buttonText">0</div>
   </div>
 
@@ -173,7 +161,7 @@ let rainbowInterval = null;
 let highscore = parseInt(localStorage.getItem("highscore")) || 0;
 highscoreDisplay.textContent = "Highscore: " + highscore;
 
-// Chance Button Logic
+// Chance-Logik
 button.addEventListener('click', () => {
     let chance = Math.max(50 - counter, 1);
     let roll = Math.random() * 100;
