@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flower clicker</title>  
   <style>
+    body { /*Das der Button im center ist*/
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: gray;
+    }
+    
     .button { /*Button stats*/
       display: inline-block;
       border: none;
@@ -20,7 +29,7 @@
 /*wenn man drauf hovert*/
     .button:hover {
       transform: scale(1.2);
-      filter: brightness(1.3);
+      filter: brightness(1.1);
     }
 /*wenn man klickt*/
     .button:active {
@@ -31,7 +40,7 @@
 </head>
 <body>
 
-  <button class="button" onclick="alert('click')">
+  <button class="button">
     <img src="flower.png" alt="Flower Button">
   </button>
   
