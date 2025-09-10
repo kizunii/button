@@ -12,7 +12,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: gray;
+      background: #404040;
     }
     
     .button { /*Button stats*/
@@ -29,7 +29,7 @@
     }
 /*wenn man drauf hovert*/
     .button:hover {
-      transform: scale(1.2);
+      transform: scale(1.1);
       filter: brightness(1.1);
     }
 /*wenn man klickt*/
@@ -41,7 +41,7 @@
 </head>
 <body>
 <!-- Button texture -->
-  <button class="button">
+  <button id="button" class="button">
     <img src="flower.png" alt="Flower Button">
   </button>
 <!-- Klick sound -->
@@ -53,8 +53,8 @@
 
     button.addEventListener('click', () => {
       sound.currentTime = 0;
-      sound.play(),
-    ));
+      sound.play();
+    });
   </script>
   
 </body>
