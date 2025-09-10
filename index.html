@@ -21,35 +21,37 @@
   /* Button Wrapper */
   #buttonWrapper {
     position: relative;
-    width: 180px;
-    height: 180px;
+    width: 240px;   /* größer */
+    height: 180px;  /* größer */
   }
 
-  /* Unteres Bild */
-  #buttonBase {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    user-select: none;
-    pointer-events: none; /* nur Deko, nicht klickbar */
-  }
-
-  /* Oberes Bild (klickbar) */
+  /* Oberes Bild (hinter der Base) */
   #chanceButtonTop {
     position: absolute;
     top: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
+    height: auto;
     cursor: pointer;
     transition: transform 0.1s;
-    user-select: none;
+    z-index: 1; /* hinter der Base */
     object-fit: cover;
   }
 
   #chanceButtonTop:active {
     transform: translateY(8px);
+  }
+
+  /* Unteres Bild (Deko/Base) */
+  #buttonBase {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 2; /* vor dem Top */
+    pointer-events: none; /* nur Deko */
+    object-fit: cover;
   }
 
   /* Overlay-Zähler */
@@ -58,7 +60,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: white;
     font-weight: bold;
     pointer-events: none;
@@ -138,10 +140,10 @@
 
   <div id="highscore">Highscore: 0</div>
 
-  <!-- Neuer Button -->
+  <!-- Button mit Base und Top-Bild -->
   <div id="buttonWrapper">
-    <img id="buttonBase" src="button_base.png" alt="Button Base">
-    <img id="chanceButtonTop" src="button_top.png" alt="Button">
+    <img id="chanceButtonTop" src="button_top.png" alt="Top Button">
+    <img id="buttonBase" src="button_base.png" alt="Base">
     <div id="buttonText">0</div>
   </div>
 
@@ -171,7 +173,7 @@ let rainbowInterval = null;
 let highscore = parseInt(localStorage.getItem("highscore")) || 0;
 highscoreDisplay.textContent = "Highscore: " + highscore;
 
-// Chance-Logik
+// Chance Button Logic
 button.addEventListener('click', () => {
     let chance = Math.max(50 - counter, 1);
     let roll = Math.random() * 100;
