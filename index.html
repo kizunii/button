@@ -203,6 +203,11 @@ button.addEventListener('click', () => {
 
     button.textContent = counter;
 
+    let size = 180 + counter * 2;
+    button.style.width = size + "px";
+    button.style.height = size + "px";
+    button.style.fontSize = (2.5 + counter * 0.2) + "rem";
+
     // Katze bei jedem 10er
     if (counter > 0 && counter % 5 === 0) {
         spawnCat();
