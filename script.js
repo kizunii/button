@@ -1,5 +1,3 @@
- // Button Element auswählen
-    const button = document.getElementById('button');
     // Audio Element für Klick-Sound
     const sound = document.getElementById('click_sound');
 
@@ -15,14 +13,14 @@ let multiplier = 1
 let multiplier_cost = 25
 
 let auto_clicker = 0
-let autoclicker = 20
+let auto_clicker = 20
 
-function displayPointsAmt(){
- button.innertext = "You have"+Points+" Pussy Points!"
-});
+function displayPointsAmt()
+ button.innerText = "You have"+pussy_points+" Pussy Points!"
+);
 
 button.addEventListener('click',function(){
- Points+=multiplier
+ pussy_points+=multiplier
  displayPointsAmt()
 })
 
@@ -39,8 +37,6 @@ button.addEventListener('click',function(){
 
       // Counter hochzählen
       counter++;
-      // Counter im HTML anzeigen
-      counterEl.textContent = counter;
 
       // Counter im localStorage speichern
       localStorage.setItem('catClickCounter', counter);
