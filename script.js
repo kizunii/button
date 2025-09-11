@@ -16,6 +16,7 @@ let auto_clicker_cost = 20;
 // Punkte anzeigen
 function displayPointsAmt() {
   counterEl.innerText = "You have " + pussy_points + " Pussy Points!";
+  counterEl.style.visibility = "visible"; // direkt sichtbar, nachdem LocalStorage geladen
 }
 
 // Direkt beim Laden die Anzeige updaten
