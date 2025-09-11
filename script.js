@@ -31,5 +31,5 @@ button.addEventListener('click', () => {
   displayPointsAmt();
 
   // Punkte speichern
-  localStorage.setItem('tClickCounter', pussy_points);
+  localStorage.setItem('ClickCounter', pussy_points);
 });
