@@ -1,13 +1,9 @@
     // Audio Element für Klick-Sound
     const sound = document.getElementById('click_sound');
-
-let button = document.getElementById("button")
-let counter = document.getElementById("counter")
-
-let upgrade_button = document.getElementById('upgrade_button');
-let auto_clicker = document.getElementById('auto_clicker');
-
-let pussy_points = 0
+    const button = document.getElementById("button");
+    const counterEl = document.getElementById("counter")
+    const auto_clicker_button = document.getElementById('auto_clicker');
+    const upgrade_button = document.getElementById('upgrade_button');
 
 let multiplier = 1
 let multiplier_cost = 25
@@ -36,7 +32,7 @@ button.addEventListener('click',function(){
       sound.play();
 
       // Counter hochzählen
-      counter++;
+      pussy_points++;
 
       // Counter im localStorage speichern
       localStorage.setItem('catClickCounter', counter);
