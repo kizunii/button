@@ -25,7 +25,6 @@ button.addEventListener('click', () => {
   // Sound abspielen
   sound.currentTime = 0;
   sound.play();
-}
 
   // Punkte erhöhen
   pussy_points += multiplier;
