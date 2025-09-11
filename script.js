@@ -5,6 +5,22 @@
     // Counter-Anzeige Element
     const counterEl = document.getElementById('counter');
 
+let upgrade_button = document.getElementById('upgrade_button');
+let auto_clicker = document.getElementById('auto_clicker');
+
+let pussy_points = 0
+
+let multiplier = 1
+let multiplier_cost = 25
+
+let auto_clicker = 0
+let autoclicker = 20
+
+function displayPointsAmt(){
+ button.innertext = "You have"+Points+" Pussy Points!"
+});
+
+
      // Counter aus localStorage laden oder 0, wenn nicht vorhanden
     let counter = parseInt(localStorage.getItem('catClickCounter')) || 0;
     counterEl.textContent = counter;
