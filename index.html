@@ -52,6 +52,26 @@
   <audio id="click_sound" src="click.mp3"></audio>
 
   <script>
+let counter = 0;
+let countdownInterval = null;
+
+canvas.addEventListener('click', () => {
+  // Wenn schon ein Countdown läuft, stoppen
+  if(countdownInterval) clearInterval(countdownInterval);
+
+  // Starten
+  countdownInterval = setInterval(() => {
+    counter++;
+    console.log("Counter:", counter); // Oder im Canvas/HTML anzeigen
+    // Optional: Zeichne den Counter im Canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "white";
+    ctx.font = "30px Arial";
+    ctx.fillText(counter, 10, 40);
+  }, 1000); // jede 1 Sekunde
+});
+
     const button = document.getElementById('button');
     const sound = document.getElementById('click_sound');
 
