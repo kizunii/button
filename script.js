@@ -21,7 +21,7 @@ function displayPointsAmt() {
 displayPointsAmt();
 
 // Button-Klick
-button.addEventListener('click', () => {
+button.addEventListener('click'), () => {
   // Sound abspielen
   sound.currentTime = 0;
   sound.play();
