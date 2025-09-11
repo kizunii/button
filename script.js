@@ -23,6 +23,11 @@ function displayPointsAmt(){
  button.innertext = "You have"+Points+" Pussy Points!"
 });
 
+button.addEventListener('click',function(){
+ Points+=multiplier
+ displayPointsAmt()
+})
+
 
      // Counter aus localStorage laden oder 0, wenn nicht vorhanden
     let counter = parseInt(localStorage.getItem('catClickCounter')) || 0;
