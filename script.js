@@ -21,7 +21,7 @@ function displayPointsAmt() {
 displayPointsAmt();
 
 // Button-Klick
-button.addEventListener('click'), () => {
+button.addEventListener('click',function() => {
   // Sound abspielen
   sound.currentTime = 0;
   sound.play();
@@ -32,4 +32,4 @@ button.addEventListener('click'), () => {
 
   // Punkte speichern
   localStorage.setItem('ClickCounter', pussy_points);
-}
+)};
