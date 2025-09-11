@@ -42,6 +42,9 @@
   </style>
 </head>
 <body>
+
+  <canvas id="flowerCanvas" width="300" height="300"></canvas>
+  
 <!-- Button texture -->
   <button id="button" class="button">
     <img src="flower3.png" alt="Flower Button" draggable="false">
@@ -58,13 +61,37 @@
       sound.play();
     });
 
-    /*hitbox ist nicht das unsichtbare*/
-  canvas.addEventListener('click', (e) => {
-   const x = e.offsetX;
-   const y = e.offsetY;
-   const pixel = ctx.getImageData(x, y, 1, 1).data;
-   if(pixel[3] > 0){ // alpha > 0
-     console.log("Bild angeklickt!");
+    const canvas = document.getElementById('flowerCanvas');
+const ctx = canvas.getContext('2d');
+const img = new Image();
+img.src = 'flower3.png';
+const sound = document.getElementById('click_sound');
+
+img.onload = () => {
+  ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+};
+
+// Klick nur auf sichtbare Pixel
+canvas.addEventListener('click', (e) => {
+  const x = e.offsetX;
+  const y = e.offsetY;
+  const pixel = ctx.getImageData(x, y, 1, 1).data;
+  if(pixel[3] > 0){ // alpha > 0
+    sound.currentTime = 0;
+    sound.play();
+    console.log("Bild angeklickt!");
+  }
+});
+
+// Hover-Cursor nur auf sichtbare Pixel
+canvas.addEventListener('mousemove', (e) => {
+  const x = e.offsetX;
+  const y = e.offsetY;
+  const pixel = ctx.getImageData(x, y, 1, 1).data;
+  if(pixel[3] > 0){
+    canvas.style.cursor = 'pointer';
+  } else {
+    canvas.style.cursor = 'default';
   }
 });
 
