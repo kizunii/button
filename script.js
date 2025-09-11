@@ -1,36 +1,35 @@
-    // Audio Element für Klick-Sound
-    const sound = document.getElementById('click_sound');
-    const button = document.getElementById("button");
-    const counterEl = document.getElementById("counter")
-    const auto_clicker_button = document.getElementById('auto_clicker');
-    const upgrade_button = document.getElementById('upgrade_button');
+// Audio Element für Klick-Sound
+const sound = document.getElementById('click_sound');
+const button = document.getElementById("button");
+const counterEl = document.getElementById("counter");
+const auto_clicker_button = document.getElementById('auto_clicker');
+const upgrade_button = document.getElementById('upgrade_button');
 
-    // Counter aus localStorage laden oder 0, wenn nicht vorhanden
-    let pussy_points = parseInt(localStorage.getItem('ClickCounter')) || 0;
-    counterEl.textContent = pussy_points;
+// Variablen
+let pussy_points = parseInt(localStorage.getItem('catClickCounter')) || 0;
+let multiplier = 1;
+let multiplier_cost = 25;
+let auto_clicker = 0;
+let auto_clicker_cost = 20;
 
-let multiplier = 1
-let multiplier_cost = 25
+// Punkte anzeigen
+function displayPointsAmt() {
+  counterEl.innerText = "You have " + pussy_points + " Pussy Points!";
+}
 
-let auto_clicker = 0
-let auto_clicker_cost = 20
+// Beim Laden sofort anzeigen
+displayPointsAmt();
 
-function displayPointsAmt(){
- counterEl.innerText = "You have"+pussy_points+" Pussy Points!"
-};
+// Button-Klick
+button.addEventListener('click', () => {
+  // Sound abspielen
+  sound.currentTime = 0;
+  sound.play();
 
-button.addEventListener('click',function(){
- pussy_points+=multiplier
- displayPointsAmt()
-})
+  // Punkte erhöhen
+  pussy_points += multiplier;
+  displayPointsAmt();
 
-      // Klick-Sound abspielen
-      sound.currentTime = 0; // Reset Audio, falls vorher noch läuft
-      sound.play();
-
-      // Counter hochzählen
-      pussy_points++;
-
-      // Counter im localStorage speichern
-      localStorage.setItem('ClickCounter', counter);
-    });
+  // Punkte speichern
+  localStorage.setItem('catClickCounter', pussy_points);
+});
