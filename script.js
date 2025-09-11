@@ -21,9 +21,10 @@ function displayPointsAmt() {
 displayPointsAmt();
 
 button.addEventListener('click', function() {
-  // Sound abspielen
-  sound.currentTime = 0;
-  sound.play();
+  pussy_points += multiplier;
+  displayPointsAmt();
+  localStorage.setItem('ClickCounter', pussy_points);
+});
 
   // Punkte erhöhen
   pussy_points += multiplier;
