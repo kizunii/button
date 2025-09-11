@@ -5,6 +5,10 @@
     const auto_clicker_button = document.getElementById('auto_clicker');
     const upgrade_button = document.getElementById('upgrade_button');
 
+    // Counter aus localStorage laden oder 0, wenn nicht vorhanden
+    let pussy_points = parseInt(localStorage.getItem('ClickCounter')) || 0;
+    counterEl.textContent = pussy_points;
+
 let multiplier = 1
 let multiplier_cost = 25
 
@@ -20,13 +24,6 @@ button.addEventListener('click',function(){
  displayPointsAmt()
 })
 
-
-     // Counter aus localStorage laden oder 0, wenn nicht vorhanden
-    let pussy_points = parseInt(localStorage.getItem('tClickCounter')) || 0;
-    counterEl.textContent = counter;
-
-    // Event Listener für Button Klick
-    button.addEventListener('click', () => {
       // Klick-Sound abspielen
       sound.currentTime = 0; // Reset Audio, falls vorher noch läuft
       sound.play();
@@ -35,5 +32,5 @@ button.addEventListener('click',function(){
       pussy_points++;
 
       // Counter im localStorage speichern
-      localStorage.setItem('catClickCounter', counter);
+      localStorage.setItem('ClickCounter', counter);
     });
