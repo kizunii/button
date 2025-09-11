@@ -21,18 +21,16 @@ function displayPointsAmt() {
 displayPointsAmt();
 
 button.addEventListener('click', function() {
-  pussy_points += multiplier;
-  displayPointsAmt();
-});
-
   // Sound abspielen
   sound.currentTime = 0;
   sound.play();
 
   // Punkte erhöhen
   pussy_points += multiplier;
+
+  // Punkte anzeigen
   displayPointsAmt();
 
   // Punkte speichern
   localStorage.setItem('ClickCounter', pussy_points);
-)};
+});
