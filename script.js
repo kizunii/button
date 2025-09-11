@@ -1,9 +1,11 @@
+// Elemente auswählen
 const sound = document.getElementById('click_sound');
-const button = document.getElementById("button");
-const counterEl = document.getElementById("counter");
+const button = document.getElementById('button');
+const counterEl = document.getElementById('counter');
 const upgrade_button = document.getElementById('upgrade_button');
 const auto_clicker_button = document.getElementById('auto_clicker');
 
+// Variablen aus LocalStorage oder Standardwerte
 let pussy_points = parseInt(localStorage.getItem('ClickCounter')) || 0;
 let multiplier = parseInt(localStorage.getItem('Multiplier')) || 1;
 let auto_clicker = parseInt(localStorage.getItem('AutoClicker')) || 0;
@@ -16,18 +18,19 @@ function displayPointsAmt() {
   counterEl.innerText = "You have " + pussy_points + " Pussy Points!";
 }
 
+// Direkt beim Laden die Anzeige updaten
 displayPointsAmt();
 
-// AutoClicker Punkte automatisch hinzufügen
+// AutoClicker Punkte pro Sekunde hinzufügen
 setInterval(() => {
-  if (auto_clicker > 0) {
+  if(auto_clicker > 0){
     pussy_points += auto_clicker;
     displayPointsAmt();
     localStorage.setItem('ClickCounter', pussy_points);
   }
 }, 1000);
 
-// Klick auf Hauptbutton
+// Hauptbutton Klick
 button.addEventListener('click', () => {
   sound.currentTime = 0;
   sound.play();
@@ -38,10 +41,10 @@ button.addEventListener('click', () => {
 
 // Upgrade Multiplier
 upgrade_button.addEventListener('click', () => {
-  if (pussy_points >= multiplier_cost) {
+  if(pussy_points >= multiplier_cost){
     pussy_points -= multiplier_cost;
     multiplier += 1;
-    multiplier_cost = Math.floor(multiplier_cost * 25);
+    multiplier_cost = Math.floor(multiplier_cost * 1.5);
     displayPointsAmt();
     localStorage.setItem('ClickCounter', pussy_points);
     localStorage.setItem('Multiplier', multiplier);
@@ -50,15 +53,12 @@ upgrade_button.addEventListener('click', () => {
 
 // Kaufe AutoClicker
 auto_clicker_button.addEventListener('click', () => {
-  if (pussy_points >= auto_clicker_cost) {
+  if(pussy_points >= auto_clicker_cost){
     pussy_points -= auto_clicker_cost;
     auto_clicker += 1;
-    auto_clicker_cost = Math.floor(auto_clicker_cost * 20);
+    auto_clicker_cost = Math.floor(auto_clicker_cost * 1.5);
     displayPointsAmt();
     localStorage.setItem('ClickCounter', pussy_points);
     localStorage.setItem('AutoClicker', auto_clicker);
   }
 });
-
-// Beim Laden sofort anzeigen
-displayPointsAmt();
