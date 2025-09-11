@@ -20,12 +20,11 @@ function displayPointsAmt() {
 // Beim Laden sofort anzeigen
 displayPointsAmt();
 
-// Button-Klick
-button.addEventListener('click',function() => {
-  pussy_points+=muliplier
-  displayPointsAmt()
-  )}
-  
+button.addEventListener('click', function() {
+  pussy_points += multiplier;
+  displayPointsAmt();
+});
+
   // Sound abspielen
   sound.currentTime = 0;
   sound.play();
