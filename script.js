@@ -16,6 +16,8 @@ function displayPointsAmt() {
   counterEl.innerText = "You have " + pussy_points + " Pussy Points!";
 }
 
+displayPointsAmt();
+
 // AutoClicker Punkte automatisch hinzufügen
 setInterval(() => {
   if (auto_clicker > 0) {
