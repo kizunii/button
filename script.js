@@ -32,4 +32,4 @@ button.addEventListener('click'), () => {
 
   // Punkte speichern
   localStorage.setItem('ClickCounter', pussy_points);
-});
+}
