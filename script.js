@@ -2,8 +2,6 @@
     const button = document.getElementById('button');
     // Audio Element für Klick-Sound
     const sound = document.getElementById('click_sound');
-    // Counter-Anzeige Element
-    const counterEl = document.getElementById('counter');
 
 let button = document.getElementById("button")
 let counter = document.getElementById("counter")
