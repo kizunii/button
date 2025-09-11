@@ -6,7 +6,7 @@ const auto_clicker_button = document.getElementById('auto_clicker');
 const upgrade_button = document.getElementById('upgrade_button');
 
 // Variablen
-let pussy_points = parseInt(localStorage.getItem('catClickCounter')) || 0;
+let pussy_points = parseInt(localStorage.getItem('ClickCounter')) || 0;
 let multiplier = 1;
 let multiplier_cost = 25;
 let auto_clicker = 0;
@@ -31,5 +31,5 @@ button.addEventListener('click', () => {
   displayPointsAmt();
 
   // Punkte speichern
-  localStorage.setItem('catClickCounter', pussy_points);
+  localStorage.setItem('tClickCounter', pussy_points);
 });
