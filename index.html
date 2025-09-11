@@ -57,6 +57,17 @@
       sound.currentTime = 0;
       sound.play();
     });
+
+    /*hitbox ist nicht das unsichtbare*/
+  canvas.addEventListener('click', (e) => {
+   const x = e.offsetX;
+   const y = e.offsetY;
+   const pixel = ctx.getImageData(x, y, 1, 1).data;
+   if(pixel[3] > 0){ // alpha > 0
+     console.log("Bild angeklickt!");
+  }
+});
+
   </script>
   
 </body>
