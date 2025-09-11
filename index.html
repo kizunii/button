@@ -26,7 +26,7 @@
       cursor: pointer;
       padding: 0;
       transition: transform 0.2s ease, filter 0.2s ease; /* Smooth Hover & Click */
-      transform: rotate(45deg); /* Button leicht gedreht */
+      transform: rotate(0deg); /* Button leicht gedreht */
     }
 
     /* Größe vom Button-Image */
@@ -38,13 +38,13 @@
 
     /* Hover-Effekt */
     .button:hover {
-      transform: scale(1.1) rotate(45deg); /* Vergrößerung beim Hover */
+      transform: scale(1.1) rotate(0deg); /* Vergrößerung beim Hover */
       filter: brightness(1.1); /* Heller */
     }
 
     /* Button gedrückt (Reindrücken) */
     .button:active {
-      transform: scale(0.9) rotate(45deg); /* Kleiner beim Klick */
+      transform: scale(0.9) rotate(0deg); /* Kleiner beim Klick */
     }
 
     /* Counter-Anzeige unter dem Button */
@@ -67,7 +67,7 @@
   <div class="counter" id="counter">0</div>
 
   <!-- Klick Sound -->
-  <audio id="click_sound" src="meow.wav"></audio>
+  <audio id="click_sound" src="meow.mp3"></audio>
 
   <script>
     // Button Element auswählen
