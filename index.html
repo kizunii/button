@@ -80,6 +80,10 @@
     // Variable für Counter
     let counter = 0;
 
+     // Counter aus localStorage laden oder 0, wenn nicht vorhanden
+    let counter = parseInt(localStorage.getItem('catClickCounter')) || 0;
+    counterEl.textContent = counter;
+
     // Event Listener für Button Klick
     button.addEventListener('click', () => {
       // Klick-Sound abspielen
@@ -90,6 +94,9 @@
       counter++;
       // Counter im HTML anzeigen
       counterEl.textContent = counter;
+
+      // Counter im localStorage speichern
+      localStorage.setItem('catClickCounter', counter);
     });
   </script>
 </body>
