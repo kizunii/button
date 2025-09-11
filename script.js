@@ -5,6 +5,9 @@
     // Counter-Anzeige Element
     const counterEl = document.getElementById('counter');
 
+let button = document.getElementById("button")
+let counter = document.getElementById("counter")
+
 let upgrade_button = document.getElementById('upgrade_button');
 let auto_clicker = document.getElementById('auto_clicker');
 
