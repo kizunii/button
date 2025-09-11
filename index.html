@@ -4,83 +4,93 @@
   <link rel="icon" type="image/png" href="flower3.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flower clicker</title>  
+  <title>Flower Clicker</title>  
   <style>
-    body { /*Das der Button im center ist*/
+    body {
       margin: 0;
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #404040;
+      flex-direction: column; /* Button + Counter untereinander */
+      background: #404040; /* Hintergrundfarbe */
+      font-family: Arial, sans-serif;
+      color: #fff;
     }
-    
+
+    /* Button Container */
     .button {
       display: inline-block;
       border: none;
       background: none;
       cursor: pointer;
       padding: 0;
-      transition: transform 0.3s ease, filter 0.3s ease;
-      transform: rotate(45deg); /* Button rotation */
+      transition: transform 0.2s ease, filter 0.2s ease; /* Smooth Hover & Click */
+      transform: rotate(45deg); /* Button leicht gedreht */
     }
-/*größe von image*/
+
+    /* Größe vom Button-Image */
     .button img {
       width: 300px;
-      filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.7));
+      filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.7)); /* Shadow */
+      user-select: none; /* Bild nicht auswählbar */
+      pointer-events: none; /* Klick nur auf Button, nicht Bild */
     }
-/*wenn man drauf hovert*/
+
+    /* Hover-Effekt */
     .button:hover {
-      transform: scale(1.1) rotate(45deg);
-      filter: brightness(1.1);
+      transform: scale(1.1) rotate(45deg); /* Vergrößerung beim Hover */
+      filter: brightness(1.1); /* Heller */
     }
-/*wenn man klickt*/
+
+    /* Button gedrückt (Reindrücken) */
     .button:active {
-      transform: scale(0.9) rotate(45deg);
-      
+      transform: scale(0.9) rotate(45deg); /* Kleiner beim Klick */
     }
-      
+
+    /* Counter-Anzeige unter dem Button */
+    .counter {
+      font-size: 3rem;
+      margin-top: 20px;
+      text-shadow: 0 0 10px #fff; /* Glow-ähnlicher Effekt */
+    }
   </style>
 </head>
 <body>
 
-<!-- Button texture -->
+  <!-- Flower-Button -->
   <button id="button" class="button">
     <img src="flower3.png" alt="Flower Button" draggable="false">
   </button>
-<!-- Klick sound -->
+
+  <!-- Counter-Anzeige -->
+  <div class="counter" id="counter">0</div>
+
+  <!-- Klick Sound -->
   <audio id="click_sound" src="click.mp3"></audio>
 
   <script>
-let counter = 0;
-let countdownInterval = null;
-
-canvas.addEventListener('click', () => {
-  // Wenn schon ein Countdown läuft, stoppen
-  if(countdownInterval) clearInterval(countdownInterval);
-
-  // Starten
-  countdownInterval = setInterval(() => {
-    counter++;
-    console.log("Counter:", counter); // Oder im Canvas/HTML anzeigen
-    // Optional: Zeichne den Counter im Canvas
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "white";
-    ctx.font = "30px Arial";
-    ctx.fillText(counter, 10, 40);
-  }, 1000); // jede 1 Sekunde
-});
-
+    // Button Element auswählen
     const button = document.getElementById('button');
+    // Audio Element für Klick-Sound
     const sound = document.getElementById('click_sound');
+    // Counter-Anzeige Element
+    const counterEl = document.getElementById('counter');
 
+    // Variable für Counter
+    let counter = 0;
+
+    // Event Listener für Button Klick
     button.addEventListener('click', () => {
-      sound.currentTime = 0;
+      // Klick-Sound abspielen
+      sound.currentTime = 0; // Reset Audio, falls vorher noch läuft
       sound.play();
-    });
 
+      // Counter hochzählen
+      counter++;
+      // Counter im HTML anzeigen
+      counterEl.textContent = counter;
+    });
   </script>
-  
 </body>
 </html>
