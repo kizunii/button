@@ -23,7 +23,7 @@ displayPointsAmt();
 // Button-Klick
 button.addEventListener('click',function() => {
   pussy_points+=muliplier
-  DisplayPPAmt()
+  displayPointsAmt()
   )}
   
   // Sound abspielen
