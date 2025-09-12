@@ -48,6 +48,8 @@ upgrade_button.addEventListener('click', function(){
     multiplier_cost = Math.floor(multiplier_cost * 1.5);
     displayPointsAmt();
     upgrade_button.innerText = "Upgrade button for "+multiplier_cost+" Points"
+    localStorage.setItem('ClickCounter', pussy_points);
+    localStorage.setItem('Multiplier', multiplier);
   }
   else{
     alert("not enough Points")
