@@ -31,7 +31,7 @@ setInterval(() => {
 }, 1000);
 
 // Hauptbutton Klick
-button.addEventListener('click', function() {
+button.addEventListener('click', function(){
   sound.currentTime = 0;
   sound.play();
   pussy_points += multiplier;
@@ -40,7 +40,7 @@ button.addEventListener('click', function() {
 });
 
 // Upgrade Multiplier
-upgrade_button.addEventListener('click', function() {
+upgrade_button.addEventListener('click', function(){
   if(pussy_points >= multiplier_cost){
     pussy_points -= multiplier_cost;
     multiplier_cost*=1.3
@@ -48,8 +48,6 @@ upgrade_button.addEventListener('click', function() {
     multiplier_cost = Math.floor(multiplier_cost * 1.5);
     displayPointsAmt();
     upgrade_button.innerText = "Upgrade button for "+multiplier_cost+" Points"
-    localStorage.setItem('ClickCounter', pussy_points);
-    localStorage.setItem('Multiplier', multiplier);
   }
   else{
     alert("not enough Points")
@@ -57,7 +55,7 @@ upgrade_button.addEventListener('click', function() {
 });
 
 // Kaufe AutoClicker
-auto_clicker_button.addEventListener('click', function() {
+auto_clicker_button.addEventListener('click', function(){
   if(pussy_points >= auto_clicker_cost){
     pussy_points -= auto_clicker_cost;
     auto_clicker += 1;
