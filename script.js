@@ -40,7 +40,7 @@ let autoClickerInterval = setInterval(() => {
 }, 1000);
 
 // Beim Reset:
-reset_button.addEventListener('click', () => {
+reset_button.addEventListener('click', function(){
   pussy_points = 0;
   multiplier = 1;
   auto_clicker = 0;
