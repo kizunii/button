@@ -17,7 +17,7 @@ let auto_clicker_cost = 20;
 
 //testen
 add_points_button.addEventListener('click', () => {
-  pussy_points += 100000;                  // +100k Punkte
+  pussy_points += 1000000000;                  // + Punkte
   displayPointsAmt();                   // Anzeige updaten
   localStorage.setItem('ClickCounter', pussy_points);  // speichern
 });
