@@ -15,8 +15,8 @@ let multiplier_cost = parseFloat(localStorage.getItem('MultiplierCost')) || 25;
 let auto_clicker_cost = parseFloat(localStorage.getItem('AutoClickerCost')) || 20;
 
 function updateButtonTexts() {
-  upgrade_button.innerText = "Upgrade button for " + Math.round(multiplier_cost*100)/100 + " Points";
-  auto_clicker_button.innerText = "Buy Autoclicker for " + Math.round(auto_clicker_cost*100)/100 + " Points";
+  upgrade_button.innerText = "Upgrade button for " + Math.round(multiplier_cost*10000)/10000 + " Points";
+  auto_clicker_button.innerText = "Buy Autoclicker for " + Math.round(auto_clicker_cost*10000)/10000 + " Points";
 };
 
 // Nach Kauf/Upgrade speichern
@@ -35,7 +35,7 @@ add_points_button.addEventListener('click', () => {
 
 // Punkte anzeigen
 function displayPointsAmt() {
-  counterEl.innerText = "You have " + Math.round(pussy_points*100)/100 + " Pussy Points!";
+  counterEl.innerText = "You have " + Math.round(pussy_points*10000)/10000 + " Pussy Points!";
 }
 
 // Direkt beim Laden die Anzeige updaten
