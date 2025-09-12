@@ -62,7 +62,7 @@ auto_clicker_button.addEventListener('click', function(){
     auto_clicker_cost*=1.25
     auto_clicker ++
     displayPointsAmt();
-    upgrade_button.innerText = "Upgrade button for "+auto_clicker_cost+" Points"
+    auto_clicker_button.innerText = "Upgrade button for "+auto_clicker_cost+" Points"
     localStorage.setItem('ClickCounter', pussy_points);
     localStorage.setItem('AutoClicker', auto_clicker);
   }
