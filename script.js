@@ -11,9 +11,19 @@ const reset_button = document.getElementById('reset_button');
 let pussy_points = parseInt(localStorage.getItem('ClickCounter'))
 let multiplier = parseInt(localStorage.getItem('Multiplier')) || 1;
 let auto_clicker = parseInt(localStorage.getItem('AutoClicker')) || 0;
-
 let multiplier_cost = parseFloat(localStorage.getItem('MultiplierCost')) || 25;
 let auto_clicker_cost = parseFloat(localStorage.getItem('AutoClickerCost')) || 20;
+
+// Buttons direkt mit geladenen Kosten beschriften
+upgrade_button.innerText = "Upgrade button for " + multiplier_cost + " Points";
+auto_clicker_button.innerText = "Buy Autoclicker for " + auto_clicker_cost + " Points";
+
+// Nach Kauf/Upgrade speichern
+localStorage.setItem('ClickCounter', pussy_points);
+localStorage.setItem('Multiplier', multiplier);
+localStorage.setItem('AutoClicker', auto_clicker);
+localStorage.setItem('MultiplierCost', multiplier_cost);
+localStorage.setItem('AutoClickerCost', auto_clicker_cost);
 
 //teste
 add_points_button.addEventListener('click', () => {
