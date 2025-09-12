@@ -4,6 +4,7 @@ const button = document.getElementById('button');
 const counterEl = document.getElementById('counter');
 const upgrade_button = document.getElementById('upgrade_button');
 const auto_clicker_button = document.getElementById('auto_clicker');
+const add_points_button = document.getElementById('add_points');
 
 // Variablen aus LocalStorage oder Standardwerte
 let pussy_points = parseInt(localStorage.getItem('ClickCounter'))
@@ -12,6 +13,14 @@ let auto_clicker = parseInt(localStorage.getItem('AutoClicker')) || 0;
 
 let multiplier_cost = 25;
 let auto_clicker_cost = 20;
+
+//testen
+add_points_button.addEventListener('click', () => {
+  pussy_points += 100000;                  // +100k Punkte
+  displayPointsAmt();                   // Anzeige updaten
+  localStorage.setItem('ClickCounter', pussy_points);  // speichern
+});
+
 
 // Punkte anzeigen
 function displayPointsAmt() {
