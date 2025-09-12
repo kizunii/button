@@ -36,23 +36,25 @@ let autoClickerInterval = setInterval(() => {
   }
 }, 1000);
 
-// Reset Button
 reset_button.addEventListener('click', () => {
+  // Punkte & Upgrades zurücksetzen
   pussy_points = 0;
   multiplier = 1;
   auto_clicker = 0;
+
   multiplier_cost = 25;
   auto_clicker_cost = 20;
 
-  displayPointsAmt();
-  updateButtonTexts();
-
-  // LocalStorage überschreiben nach Reset
+  // LocalStorage zurücksetzen
   localStorage.setItem('ClickCounter', pussy_points);
   localStorage.setItem('Multiplier', multiplier);
   localStorage.setItem('AutoClicker', auto_clicker);
   localStorage.setItem('MultiplierCost', multiplier_cost);
   localStorage.setItem('AutoClickerCost', auto_clicker_cost);
+
+  // Anzeige updaten
+  displayPointsAmt();
+  updateButtonTexts();
 });
 
 // Hauptbutton Klick
