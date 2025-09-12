@@ -19,8 +19,6 @@ function updateButtonTexts() {
   auto_clicker_button.innerText = "Buy Autoclicker for " + Math.round(auto_clicker_cost*100)/100 + " Points";
 };
 
-  updateButtonTexts();
-
 // Nach Kauf/Upgrade speichern
 localStorage.setItem('ClickCounter', pussy_points);
 localStorage.setItem('Multiplier', multiplier);
@@ -64,12 +62,13 @@ reset_button.addEventListener('click', () => {
 
   // Anzeige updaten
   displayPointsAmt();
-  updateButtonTexts()
-
+ 
   // LocalStorage überschreiben
   localStorage.setItem('ClickCounter', pussy_points);
   localStorage.setItem('Multiplier', multiplier);
   localStorage.setItem('AutoClicker', auto_clicker);
+
+  updateButtonTexts()
 
   // altes Intervall stoppen
   clearInterval(autoClickerInterval);
@@ -93,25 +92,25 @@ button.addEventListener('click', function(){
   localStorage.setItem('ClickCounter', pussy_points);
 });
 
+// Buttons direkt beim Laden aktualisieren
+updateButtonTexts(); // liest multiplier_cost & auto_clicker_cost aus LocalStorage
+
 // Upgrade Multiplier
 upgrade_button.addEventListener('click', function(){
   if(pussy_points >= multiplier_cost){
     pussy_points -= multiplier_cost;
-    multiplier_cost*=1.3
-    multiplier ++
-    
-    displayPointsAmt();
-    updateButtonTexts()
+    multiplier++;
+    multiplier_cost *= 1.3;
 
-      // speichern
+    displayPointsAmt();
+
+    // speichern
     localStorage.setItem('ClickCounter', pussy_points);
     localStorage.setItem('Multiplier', multiplier);
-    localStorage.setItem('MultiplierCost', multiplier_cost); // Kosten speichern
-    
-    upgrade_button.innerText = "Upgrade button for "+Math.round(multiplier_cost*100)/100+" Points"
- 
-  }
-  else{
+    localStorage.setItem('MultiplierCost', multiplier_cost);
+
+    updateButtonTexts(); // Buttontexte aktualisieren
+  } else {
     alert("not enough Points")
   }
 });
@@ -120,17 +119,16 @@ upgrade_button.addEventListener('click', function(){
 auto_clicker_button.addEventListener('click', function(){
   if(pussy_points >= auto_clicker_cost){
     pussy_points -= auto_clicker_cost;
-    auto_clicker_cost*=1.25
-    auto_clicker ++
-   
-    displayPointsAmt();
-    updateButtonTexts()
+    auto_clicker++;
+    auto_clicker_cost *= 1.25;
 
-     // speichern
+    displayPointsAmt();
+
+    // speichern
     localStorage.setItem('ClickCounter', pussy_points);
     localStorage.setItem('AutoClicker', auto_clicker);
-    localStorage.setItem('AutoClickerCost', auto_clicker_cost); // Kosten speichern
-    
-    auto_clicker_button.innerText = "Buy Autoclicker for "+Math.round(auto_clicker_cost*100)/100+" Points"
+    localStorage.setItem('AutoClickerCost', auto_clicker_cost);
+
+    updateButtonTexts(); // Buttontexte aktualisieren
   }
 });
