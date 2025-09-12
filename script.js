@@ -17,7 +17,7 @@ let auto_clicker_cost = parseFloat(localStorage.getItem('AutoClickerCost')) || 2
 function updateButtonTexts() {
   upgrade_button.innerText = "Upgrade button for " + Math.round(multiplier_cost*100)/100 + " Points";
   auto_clicker_button.innerText = "Buy Autoclicker for " + Math.round(auto_clicker_cost*100)/100 + " Points";
-}
+};
 
   updateButtonTexts();
 
