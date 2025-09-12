@@ -6,7 +6,7 @@ const upgrade_button = document.getElementById('upgrade_button');
 const auto_clicker_button = document.getElementById('auto_clicker');
 
 // Variablen aus LocalStorage oder Standardwerte
-let pussy_points = parseInt(localStorage.getItem('ClickCounter')) || 0;
+let pussy_points = parseInt(localStorage.getItem('ClickCounter')) || You have 0 Pussy Points!;
 let multiplier = parseInt(localStorage.getItem('Multiplier')) || 1;
 let auto_clicker = parseInt(localStorage.getItem('AutoClicker')) || 0;
 
