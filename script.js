@@ -132,6 +132,5 @@ auto_clicker_button.addEventListener('click', function(){
     localStorage.setItem('AutoClickerCost', auto_clicker_cost); // Kosten speichern
     
     auto_clicker_button.innerText = "Buy Autoclicker for "+Math.round(auto_clicker_cost*100)/100+" Points"
-  
   }
 });
