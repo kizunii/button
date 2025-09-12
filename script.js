@@ -21,23 +21,6 @@ add_points_button.addEventListener('click', () => {
   displayPointsAmt();                   // Anzeige updaten
   localStorage.setItem('ClickCounter', pussy_points);  // speichern
 });
-//resest testen
-reset_button.addEventListener('click', function(){
-  pussy_points = 0;
-  multiplier = 1;
-  auto_clicker = 0;
-
-  multiplier_cost = 25;
-  auto_clicker_cost = 20;
-
-  displayPointsAmt();
-  upgrade_button.innerText = "Upgrade button for " + multiplier_cost + " Points";
-  auto_clicker_button.innerText = "Buy Autoclicker for " + auto_clicker_cost + " Points";
-
-  localStorage.setItem('ClickCounter', pussy_points);
-  localStorage.setItem('Multiplier', multiplier);
-  localStorage.setItem('AutoClicker', auto_clicker);
-});
 
 // Punkte anzeigen
 function displayPointsAmt() {
@@ -54,7 +37,7 @@ setInterval(() => {
     displayPointsAmt();
     localStorage.setItem('ClickCounter', pussy_points);
   }
-}, 10);
+}, 1000);
 
 // Hauptbutton Klick
 button.addEventListener('click', function(){
