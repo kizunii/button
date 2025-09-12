@@ -43,11 +43,16 @@ button.addEventListener('click', () => {
 upgrade_button.addEventListener('click', () => {
   if(pussy_points >= multiplier_cost){
     pussy_points -= multiplier_cost;
-    multiplier += 1;
+    multiplier_cost*=1.3
+    multiplier ++
     multiplier_cost = Math.floor(multiplier_cost * 1.5);
     displayPointsAmt();
+    upgrade_button.innerText = "Upgrade button for "+multiplier_cost+" Points"
     localStorage.setItem('ClickCounter', pussy_points);
     localStorage.setItem('Multiplier', multiplier);
+  }
+  else{
+    alert("not enough Points")
   }
 });
 
