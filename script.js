@@ -1,3 +1,6 @@
+function roundToInt(value) {
+  return Math.round(value + Number.EPSILON);
+}
 // Elemente auswählen
 const sound = document.getElementById('click_sound');
 const button = document.getElementById('button');
@@ -6,10 +9,6 @@ const upgrade_button = document.getElementById('upgrade_button');
 const auto_clicker_button = document.getElementById('auto_clicker');
 const add_points_button = document.getElementById('add_points');
 const reset_button = document.getElementById('reset_button');
-
-function roundToInt(value) {
-  return Math.round(value + Number.EPSILON);
-}
 
 // Variablen aus LocalStorage oder Standardwerte
 let pussy_points = parseInt(localStorage.getItem('ClickCounter')) || 0;
