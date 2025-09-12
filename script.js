@@ -15,8 +15,8 @@ let multiplier_cost = parseFloat(localStorage.getItem('MultiplierCost')) || 25;
 let auto_clicker_cost = parseFloat(localStorage.getItem('AutoClickerCost')) || 20;
 
 // Buttons direkt mit geladenen Kosten beschriften
-upgrade_button.innerText = "Upgrade button for " + multiplier_cost + " Points";
-auto_clicker_button.innerText = "Buy Autoclicker for " + auto_clicker_cost + " Points";
+upgrade_button.innerText = "Upgrade button for " + Math.round(multiplier_cost*100)/100 + " Points";
+auto_clicker_button.innerText = "Buy Autoclicker for " + Math.round(auto_clicker_cost*100)/100 + " Points";
 
 // Nach Kauf/Upgrade speichern
 localStorage.setItem('ClickCounter', pussy_points);
@@ -61,8 +61,8 @@ reset_button.addEventListener('click', () => {
 
   // Anzeige updaten
   displayPointsAmt();
-  upgrade_button.innerText = "Upgrade button for " + multiplier_cost + " Points";
-  auto_clicker_button.innerText = "Buy Autoclicker for " + auto_clicker_cost + " Points";
+  upgrade_button.innerText = "Upgrade button for " + Math.round(multiplier_cost*100)/100 + " Points";
+  auto_clicker_button.innerText = "Buy Autoclicker for " + Math.round(auto_clicker_cost*100)/100 + " Points";
 
   // LocalStorage überschreiben
   localStorage.setItem('ClickCounter', pussy_points);
