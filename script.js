@@ -16,13 +16,13 @@ let auto_clicker_cost = parseFloat(localStorage.getItem('AutoClickerCost')) || 2
 
 // Buttons direkt mit geladenen Kosten beschriften
 function updateButtonTexts() {
-  upgrade_button.innerText = "Upgrade button for " + Math.round(multiplier_cost) + " Points";
-  auto_clicker_button.innerText = "Buy Autoclicker for " + Math.round(auto_clicker_cost) + " Points";
+  upgrade_button.innerText = "Upgrade button for " + Math.round(multiplier_cost*100)/100 + " Points";
+  auto_clicker_button.innerText = "Buy Autoclicker for " + Math.round(auto_clicker_cost*100)/100 + " Points";
 }
 
 // Anzeige direkt beim Laden updaten
 function displayPointsAmt() {
-  counterEl.innerText = "You have " + Math.round(pussy_points) + " Pussy Points!";
+  counterEl.innerText = "You have " + Math.round(pussy_points*100)/100 + " Pussy Points!";
 }
 
 displayPointsAmt();
