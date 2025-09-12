@@ -12,8 +12,8 @@ let pussy_points = parseInt(localStorage.getItem('ClickCounter'))
 let multiplier = parseInt(localStorage.getItem('Multiplier')) || 1;
 let auto_clicker = parseInt(localStorage.getItem('AutoClicker')) || 0;
 
-let multiplier_cost = 25;
-let auto_clicker_cost = 20;
+let multiplier_cost = parseFloat(localStorage.getItem('MultiplierCost')) || 25;
+let auto_clicker_cost = parseFloat(localStorage.getItem('AutoClickerCost')) || 20;
 
 //teste
 add_points_button.addEventListener('click', () => {
