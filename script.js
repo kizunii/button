@@ -88,9 +88,14 @@ upgrade_button.addEventListener('click', function(){
     multiplier_cost*=1.3
     multiplier ++
     displayPointsAmt();
-    upgrade_button.innerText = "Upgrade button for "+multiplier_cost+" Points"
+
+      // speichern
     localStorage.setItem('ClickCounter', pussy_points);
     localStorage.setItem('Multiplier', multiplier);
+    localStorage.setItem('MultiplierCost', multiplier_cost); // Kosten speichern
+    
+    upgrade_button.innerText = "Upgrade button for "+multiplier_cost+" Points"
+ 
   }
   else{
     alert("not enough Points")
@@ -104,8 +109,13 @@ auto_clicker_button.addEventListener('click', function(){
     auto_clicker_cost*=1.25
     auto_clicker ++
     displayPointsAmt();
-    auto_clicker_button.innerText = "Buy Autoclicker for "+auto_clicker_cost+" Points"
+
+     // speichern
     localStorage.setItem('ClickCounter', pussy_points);
     localStorage.setItem('AutoClicker', auto_clicker);
+    localStorage.setItem('AutoClickerCost', auto_clicker_cost); // Kosten speichern
+    
+    auto_clicker_button.innerText = "Buy Autoclicker for "+auto_clicker_cost+" Points"
+  
   }
 });
