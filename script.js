@@ -28,7 +28,7 @@ setInterval(() => {
     displayPointsAmt();
     localStorage.setItem('ClickCounter', pussy_points);
   }
-}, 1000);
+}, 10);
 
 // Hauptbutton Klick
 button.addEventListener('click', function(){
