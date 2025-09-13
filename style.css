@@ -13,9 +13,9 @@
     .upgrade_button {
       background: #919191;
       border: 10px;
+      border-color: #ffffff;
       display: inline;
-      width: 600px;
-      height: 100px;
+      padding: 6px;
       color: #ffffff;
       text-shadow: 0 0 10px #fff;
       transition: transform 0.3s ease, filter 0.2s ease;
