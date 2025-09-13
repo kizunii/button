@@ -71,7 +71,7 @@ button.addEventListener('click', function(){
 
 // Add Points Button (Test)
 add_points_button.addEventListener('click', () => {
-  pussy_points += 999999;
+  pussy_points += 100000000000;
   displayPointsAmt();
   localStorage.setItem('ClickCounter', pussy_points);
 });
