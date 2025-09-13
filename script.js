@@ -1,6 +1,9 @@
  function roundToInt(value) {
   return Math.round(value + Number.EPSILON);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+ 
 // Elemente auswählen
 const sound = document.getElementById('click_sound');
 const button = document.getElementById('button');
@@ -75,13 +78,14 @@ button.addEventListener('click', function(){
 button.addEventListener('click', (event) => {
  const effect = document.createElement("div");
   effect.classList.add("effect");
-  effect.textContent("+1");
+  effect.textContent = "+" + multiplier;
 
   const x = event.clientX;
   const y = event.clientY;
-
-  effect.style.left = x + "px";
-  effect.style.top = y + "px";
+ 
+  effect.style.position = "fixed";
+  effect.style.left = event.clientX + "px";
+  effect.style.top = event.clientY + "px";
 
   document.body.appendChild(effect);
 
