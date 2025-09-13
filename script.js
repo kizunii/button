@@ -65,7 +65,12 @@ reset_button.addEventListener('click', () => {
 
 // Hauptbutton Klick
 button.addEventListener('click', function(){
-  const effect = document.createElement("div");
+  sound.currentTime = 0;
+  sound.play();
+  pussy_points += multiplier;
+  displayPointsAmt();
+  localStorage.setItem('ClickCounter', pussy_points);
+ const effect = document.createElement("div");
   effect.classList.add("effect");
   effect.textcontent("+1");
 
@@ -80,12 +85,6 @@ button.addEventListener('click', function(){
   setTimeout(() => {
    effect.remove();
   }, 1000);
-
-  sound.currentTime = 0;
-  sound.play();
-  pussy_points += multiplier;
-  displayPointsAmt();
-  localStorage.setItem('ClickCounter', pussy_points);
 });
 
 // Add Points Button (Test)
