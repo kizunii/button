@@ -10,7 +10,7 @@ const auto_clicker_button = document.getElementById('auto_clicker');
 const add_points_button = document.getElementById('add_points');
 const reset_button = document.getElementById('reset_button');
 const sound_2 = document.getElementById('Upgrade_sound');
-const menuButton = document.getElementById('menuButton');
+const open-btn = document.getElementById('open-btn');
 const menu = document.getElementById('menu');
 
 // Variablen aus LocalStorage oder Standardwerte
