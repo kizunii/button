@@ -70,6 +70,9 @@ button.addEventListener('click', function(){
   pussy_points += multiplier;
   displayPointsAmt();
   localStorage.setItem('ClickCounter', pussy_points);
+});
+
+button.addEventListener('click', (event) => {
  const effect = document.createElement("div");
   effect.classList.add("effect");
   effect.textcontent("+1");
