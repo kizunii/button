@@ -65,6 +65,22 @@ reset_button.addEventListener('click', () => {
 
 // Hauptbutton Klick
 button.addEventListener('click', function(){
+  const effect = document.createElement("div");
+  effect.classList.add("effect");
+  effect.textcontent("+1");
+
+  const x = event.clientX;
+  const y = event.clientY;
+
+  effect.style.left + "px";
+  effect.style.top + "px";
+
+  document.body.appendChild(effect);
+
+  setTimeout(() => {
+   effect.remove();
+  }, 1000);
+
   sound.currentTime = 0;
   sound.play();
   pussy_points += multiplier;
