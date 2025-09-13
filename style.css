@@ -11,15 +11,15 @@
     }
 
     .upgrade_button {
-      font-size: 30px;
+      font-size: 20px;
       background: #30302e;
       border: 3px solid #ffffff;
       border-radius: 12px;
       display: inline;
-      padding: 30px;
+      padding: 20px;
       color: #ffffff;
-      text-shadow: 0 0 10px #fff;
-      box-shadow: 0 0 10px #fff;
+      text-shadow: 0 0 2px #fff;
+      box-shadow: 0 0 2px #fff;
       transition: transform 0.3s ease, filter 0.2s ease;
       filter: brightness(1.1);
     }
@@ -27,6 +27,8 @@
     .upgrade_button:hover {
       cursor: pointer;
       transform: scale(1.1);
+      text-shadow: 0 0 10px #fff;
+      box-shadow: 0 0 10px #fff;
     }
 
     .upgrade_button:active {
