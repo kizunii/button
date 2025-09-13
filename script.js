@@ -19,8 +19,8 @@ let auto_clicker_cost = parseFloat(localStorage.getItem('AutoClickerCost')) || 2
 
 // Buttons direkt mit geladenen Kosten beschriften
 function updateButtonTexts() {
-  upgrade_button.innerText = "Upgrade button for " + roundToInt(multiplier_cost) + " Points (" + roundToInt(multiplier) + "x)";
-  auto_clicker_button.innerText = "Buy Autoclicker for " + roundToInt(auto_clicker_cost) + " Points (" + roundToInt(auto_clicker) + ")";
+  upgrade_button.innerText = "Upgrade button for " + roundToInt(multiplier_cost) + " Points ( " + roundToInt(multiplier) + " x) ";
+  auto_clicker_button.innerText = "Buy Autoclicker for " + roundToInt(auto_clicker_cost) + " Points ( " + roundToInt(auto_clicker) + " ) ";
 }
 
 // Anzeige direkt beim Laden updaten
