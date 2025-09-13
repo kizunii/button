@@ -75,13 +75,13 @@ button.addEventListener('click', function(){
 button.addEventListener('click', (event) => {
  const effect = document.createElement("div");
   effect.classList.add("effect");
-  effect.textcontent("+1");
+  effect.textContent("+1");
 
   const x = event.clientX;
   const y = event.clientY;
 
-  effect.style.left + "px";
-  effect.style.top + "px";
+  effect.style.left = x + "px";
+  effect.style.top = y + "px";
 
   document.body.appendChild(effect);
 
