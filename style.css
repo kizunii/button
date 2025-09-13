@@ -115,3 +115,57 @@
   margin-top: 20px;
   text-shadow: 0 0 10px #fff;
     }
+
+    /* Button zum Öffnen */
+    .open-btn {
+      font-size: 20px;
+      padding: 10px 20px;
+      background: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: #111;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+    }
+
+    /* Sidebar Buttons */
+    .sidebar button {
+      display: block;
+      width: 80%;
+      margin: 10px auto;
+      padding: 12px;
+      font-size: 16px;
+      color: white;
+      background: #333;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s;
+      border-radius: 5px;
+    }
+
+    .sidebar button:hover {
+      background: #575757;
+    }
+
+    /* Close-Button */
+    .sidebar .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+      color: white;
+      background: none;
+      border: none;
+    }
