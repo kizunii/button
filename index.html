@@ -9,9 +9,6 @@
 </head>
 <body>
 
-  <button type="button" class="upgrade_button" id="upgrade_button">Upgrade Button for 25 Points</button>
-  <button type="button" class="auto_clicker"id="auto_clicker">Buy Autoclicker for 20 Points</button>
-
   <button type="button" class="test" id="add_points">test</button>
   <button type="button" class="reset" id="reset_button">reset</button>
 
@@ -26,6 +23,15 @@
   <!-- Klick Sound -->
   <audio id="click_sound" src="Images/click.wav"></audio>
   <audio id="Upgrade_sound" src="Images/orb.mp3"></audio>
+
+  <!-- Button zum Öffnen -->
+  <button class="open-btn" onclick="openSidebar()">☰ Menü</button>
+
+  <!-- Sidebar -->
+  <div id="mySidebar" class="sidebar">
+    <button type="button" class="upgrade_button" id="upgrade_button">Upgrade Button for 25 Points</button>
+    <button type="button" class="auto_clicker"id="auto_clicker">Buy Autoclicker for 20 Points</button>
+  </div>
 
   <script src="script.js"></script>
 </body>
