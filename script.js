@@ -1,8 +1,6 @@
  function roundToInt(value) {
   return Math.round(value + Number.EPSILON);
 }
-
-document.addEventListener("DOMContentLoaded", () => {
  
 // Elemente auswählen
 const sound = document.getElementById('click_sound');
@@ -75,25 +73,6 @@ button.addEventListener('click', function(){
   localStorage.setItem('ClickCounter', pussy_points);
 });
 
-button.addEventListener('click', (event) => {
- const effect = document.createElement("div");
-  effect.classList.add("effect");
-  effect.textContent = "+" + multiplier;
-
-  const x = event.clientX;
-  const y = event.clientY;
- 
-  effect.style.position = "fixed";
-  effect.style.left = event.clientX + "px";
-  effect.style.top = event.clientY + "px";
-
-  document.body.appendChild(effect);
-
-  setTimeout(() => {
-   effect.remove();
-  }, 1000);
-});
-
 // Add Points Button (Test)
 add_points_button.addEventListener('click', () => {
   pussy_points += 100000000000;
@@ -148,4 +127,3 @@ function closeSidebar() {
 }
 
 openBtn.addEventListener('click', openSidebar);
-}
