@@ -3,7 +3,6 @@
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-}
  
 // Elemente auswählen
 const sound = document.getElementById('click_sound');
@@ -149,3 +148,4 @@ function closeSidebar() {
 }
 
 openBtn.addEventListener('click', openSidebar);
+}
