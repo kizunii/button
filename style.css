@@ -11,22 +11,21 @@
     }
 
     .upgrade_button {
-      cursor: pointer;
       background: #919191;
       border: 3px;
       display: inline-block;
       width: 100px;
-      height: 50px
+      height: 50px;
       color: #ffffff;
     }
       
-
     .upgrade_button:hover {
-      
+      cursor: pointer;
+      transform: scale(1.1);
     }
 
     .upgrade_button:active {
-      
+      transform: scale(0.9);
     }
     /* Button Container */
     .button {
