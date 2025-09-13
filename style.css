@@ -10,6 +10,19 @@
       color: #fff;
     }
 
+    .effect {
+      position: absolute;
+      color: white;
+      font-weight: bold;
+      pointer-events: none;
+      animation: floatUp 1s ease.out forwards;
+    }
+
+    @keyframes floatUp {
+      0%   { opacity: 1; transform: translateY(0) scale(0); }
+      100% { opacity: 0; transform: translateY(-50px) scale(1.5); }
+    }
+
     .test {
       position: absolute;
       top: 20px;
