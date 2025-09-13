@@ -11,12 +11,12 @@
     }
 
     .upgrade_button {
-      font-size: 15px;
+      font-size: 30px;
       background: #30302e;
-      border: 6px solid #ffffff;
+      border: 3px solid #ffffff;
       border-radius: 12px;
       display: inline;
-      padding: 6px;
+      padding: 30px;
       color: #ffffff;
       text-shadow: 0 0 10px #fff;
       box-shadow: 0 0 10px #fff;
