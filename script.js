@@ -90,8 +90,6 @@ upgrade_button.addEventListener('click', function(){
     localStorage.setItem('ClickCounter', pussy_points);
     localStorage.setItem('Multiplier', multiplier);
     localStorage.setItem('MultiplierCost', multiplier_cost);
-  } else {
-    alert("not enough Points")
   }
 });
 
