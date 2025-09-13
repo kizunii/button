@@ -11,13 +11,15 @@
     }
 
     .upgrade_button {
-      background: #919191;
-      border: 10px;
-      border-color: #ffffff;
+      font-size: 15px;
+      background: #30302e;
+      border: 6px solid #ffffff;
+      border-radius: 12px;
       display: inline;
       padding: 6px;
       color: #ffffff;
       text-shadow: 0 0 10px #fff;
+      box-shadow: 0 0 10px #fff;
       transition: transform 0.3s ease, filter 0.2s ease;
       filter: brightness(1.1);
     }
@@ -29,6 +31,7 @@
 
     .upgrade_button:active {
       transform: scale(0.9);
+      background; 
     }
     /* Button Container */
     .button {
