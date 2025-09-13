@@ -114,3 +114,10 @@ auto_clicker_button.addEventListener('click', function(){
     localStorage.setItem('AutoClickerCost', auto_clicker_cost);
   }
 });
+
+   function openSidebar() {
+      document.getElementById("mySidebar").style.width = "250px";
+    }
+
+    function closeSidebar() {
+      document.getElementById("mySidebar").style.width = "0";
