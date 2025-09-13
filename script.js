@@ -11,7 +11,7 @@ const add_points_button = document.getElementById('add_points');
 const reset_button = document.getElementById('reset_button');
 const sound_2 = document.getElementById('Upgrade_sound');
 const open-btn = document.getElementById('open-btn');
-const menu = document.getElementById('menu');
+const mySidebar = document.getElementById('mySidebar');
 
 // Variablen aus LocalStorage oder Standardwerte
 let pussy_points = parseInt(localStorage.getItem('ClickCounter')) || 0;
@@ -126,5 +126,5 @@ function closeSidebar() {
 }
 
 open-btn.addEventListener('click', () => {
-  menu.classList.toggle('show');
+  mySidebar.classList.toggle('show');
 });
