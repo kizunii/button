@@ -29,7 +29,7 @@
       
     .upgrade_button:hover {
       cursor: pointer;
-      transform: scale(1.1);
+      transform: scale(1.03);
       text-shadow: 0 0 10px #fff;
       box-shadow: 0 0 10px #fff;
     }
