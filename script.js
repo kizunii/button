@@ -117,12 +117,13 @@ auto_clicker_button.addEventListener('click', function(){
   }
 });
 
-   function openSidebar() {
-      document.getElementById("mySidebar").style.width = "250px";
-    }
+  function openSidebar() {
+  document.getElementById("mySidebar").style.width = "250px";
+}
 
-    function closeSidebar() {
-      document.getElementById("mySidebar").style.width = "0";
+function closeSidebar() {
+  document.getElementById("mySidebar").style.width = "0";
+}
 
 menuButton.addEventListener('click', () => {
   menu.classList.toggle('show');
