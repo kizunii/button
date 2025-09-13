@@ -10,6 +10,24 @@
       color: #fff;
     }
 
+    .upgrade_button {
+      cursor: pointer;
+      background: #919191;
+      border: 3px;
+      display: inline-block;
+      width: 100px;
+      height: 50px
+      color: #ffffff;
+    }
+      
+
+    .upgrade_button:hover {
+      
+    }
+
+    .upgrade_button:active {
+      
+    }
     /* Button Container */
     .button {
       display: inline-block;
