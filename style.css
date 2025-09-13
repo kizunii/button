@@ -152,6 +152,7 @@
       cursor: pointer;
       transition: 0.2s;
       border-radius: 10px;
+      padding-top: 120px;
     }
 
     .sidebar button:hover {
