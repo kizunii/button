@@ -9,6 +9,7 @@ const upgrade_button = document.getElementById('upgrade_button');
 const auto_clicker_button = document.getElementById('auto_clicker');
 const add_points_button = document.getElementById('add_points');
 const reset_button = document.getElementById('reset_button');
+const sound_2 = document.getElementById('Upgrade_sound');
 
 // Variablen aus LocalStorage oder Standardwerte
 let pussy_points = parseInt(localStorage.getItem('ClickCounter')) || 0;
@@ -80,6 +81,8 @@ add_points_button.addEventListener('click', () => {
 upgrade_button.addEventListener('click', function(){
   if(pussy_points >= multiplier_cost){
     pussy_points -= multiplier_cost;
+    sound_2.currentTime= 0
+    sound_2.play()
     multiplier++;
     multiplier_cost = roundToInt(multiplier_cost * 1.3);
 
@@ -97,6 +100,8 @@ upgrade_button.addEventListener('click', function(){
 auto_clicker_button.addEventListener('click', function(){
   if(pussy_points >= auto_clicker_cost){
     pussy_points -= auto_clicker_cost;
+    sound_2.currentTime= 0
+    sound_2.play()
     auto_clicker++;
     auto_clicker_cost = roundToInt(auto_clicker_cost * 1.25);
 
