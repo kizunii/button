@@ -10,6 +10,18 @@
       color: #fff;
     }
 
+    .test {
+      position: absolute;
+      top: 20px;
+      right: 20px
+    }
+
+    .reset {
+      position: absolute;
+      top: 110px;
+      right: 20px;
+    }
+
     .auto_clicker {
       font-size: 20px;
       background: #30302e;
