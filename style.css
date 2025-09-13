@@ -12,11 +12,12 @@
 
     .upgrade_button {
       background: #919191;
-      border: 3px;
-      display: inline-block;
-      width: 100px;
-      height: 50px;
+      border: 10px;
+      display: inline;
+      width: 600px;
+      height: 100px;
       color: #ffffff;
+      text-shadow: 0 0 10px #fff;
     }
       
     .upgrade_button:hover {
