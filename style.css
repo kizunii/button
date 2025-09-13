@@ -18,6 +18,8 @@
       height: 100px;
       color: #ffffff;
       text-shadow: 0 0 10px #fff;
+      transition: transform 0.3s ease, filter 0.2s ease;
+      filter: brightness(1.1);
     }
       
     .upgrade_button:hover {
