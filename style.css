@@ -10,6 +10,35 @@
       color: #fff;
     }
 
+    .auto_clicker {
+      font-size: 20px;
+      background: #30302e;
+      border: 3px solid #ffffff;
+      border-radius: 12px;
+      display: inline;
+      padding: 20px;
+      color: #ffffff;
+      text-shadow: 0 0 2px #fff;
+      box-shadow: 0 0 2px #fff;
+      transition: transform 0.3s ease, filter 0.2s ease;
+      filter: brightness(1.1);
+      position: absolute;
+      top: 80px;
+      left: 20px;
+    }
+
+    .auto-clicker:hover {
+      cursor: pointer;
+      transform: scale(1.03);
+      text-shadow: 0 0 10px #fff;
+      box-shadow: 0 0 10px #fff;
+    }
+
+    .auticlicker:active {
+      transform: scale(0.95);
+      background: #3c3c3a;
+    }
+
     .upgrade_button {
       font-size: 20px;
       background: #30302e;
@@ -35,8 +64,8 @@
     }
 
     .upgrade_button:active {
-      transform: scale(0.9);
-      background; 
+      transform: scale(0.95);
+      background: #3c3c3a;
     }
     /* Button Container */
     .button {
