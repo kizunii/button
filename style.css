@@ -6,7 +6,7 @@
       align-items: center;
       flex-direction: column; /* Button + Counter untereinander */
       background: #404040; /* Hintergrundfarbe */
-      font-family: Arial, sans-serif;
+      font-family: Minecraft-Regular;
       color: #fff;
     }
 
