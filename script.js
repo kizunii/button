@@ -125,6 +125,6 @@ function closeSidebar() {
   document.getElementById("mySidebar").style.width = "0";
 }
 
-menuButton.addEventListener('click', () => {
+open-btn.addEventListener('click', () => {
   menu.classList.toggle('show');
 });
