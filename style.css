@@ -227,11 +227,10 @@
       transition: 0.2s;
      }
 
-    .sidebar button:not(.closeBtn):hover, 
-    .sidebar button:not(.reset):hover {
+    .sidebar button:not(.closeBtn):not(.reset):hover {
       background: #575757;
-    }
-
+     } 
+  
     .sidebar button:not(.closeBtn) {
       display: block;        /* Block für margin auto */
       width: 80%;
