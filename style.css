@@ -213,7 +213,7 @@
       transition: transform 0.3s ease, filter 0.2s ease;
       filter: brightness(1.1);
       position: absolute;
-      top: 160px;
+      top: 150px;
       left: 35px;
     }
 
