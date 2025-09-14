@@ -87,7 +87,7 @@
       /* Button zum Öffnen */
  /* From Uiverse.io by cssbuttons-io */ 
 .openBtn {
-  position: relative;
+  position: absolute;
   font-size: 17px;
   text-transform: uppercase;
   text-decoration: none;
@@ -101,6 +101,8 @@
   font-weight: 500;
   color: black;
   background-color: white;
+  top: 20px;
+  left: 20px;
 }
 
 .openBtn:hover {
@@ -108,7 +110,7 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.btn:active {
+.openBtn:active {
   transform: translateY(-1px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
