@@ -158,15 +158,15 @@ function closeSidebar() {
 openBtn.addEventListener('click', openSidebar);
 
 const text = "Pussy Clicker";
-    let i = 2;
+    let i = 0;
     let deleting = false;
 
     function typeWriter() {
       if (!deleting && i <= text.length) {
-        document.title = text.substring(1, i);
+        document.title = text.substring(0, i);
         i++;
-      } else if (deleting && i >= 1) {
-        document.title = text.substring(1, i);
+      } else if (deleting && i > 1) {
+        document.title = text.substring(0, i);
         i--;
       }
 
@@ -174,7 +174,7 @@ const text = "Pussy Clicker";
         deleting = true;
         setTimeout(typeWriter, 1000); // Pause vor Löschen
         return;
-      } else if (i < 0) {
+      } else if (i === 1) {
         deleting = false;
         setTimeout(typeWriter, 500); // Pause vor Neu-Schreiben
         return;

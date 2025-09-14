@@ -127,7 +127,7 @@
     /* Sidebar */
     .sidebar {
       height: 100%;
-      width: 350px;
+      width: 0px;
       position: fixed;
       top: 0;
       left: 0;
