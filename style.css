@@ -132,6 +132,7 @@
       overflow-x: hidden;
       transition: 0.3s;
       border-radius: 20px;
+      padding-top: 100px
     }
 
     /* Sidebar Buttons */
@@ -159,7 +160,8 @@
 
     /* Close-Button */
     .sidebar .close-btn {
-      top: -20px;
+      position: relative;
+      top: 20px;
       right: 1px;
       font-size: 30px;
       cursor: pointer;
