@@ -94,7 +94,7 @@
  /* Close-Button */
     .sidebar .closeBtn {
       position: absolute;
-      top: -50px;
+      top: -5px;
       right: 175px;
       font-size: 30px;
       cursor: pointer;
