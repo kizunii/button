@@ -67,7 +67,8 @@
     /* Hover-Effekt */
     .button:hover {
       transform: scale(1.1) rotate(0deg); /* Vergrößerung beim Hover */
-      filter: brightness(1.1); /* Heller */
+      filter: brightness(1.1); 
+      cursor: pointer;
     }
 
     /* Button gedrückt (Reindrücken) */
@@ -158,6 +159,7 @@
 
     .sidebar button:not(.closeBtn):not(.reset):hover {
       background: #575757;
+      cursor: pointer;
      } 
   
     .sidebar button:not(.closeBtn) {
@@ -190,6 +192,7 @@
       left: 35px;
       bottom: 75px;
       z-index: 10;
+      cursor: pointer;
     }
 
     .sidebar .reset:hover {
@@ -199,6 +202,7 @@
       box-shadow: 0 0 15px #ee2323;
       background: #f25252;
       border: 2px solid #ee2323;
+      cursor: pointer;
     }
 
     .sidebar .reset:active {
@@ -217,6 +221,7 @@
       position: absolute;
       top: 145px;
       left: 35px;
+      cursor: pointer;
     }
 
     .sidebar .auto_clicker:hover {
@@ -242,6 +247,7 @@
       position: absolute;
       top: 60px;
       left: 35px;
+      cursor: pointer;
     }
       
     .sidebar .upgrade_button:hover {
