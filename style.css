@@ -237,11 +237,12 @@
       cursor: pointer;
       transform: scale(1.03);
       text-shadow: 0 0 10px #9b111e;
-      box-shadow: 0 0 10px #9b111e;
+      box-shadow: 0 0 15px #9b111e;
       background: #f25252;
+      border: 2px solid #f25252;
     }
 
     .sidebar .reset:active {
        transform: scale(0.95);
-      background: #711921;
+      background: #961b1b;
     }
