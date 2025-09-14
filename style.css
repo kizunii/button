@@ -305,6 +305,7 @@
 }
 
  .sidebar .upgrade_button {
+      background: #575757;
       border: none;   
       outline: none;
       font-family: MinecraftRegular;
@@ -338,7 +339,7 @@
     4px 0 rgb(59, 59, 59) inset;
 }
 
-.sidebar .auto_clicker:after {
+.sidebar .upgrade_button:after {
   position: absolute;
   pointer-events: none;
   top: 0;
