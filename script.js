@@ -13,8 +13,7 @@ const reset_button = document.getElementById('reset_button');
 const sound_2 = document.getElementById('Upgrade_sound');
 const openBtn = document.getElementById('openBtn');
 const mySidebar = document.getElementById('mySidebar');
-const text = "Pussy Clicker";
-const title = Pussy Clicker;
+
 
 // Variablen aus LocalStorage oder Standardwerte
 let pussy_points = parseInt(localStorage.getItem('ClickCounter')) || 0;
@@ -22,8 +21,6 @@ let multiplier = parseInt(localStorage.getItem('Multiplier')) || 1;
 let auto_clicker = parseInt(localStorage.getItem('AutoClicker')) || 0;
 let multiplier_cost = parseFloat(localStorage.getItem('MultiplierCost')) || 25;
 let auto_clicker_cost = parseFloat(localStorage.getItem('AutoClickerCost')) || 20;
-let i = 0;
-let deleting = false;
 
 // Buttons direkt mit geladenen Kosten beschriften
 function updateButtonTexts() {
@@ -160,8 +157,11 @@ function closeSidebar() {
 
 openBtn.addEventListener('click', openSidebar);
 
- function typeWriter() {
-      
+const text = "Meine Website";
+    let i = 0;
+    let deleting = false;
+
+    function typeWriter() {
       if (!deleting && i <= text.length) {
         document.title = text.substring(0, i);
         i++;
@@ -172,15 +172,15 @@ openBtn.addEventListener('click', openSidebar);
 
       if (i > text.length) {
         deleting = true;
-        setTimeout(typeWriter, 1000); // kurze Pause bevor löschen
+        setTimeout(typeWriter, 1000); // Pause vor Löschen
         return;
       } else if (i < 0) {
         deleting = false;
-        setTimeout(typeWriter, 500); // kurze Pause bevor neu schreiben
+        setTimeout(typeWriter, 500); // Pause vor Neu-Schreiben
         return;
       }
 
-      setTimeout(typeWriter, 200); // Geschwindigkeit
+      setTimeout(typeWriter, 200); // Schreibgeschwindigkeit
     }
 
     window.onload = typeWriter;
