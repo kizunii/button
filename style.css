@@ -166,7 +166,7 @@
     .sidebar .closeBtn {
       font-family: MinecraftRegular;
       position: absolute;
-      top: 10px;
+      top: 30px;
       right: 175px;
       font-size: 30px;
       cursor: pointer;
