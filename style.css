@@ -166,8 +166,8 @@
       transition: transform 0.3s ease, filter 0.2s ease;
       filter: brightness(1.1);
       position: absolute;
-      left: 20px;
-      bottom: 20px;
+      left: 35px;
+      bottom: 40px;
       z-index: 10;
     }
 
@@ -194,8 +194,8 @@
       transition: transform 0.3s ease, filter 0.2s ease;
       filter: brightness(1.1);
       position: absolute;
-      top: 110px;
-      left: 20px;
+      top: 90px;
+      left: 35px;
     }
 
     .sidebar .auto_clicker:hover {
@@ -219,7 +219,7 @@
       transition: transform 0.3s ease, filter 0.2s ease;
       filter: brightness(1.1);
       position: absolute;
-      top: 20px;
+      top: 40px;
       left: 35px;
     }
       
