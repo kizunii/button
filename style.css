@@ -98,6 +98,7 @@
       transform: scale(1.03);
       text-shadow: 0 0 10px #9b111e;
       box-shadow: 0 0 10px #9b111e;
+      background: #f25252;
     }
 
     .reset:active {
