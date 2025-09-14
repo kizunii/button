@@ -158,7 +158,7 @@ function closeSidebar() {
 openBtn.addEventListener('click', openSidebar);
 
 const text = "Pussy Clicker";
-    let i = 1;
+    let i = 2;
     let deleting = false;
 
     function typeWriter() {
@@ -166,7 +166,7 @@ const text = "Pussy Clicker";
         document.title = text.substring(0, i);
         i++;
       } else if (deleting && i >= 0) {
-        document.title = text.substring(13, i);
+        document.title = text.substring(0, i);
         i--;
       }
 
