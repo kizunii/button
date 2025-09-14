@@ -285,6 +285,8 @@
 }
 
      .sidebar .upgrade_button {
+      width:280px;
+      height:20px;
       border: none;   
       outline: none;
       font-family: MinecraftRegular;
