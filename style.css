@@ -142,7 +142,7 @@
     }
 
       /* Button zum Öffnen */
-    .open_button {
+    .openBtn {
       font-size: 20px;
       padding: 10px 20px;
       background: #333;
@@ -180,16 +180,16 @@
       border-radius: -10px;
      }
 
-    .sidebar button:not(.close-btn):hover {
+    .sidebar button:not(.closeBtn):hover {
       background: #575757;
     }
 
-    .sidebar button:not(.close-btn) {
+    .sidebar button:not(.closeBtn) {
       margin-top: 50px; 
     }
 
     /* Close-Button */
-    .sidebar .close-btn {
+    .sidebar .closeBtn {
       position: relative;
       top: 20px;
       right: 1px;
