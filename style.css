@@ -1,4 +1,11 @@
-  body {
+   @font-face {
+  font-family: 'MinecraftRegular';               
+  src: url('images/MinecraftRegular-Bmg3.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+    }
+    
+    body {
       margin: 0;
       height: 100vh;
       display: flex;
@@ -10,38 +17,6 @@
       color: #fff;
     }
 
-    .particle {
-      position: absolute;
-      color: gold;
-      font-weight: bold;
-      font-size: 16px;
-      animation: floatUp 1s ease-out forwards;
-      pointer-events: none;
-    }
-
-    @keyframes floatUp {
-    0% {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-     }
-    100% {
-      opacity: 0;
-      transform: translateY(-80px) scale(1.5);
-     }
-    }
-    
-    .test {
-      position: absolute;
-      top: 20px;
-      right: 20px
-    }
-
-    .reset {
-      position: absolute;
-      top: 110px;
-      right: 20px;
-    }
-
     .auto_clicker {
       font-size: 20px;
       background: #30302e;
@@ -50,8 +25,7 @@
       display: inline;
       padding: 20px;
       color: #ffffff;
-      text-shadow: 0 0 2px #fff;
-      box-shadow: 0 0 2px #fff;
+      box-shadow: 0 0 2px #414141;
       transition: transform 0.3s ease, filter 0.2s ease;
       filter: brightness(1.1);
       position: absolute;
@@ -62,8 +36,8 @@
     .auto_clicker:hover {
       cursor: pointer;
       transform: scale(1.03);
-      text-shadow: 0 0 10px #fff;
-      box-shadow: 0 0 10px #fff;
+      text-shadow: 0 0 10px #414141;
+      box-shadow: 0 0 10px #414141;
     }
 
     .auto_clicker:active {
@@ -79,8 +53,7 @@
       display: inline;
       padding: 20px;
       color: #ffffff;
-      text-shadow: 0 0 2px #fff;
-      box-shadow: 0 0 2px #fff;
+      box-shadow: 0 0 2px #414141;
       transition: transform 0.3s ease, filter 0.2s ease;
       filter: brightness(1.1);
       position: absolute;
@@ -91,13 +64,13 @@
     .upgrade_button:hover {
       cursor: pointer;
       transform: scale(1.03);
-      text-shadow: 0 0 10px #fff;
-      box-shadow: 0 0 10px #fff;
+      text-shadow: 0 0 10px #414141;
+      box-shadow: 0 0 10px #414141;
     }
 
     .upgrade_button:active {
       transform: scale(0.95);
-      background: #3c3c3a;
+      background: #2c2c2c;
     }
     /* Button Container */
     .button {
@@ -136,8 +109,8 @@
   text-shadow: 0 0 10px #fff;
     }
 
-    /* Button zum Öffnen */
-    .open_btn {
+      /* Button zum Öffnen */
+    .open_button {
       font-size: 20px;
       padding: 10px 20px;
       background: #333;
@@ -153,36 +126,41 @@
       position: fixed;
       top: 0;
       left: 0;
-      background: #111;
+      background: rgba(17, 17, 17, 0.9);
       overflow-x: hidden;
       transition: 0.3s;
-      padding-top: 60px;
+      padding-top: 300x;
+      border-radius: 20px;
     }
 
     /* Sidebar Buttons */
     .sidebar button {
       display: block;
       width: 80%;
-      margin: 30px auto 10px auto;
+      margin: 10px auto;
       padding: 12px;
       font-size: 16px;
-      color: white;
-      background: #333;
-      border: none;
+      color: rgb(187, 187, 187);
+      background: #414141;
+      border: 2px solid #313131;
       cursor: pointer;
       transition: 0.2s;
-      border-radius: 10px
-    }
+      border-radius: 10px;
+     }
 
-    .sidebar button:hover {
+    .sidebar button:not(.close-btn):hover {
       background: #575757;
     }
 
+    .sidebar button:not(.close-btn) {
+      margin-top: 50px; 
+    }
+
     /* Close-Button */
-    .sidebar .close_btn {
+    .sidebar .close-btn {
       position: absolute;
-      top: -30px;
-      right: 20px;
+      top: -20px;
+      right: 1px;
       font-size: 30px;
       cursor: pointer;
       color: white;
