@@ -162,7 +162,6 @@
       border: 3px solid #ffffff;
       border-radius: 6px;
       display: block;
-      margin: 0;
       padding: 5px;
       color: #ffffff;
       box-shadow: 0 0 2px #414141;
@@ -192,12 +191,11 @@
       font-family: MinecraftRegular;
       font-size: 2rem;
       border-radius: 12px;
-      margin: 50px auto;
       padding: 20px;
       box-shadow: 0 0 2px #414141;
       transition: transform 0.3s ease, filter 0.2s ease;
       filter: brightness(1.1);
-      position: static;
+      position: absolute;
       top: 110px;
       left: 20px;
     }
@@ -218,12 +216,11 @@
       font-family: MinecraftRegular;
       font-size: 20px;
       border-radius: 12px;
-      margin: 50px auto;
       padding: 20px;
       box-shadow: 0 0 2px #414141;
       transition: transform 0.3s ease, filter 0.2s ease;
       filter: brightness(1.1);
-      position: static;
+      position: absolute;
       top: 20px;
       left: 20px;
     }
