@@ -94,7 +94,10 @@
       position: absolute;
       top: 20px;
       left: 20px;
-      padding: 3px;
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 6px;
+      padding-bottom: 6px;
     }
 
     .openBtn:hover {
