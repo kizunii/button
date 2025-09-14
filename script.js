@@ -73,6 +73,26 @@ button.addEventListener('click', function(){
   localStorage.setItem('ClickCounter', pussy_points);
 });
 
+button.addEventListener("click", (e) => {
+  const particle = document.createElement("span");
+  particle.classList.add("particle");
+
+  // Text oder Symbol für Effekt
+  particle.innerText = "+1";
+
+  // Position relativ zum Button
+  const rect = btn.getBoundingClientRect();
+  particle.style.left = (e.clientX - rect.left - 10) + "px";
+  particle.style.top = (e.clientY - rect.top - 20) + "px";
+
+  btn.appendChild(particle);
+
+  // Nach Animation wieder löschen
+  setTimeout(() => {
+    particle.remove();
+  }, 1000);
+});
+
 // Add Points Button (Test)
 add_points_button.addEventListener('click', () => {
   pussy_points += 100000000000;
