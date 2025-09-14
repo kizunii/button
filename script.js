@@ -65,29 +65,21 @@ reset_button.addEventListener('click', () => {
 });
 
 // Hauptbutton Klick
-button.addEventListener('click', function(){
+button.addEventListener('click', function(e){
   sound.currentTime = 0;
   sound.play();
   pussy_points += multiplier;
   displayPointsAmt();
   localStorage.setItem('ClickCounter', pussy_points);
-});
-
-button.addEventListener("click", (e) => {
+ 
   const particle = document.createElement("span");
   particle.classList.add("particle");
-
-  // Text oder Symbol für Effekt
   particle.innerText = "+1";
-
-  // Position relativ zum Button
   const rect = button.getBoundingClientRect();
   particle.style.left = (e.clientX - rect.left - 10) + "px";
   particle.style.top = (e.clientY - rect.top - 20) + "px";
-
   button.appendChild(particle);
 
-  // Nach Animation wieder löschen
   setTimeout(() => {
     particle.remove();
   }, 1000);
