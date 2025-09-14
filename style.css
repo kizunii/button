@@ -96,6 +96,18 @@
       left: 20px;
     }
 
+    .openBtn:hover {
+      cursor: pointer;
+      transform: scale(1.03);
+      text-shadow: 0 0 10px #414141;
+      box-shadow: 0 0 10px #414141;
+    }
+
+    .openBtn:active {
+      transform: scale(0.95);
+      background: #3c3c3a;
+    }
+
  /* Close-Button */
     .sidebar .closeBtn {
       position: absolute;
