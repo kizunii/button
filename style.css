@@ -124,7 +124,7 @@
 
     /* Sidebar Buttons */
     .sidebar button {
-      display: block;
+      display: static;
       width: 80%;
       margin: 10px auto;
       padding: 12px;
@@ -171,6 +171,7 @@
       position: absolute;
       left: 20px;
       bottom: 20px;
+      z-index: 10;
     }
 
     .sidebar .reset:hover {
@@ -196,7 +197,7 @@
       box-shadow: 0 0 2px #414141;
       transition: transform 0.3s ease, filter 0.2s ease;
       filter: brightness(1.1);
-      position: absolute;
+      position: static;
       top: 110px;
       left: 20px;
     }
@@ -222,7 +223,7 @@
       box-shadow: 0 0 2px #414141;
       transition: transform 0.3s ease, filter 0.2s ease;
       filter: brightness(1.1);
-      position: absolute;
+      position: static;
       top: 20px;
       left: 20px;
     }
