@@ -165,7 +165,7 @@ const text = "Pussy Clicker";
       if (!deleting && i <= text.length) {
         document.title = text.substring(0, i);
         i++;
-      } else if (deleting && i >= 0) {
+      } else if (deleting && i >= 1) {
         document.title = text.substring(0, i);
         i--;
       }
