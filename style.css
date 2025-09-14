@@ -171,6 +171,7 @@
       position: absolute;
       top: 500px;
       left: 20px;
+      bottom: 20px;
     }
 
     .sidebar .reset:hover {
