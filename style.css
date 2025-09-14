@@ -86,32 +86,24 @@
 
       /* Button zum Öffnen */
     .openBtn {
-      font-size: 20px;
-      color: rgb(187, 187, 187);
-      background: rgba(53, 53, 53, 0.9);
-      border: 2px solid #525252;
-      cursor: pointer;
-      transition: 0.2s;
-      border-radius: 10px;
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      align-items: center;
-      width: 50px;
-      height: 50px;
-    }
+  position: absolute;
+  top: 20px;
+  right: -50px;              
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: rgba(53,53,53,0.9);
+  color: rgb(187,187,187);
+  border: 2px solid #525252;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
 
     .openBtn:hover {
       cursor: pointer;
       transform: scale(1.03);
-      text-shadow: 0 0 10px #525252;
-      box-shadow: 0 0 10px #525252;
     }
 
-    .openBtn:active {
-      transform: scale(0.95);
-      background: #2c2c2c;
-    }
 
  /* Close-Button */
     .sidebar .closeBtn {
