@@ -162,7 +162,7 @@
  /* Close-Button */
     .sidebar .closeBtn {
       position: absolute;
-      top: -5px;
+      top: 0px;
       right: 175px;
       font-size: 30px;
       cursor: pointer;
@@ -266,7 +266,7 @@
       transition: transform 0.3s ease, filter 0.2s ease;
       filter: brightness(1.1);
       position: absolute;
-      top: 165px;
+      top: 175px;
       left: 35px;
       cursor: pointer;
     }
