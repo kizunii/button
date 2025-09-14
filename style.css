@@ -200,7 +200,7 @@
     .sidebar button:not(.closeBtn) {
       display: block;        /* Block für margin auto */
       width: 80%;
-      margin: 40px auto;     /* Vertikal 40px, horizontal auto = zentriert */
+      margin: 10px auto;     /* Vertikal 40px, horizontal auto = zentriert */
       padding: 12px;
       font-size: 16px;
       color: rgb(187, 187, 187);
@@ -211,5 +211,3 @@
       border-radius: 10px;
       position: static;      /* unbedingt! damit margin auto funktioniert */
    }
-
-   
