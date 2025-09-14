@@ -167,7 +167,7 @@
 
     /* Sidebar */
     .sidebar {
-      height: 100%;
+      height: calc(100% - 1px);
       width: 350px;
       position: fixed;
       top: 0;
