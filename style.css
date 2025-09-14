@@ -51,7 +51,8 @@
       background: #30302e;
       border: 3px solid #ffffff;
       border-radius: 12px;
-      display: inline;
+      display: block;
+      margin: 50px auto;
       padding: 20px;
       color: #ffffff;
       box-shadow: 0 0 2px #414141;
@@ -80,7 +81,8 @@
       background: #30302e;
       border: 3px solid #ffffff;
       border-radius: 12px;
-      display: inline;
+      display: block;
+      margin: 50px auto;
       padding: 20px;
       color: #ffffff;
       box-shadow: 0 0 2px #414141;
@@ -167,7 +169,7 @@
     .sidebar button {
       display: block;
       width: 80%;
-      margin: 50px auto;
+      margin: 10px auto;
       padding: 12px;
       font-size: 16px;
       color: rgb(187, 187, 187);
