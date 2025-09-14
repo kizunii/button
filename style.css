@@ -126,7 +126,6 @@
     .sidebar button {
       display: static;
       width: 80%;
-      margin: 10px auto;
       padding: 12px;
       font-size: 16px;
       color: rgb(187, 187, 187);
@@ -143,7 +142,6 @@
     .sidebar button:not(.closeBtn) {
       display: block;        /* Block für margin auto */
       width: 80%;
-      margin: 10px auto;     /* Vertikal 40px, horizontal auto = zentriert */
       padding: 12px;
       font-size: 16px;
       color: rgb(187, 187, 187);
