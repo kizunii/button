@@ -175,8 +175,11 @@
       background: rgba(17, 17, 17, 0.9);
       overflow-x: hidden;
       transition: 0.3s;
-      border-radius: 20px;
       padding-top: 50px
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
     }
 
     /* Sidebar Buttons */
