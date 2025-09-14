@@ -29,7 +29,7 @@ function updateButtonTexts() {
 
 // Anzeige direkt beim Laden updaten
 function displayPointsAmt() {
-  counterEl.innerText = "You have " + roundToInt(pussy_points) + " Pussy Points!";
+  counterEl.innerText = roundToInt(pussy_points) + "Pussy Points";
 }
 
 displayPointsAmt();
