@@ -1,6 +1,6 @@
    @font-face {
   font-family: 'MinecraftRegular';               
-  src: url('images/MinecraftRegular-Bmg3.otf') format('opentype');
+  src: url('Images/MinecraftRegular-Bmg3.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
     }
@@ -16,6 +16,21 @@
       font-family: Arial, sans-serif;
       color: #fff;
     }
+#button {
+  position: relative;
+  overflow: visible;
+}
+
+.particle {
+  position: absolute;
+  color: #ff69b4;
+  font-weight: bold;
+  font-size: 16px;
+  pointer-events: none;
+  user-select: none;
+  animation: rise 1s ease-out forwards;
+  opacity: 1;
+}
 
     .auto_clicker {
       font-family: MinecraftRegular;
@@ -147,7 +162,7 @@
       border: 2px solid #313131;
       cursor: pointer;
       transition: 0.2s;
-      border-radius: 10px;
+      border-radius: -10px;
      }
 
     .sidebar button:not(.close-btn):hover {
