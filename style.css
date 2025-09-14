@@ -13,9 +13,11 @@
       align-items: center;
       flex-direction: column; /* Button + Counter untereinander */
       background: #404040; /* Hintergrundfarbe */
-      font-family: Arial, sans-serif;
+      overflow: hidden; /* damit keine Scrollbar beim Ziehen */
+      font-family: MinecraftRegular;
       color: #fff;
-    }
+    
+  }
 #button {
   position: relative;
   overflow: visible;
@@ -255,9 +257,35 @@
     }
 
 #credits {
-  position: absolute;
+   position: absolute;
    color: #585858;
    font-size: 8px;
    font-family: MinecraftRegular;
    bottom: 20px;
 }
+
+#dragContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease-out;
+    z-index: 10;
+  }
+
+  /* Darunterliegender Bereich */
+  #hiddenContent {
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background: #333;
+    padding: 20px;
+    box-sizing: border-box;
+  }

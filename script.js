@@ -184,3 +184,37 @@ const text = "Pussy Clicker";
     }
 
     window.onload = typeWriter;
+
+    const drag = document.getElementById('dragContainer');
+let isDragging = false;
+let startY = 0;
+let offsetY = 0;
+
+document.addEventListener("mousedown", e => {
+  if (e.button === 0) {
+    isDragging = true;
+    startY = e.clientY - offsetY;
+  }
+});
+
+document.addEventListener("mousemove", e => {
+  if (!isDragging) return;
+  offsetY = e.clientY - startY;
+  if (offsetY < 0) offsetY = 0; // nur hochziehen
+  drag.style.transform = `translateY(${-offsetY}px)`;
+});
+
+document.addEventListener("mouseup", () => {
+  if (!isDragging) return;
+  isDragging = false;
+  // Zurückfallen
+  let fall = offsetY;
+  const anim = setInterval(() => {
+    fall -= 20;
+    if (fall <= 0) {
+      fall = 0;
+      clearInterval(anim);
+    }
+    drag.style.transform = `translateY(${-fall}px)`;
+  }, 16);
+});
