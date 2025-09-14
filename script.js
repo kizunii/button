@@ -115,8 +115,8 @@ upgrade_button.addEventListener('click', function(){
     pussy_points -= multiplier_cost;
     sound_2.currentTime= 0
     sound_2.play()
-    multiplier++;
-    multiplier_cost = roundToInt(multiplier_cost * 1.3);
+    multiplier *= 2;
+    multiplier_cost = Math.floor(multiplier_cost * 2.5);
 
     displayPointsAmt();
     updateButtonTexts();
