@@ -86,8 +86,8 @@
       font-size: 20px;
       padding: 10px 20px;
       color: rgb(187, 187, 187);
-      background: #414141;
-      border: 2px solid #313131;
+      background: rgba(17, 17, 17, 0.9);
+      border: 2px solid #1a1a1a;
       cursor: pointer;
       transition: 0.2s;
       border-radius: 10px;
@@ -99,8 +99,8 @@
     .openBtn:hover {
       cursor: pointer;
       transform: scale(1.03);
-      text-shadow: 0 0 10px #414141;
-      box-shadow: 0 0 10px #414141;
+      text-shadow: 0 0 10px #a8a8a8;
+      box-shadow: 0 0 10px #a8a8a8;
     }
 
     .openBtn:active {
