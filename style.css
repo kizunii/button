@@ -91,6 +91,7 @@
 /* From Uiverse.io by cssbuttons-io */ 
 
 .openBtn {
+  font-family: MinecraftRegular;
   font-size: 18px;
   background-color: #008542;
   color: #fff;
@@ -216,11 +217,29 @@
       position: absolute;      /* unbedingt! damit margin auto funktioniert */
    }
 
-.reset:before {
+   .sidebar .upgrade_button {
+      background:#cc0000;
+      border: none;   
+      outline: none;
+      font-family: MinecraftRegular;
+      font-size: 2rem;
+      padding: 20px;
+      transition: transform 0.3s ease, filter 0.2s ease;
+      position: absolute;
+      filter: brightness(1.1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      bottom: 80;
+      left: 35px;
+      cursor: pointer;
+    }
+
+.sidebar .reset:before {
   position: absolute;
   pointer-events: none;
-  bottom: 40px;
-  left: 35px;
+  bottom: 0;
+  left: 0;
   display: block;
   width: 100%;
   height: 100%;
@@ -233,7 +252,7 @@
     4px 0 rgb(108, 0, 0) inset;
 }
 
-.reset:after {
+.sidebar .reset:after {
   position: absolute;
   pointer-events: none;
   top: 0;
@@ -246,20 +265,20 @@
   transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
 }
 
-.reset:hover:before {
+.sidebar .reset:hover:before {
   box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset,
     -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
 }
 
-.reset:hover:after {
+.sidebar .reset:hover:after {
   box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
 }
 
-.reset:active {
+.sidebar .reset:active {
   transform: translateY(4px);
 }
 
-.reset:active:after {
+.sidebar .reset:active:after {
   box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
 }
 
