@@ -82,7 +82,7 @@
       border: 3px solid #ffffff;
       border-radius: 6px;
       display: block;
-      margin: 10px auto;
+      margin: 20px auto;
       padding: 5px;
       color: #ffffff;
       box-shadow: 0 0 2px #414141;
@@ -218,7 +218,7 @@
       background: #575757;
     }
 
-    .sidebar button:not(.closeBtn) {
+    .sidebar button:not(.closeBtn,.reset) {
       display: block;        /* Block für margin auto */
       width: 80%;
       margin: 10px auto;     /* Vertikal 40px, horizontal auto = zentriert */
