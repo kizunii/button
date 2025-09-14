@@ -88,7 +88,7 @@
     .openBtn {
  position: absolute;
   top: 20px;
-  right: -50px; /* ragt aus der Sidebar raus */
+  right: 20; 
   width: 50px;
   height: 50px;
   border-radius: 10px;
@@ -102,6 +102,12 @@
     .openBtn:hover {
       cursor: pointer;
       transform: scale(1.03);
+      box-shadow: #bbb
+    }
+
+    .openBtn:active {
+      background-color: #333333;
+      transform: scale(0.95);
     }
 
 
@@ -127,7 +133,7 @@
       top: 0;
       left: 0;
       background: rgba(17, 17, 17, 0.9);
-       overflow: visible;
+      overflow-x: hidden;
       transition: 0.3s;
       padding-top: 50px;
       border-top-right-radius: 20px;
