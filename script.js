@@ -11,7 +11,7 @@ const auto_clicker_button = document.getElementById('auto_clicker');
 const add_points_button = document.getElementById('add_points');
 const reset_button = document.getElementById('reset_button');
 const sound_2 = document.getElementById('Upgrade_sound');
-const openBtn = document.getElementById('open-btn');
+const openBtn = document.getElementById('openBtn');
 const mySidebar = document.getElementById('mySidebar');
 
 // Variablen aus LocalStorage oder Standardwerte
