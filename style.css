@@ -82,7 +82,7 @@
       border: 3px solid #ffffff;
       border-radius: 6px;
       display: block;
-      margin: 20px auto;
+      margin: -50px auto;
       padding: 5px;
       color: #ffffff;
       box-shadow: 0 0 2px #414141;
@@ -92,6 +92,19 @@
       top: 500px;
       left: 20px;
     }
+
+    .reset:hover {
+      cursor: pointer;
+      transform: scale(1.03);
+      text-shadow: 0 0 10px #9b111e;
+      box-shadow: 0 0 10px #9b111e;
+    }
+
+    .reset:active {
+       transform: scale(0.95);
+      background: #711921;
+    }
+       
 
     .upgrade_button {
       font-family: MinecraftRegular;
@@ -218,7 +231,7 @@
       background: #575757;
     }
 
-    .sidebar button:not(.closeBtn,.reset) {
+    .sidebar button:not(.closeBtn) {
       display: block;        /* Block für margin auto */
       width: 80%;
       margin: 10px auto;     /* Vertikal 40px, horizontal auto = zentriert */
