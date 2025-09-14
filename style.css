@@ -184,7 +184,7 @@
     }
 
     .sidebar button:not(.closeBtn) {
-      margin-top: 10px;
+      margin: 10px auto;
       position: relative;
       top: 10px;
       right: 35px;
