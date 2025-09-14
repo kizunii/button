@@ -199,7 +199,6 @@
       font-size: 16px;
       color: rgb(187, 187, 187);
       background: #414141;
-      border: 2px solid #313131;
       cursor: pointer;
       transition: 0.2s;
      }
@@ -216,7 +215,6 @@
       font-size: 16px;
       color: rgb(187, 187, 187);
       background: #414141;
-      border: 2px solid #313131;
       cursor: pointer;
       transition: 0.2s;
       border-radius: 10px;
@@ -284,7 +282,7 @@
   z-index: -1;
   background-color: #414141 !important;
   box-shadow: 0 -4px rgb(59, 59, 59) inset,
-    0 4px rgb(122, 122, 122) inset, -4px 0 rgb(83, 83, 83) inset,
+    0 4px rgb(102, 102, 102) inset, -4px 0 rgb(102, 102, 102) inset,
     4px 0 rgb(59, 59, 59) inset;
 }
 
