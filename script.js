@@ -68,7 +68,7 @@ reset_button.addEventListener('click', () => {
 button.addEventListener('click', function(e){
   sound.currentTime = 0;
   sound.play();
-  pussy_points += Math.pow(2, upgradeLevel - 1);
+  pussy_points += multiplier;
   displayPointsAmt();
   localStorage.setItem('ClickCounter', pussy_points);
  
