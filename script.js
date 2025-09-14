@@ -29,6 +29,20 @@ function updateButtonTexts() {
    upgrade_button.style.whiteSpace = "pre-line";
 }
 
+function formatNumber(num) {
+    if (num >= 1_000_000_000_000) {       // Trillionen
+        return (num / 1_000_000_000_000).toFixed(1).replace(/\.0$/, '') + 'T';
+    } else if (num >= 1_000_000_000) {    // Milliarden
+        return (num / 1_000_000_000).toFixed(1).replace(/\.0$/, '') + 'B';
+    } else if (num >= 1_000_000) {        // Millionen
+        return (num / 1_000_000).toFixed(1).replace(/\.0$/, '') + 'M';
+    } else if (num >= 1_000) {            // Tausender
+        return (num / 1_000).toFixed(1).replace(/\.0$/, '') + 'K';
+    } else {                               // Alles darunter
+        return num.toString();
+    }
+}
+
 // Anzeige direkt beim Laden updaten
 function displayPointsAmt() {
   counterEl.innerText = roundToInt(pussy_points) + " Pussy Points";
