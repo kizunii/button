@@ -255,9 +255,8 @@
     }
 
 #credits {
-   color: #505050;
-   font-size: 5px;
+   color: #585858;
+   font-size: 8px;
    font-family: MinecraftRegular;
-   text-align: center;
-   bottom: 10px;
+   bottom: 20px;
 }
