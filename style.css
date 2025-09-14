@@ -217,7 +217,7 @@
       position: absolute;      /* unbedingt! damit margin auto funktioniert */
    }
 
-   .sidebar .upgrade_button {
+   .sidebar .reset {
       background:#cc0000;
       border: none;   
       outline: none;
