@@ -263,7 +263,6 @@
       transition: transform 0.3s ease, filter 0.2s ease;
       filter: brightness(1.1);
       position: absolute;
-      text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -284,8 +283,8 @@
   transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
   z-index: -1;
   background-color: #414141 !important;
-  box-shadow: 0 -4px rgb(112, 112, 112) inset,
-    0 4px rgb(83, 83, 83) inset, -4px 0 rgb(83, 83, 83) inset,
+  box-shadow: 0 -4px rgb(59, 59, 59) inset,
+    0 4px rgb(122, 122, 122) inset, -4px 0 rgb(83, 83, 83) inset,
     4px 0 rgb(59, 59, 59) inset;
 }
 
