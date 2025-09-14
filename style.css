@@ -61,7 +61,7 @@
 
     /* Größe vom Button-Image */
     .button img {
-      width: 200px;
+      width: 300px;
       filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.7)); /* Shadow */
       transition: transform .6s cubic-bezier(.23,1,.32,1), color .6s cubic-bezier(.23,1,.32,1);
     }
