@@ -216,37 +216,52 @@
       position: absolute;      /* unbedingt! damit margin auto funktioniert */
    }
 
-.sidebar .reset{
-      font-family: MinecraftRegular;
-      font-size: 1rem;
-      background: #30302e;
-      display: block;
-      padding: 5px;
-      color: #ffffff;
-      box-shadow: 0 0 2px #414141;
-      transition: transform 0.3s ease, filter 0.2s ease;
-      filter: brightness(1.1);
-      position: absolute;
-      left: 35px;
-      bottom: 75px;
-      z-index: 10;
-      cursor: pointer;
-    }
+.reset:before {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: "";
+  transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+  z-index: -1;
+  background-color: #850000 !important;
+  box-shadow: 0 -4px rgb(108, 0, 0) inset,
+    0 4px rgba(253, 31, 31) inset, -4px 0 rgb(253, 31, 31) inset,
+    4px 0 rgb(108, 0, 0) inset;
+}
 
-    .sidebar .reset:hover {
-      cursor: pointer;
-      transform: scale(1.03);
-      text-shadow: 0 0 10px #ffffff;
-      box-shadow: 0 0 15px #ee2323;
-      background: #f25252;
-      border: 2px solid #ee2323;
-      cursor: pointer;
-    }
+.reset:after {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: "";
+  box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+  transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+}
 
-    .sidebar .reset:active {
-       transform: scale(0.95);
-      background: #961b1b;
-    }
+.reset:hover:before {
+  box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset,
+    -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
+}
+
+.reset:hover:after {
+  box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+}
+
+.reset:active {
+  transform: translateY(4px);
+}
+
+.reset:active:after {
+  box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
+}
 
      .sidebar .upgrade_button {
       border: none;   
@@ -316,7 +331,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      top: 80px;
+      top: px;
       left: 35px;
       cursor: pointer;
     }
