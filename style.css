@@ -85,10 +85,15 @@
     .openBtn {
       font-size: 20px;
       padding: 10px 20px;
-      background: #333;
-      color: white;
-      border: none;
+      color: rgb(187, 187, 187);
+      background: #414141;
+      border: 2px solid #313131;
       cursor: pointer;
+      transition: 0.2s;
+      border-radius: 10px;
+      position: absolute;
+      top: 20px;
+      left: 20px;
     }
 
  /* Close-Button */
