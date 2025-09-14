@@ -84,7 +84,6 @@
       /* Button zum Öffnen */
     .openBtn {
       font-size: 20px;
-      padding: 10px 20px;
       color: rgb(187, 187, 187);
       background: rgba(53, 53, 53, 0.9);
       border: 2px solid #525252;
@@ -95,8 +94,8 @@
       top: 20px;
       left: 20px;
       align-items: center;
-      width: 20px;
-      height: 20px;
+      width: 25px;
+      height: 25px;
     }
 
     .openBtn:hover {
