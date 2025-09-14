@@ -266,7 +266,7 @@
       transition: transform 0.3s ease, filter 0.2s ease;
       filter: brightness(1.1);
       position: absolute;
-      top: 145px;
+      top: 165px;
       left: 35px;
       cursor: pointer;
     }
@@ -292,7 +292,7 @@
       transition: transform 0.3s ease, filter 0.2s ease;
       filter: brightness(1.1);
       position: absolute;
-      top: 60px;
+      top: 80px;
       left: 35px;
       cursor: pointer;
     }
