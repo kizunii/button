@@ -253,3 +253,11 @@
       transform: scale(0.95);
       background: #2c2c2c;
     }
+
+#credits {
+   color: #505050;
+   font-size: 5px;
+   font-family: MinecraftRegular;
+   text-align: center;
+   bottom: 10px;
+}
