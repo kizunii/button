@@ -179,6 +179,7 @@
 
     /* Sidebar */
     .sidebar {
+      font-size: 2rem;
       height: 100%;
       width: 0px;
       position: fixed;
@@ -285,8 +286,6 @@
 }
 
      .sidebar .upgrade_button {
-      width:280px;
-      height:20px;
       border: none;   
       outline: none;
       font-family: MinecraftRegular;
