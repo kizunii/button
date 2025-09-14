@@ -247,12 +247,14 @@
     }
 
      .sidebar .auto_clicker {
+      border: none;   
+      outline: none;
       font-family: MinecraftRegular;
       font-size: 2rem;
       padding: 20px;
       transition: transform 0.3s ease, filter 0.2s ease;
-      filter: brightness(1.1);
       position: absolute;
+      filter: brightness(1.1);
       display: inline-flex;
       align-items: center;
       justify-content: center;
