@@ -163,10 +163,10 @@ const text = "Pussy Clicker";
 
     function typeWriter() {
       if (!deleting && i <= text.length) {
-        document.title = text.substring(1, i);
+        document.title = text.substring(0, i);
         i++;
       } else if (deleting && i >= 0) {
-        document.title = text.substring(0, i);
+        document.title = text.substring(1, i);
         i--;
       }
 
