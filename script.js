@@ -186,14 +186,12 @@ const text = "Pussy Clicker";
     window.onload = typeWriter;
 
 const sidebar = document.getElementById('sidebar');
-const toggleBtn = document.getElementById('sidebarToggle');
+const toggleBtn = document.querySelector('.openBtn');
 
 toggleBtn.addEventListener('click', () => {
-  if(sidebar.classList.contains('expanded')) {
-    sidebar.classList.remove('expanded');
+  if(sidebar.style.width === '250px') {
     sidebar.style.width = '0';
   } else {
-    sidebar.classList.add('expanded');
-    sidebar.style.width = '250px'; // Breite wenn offen
+    sidebar.style.width = '250px';
   }
 });
