@@ -74,7 +74,7 @@ button.addEventListener('click', function(e){
  
   const particle = document.createElement("span");
   particle.classList.add("particle");
-  particle.innerText = "+"multiplier;
+  particle.innerText = "+" + multiplier;
   const rect = button.getBoundingClientRect();
   particle.style.left = (e.clientX - rect.left - 10) + "px";
   particle.style.top = (e.clientY - rect.top - 20) + "px";
