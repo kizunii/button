@@ -184,3 +184,15 @@ const text = "Pussy Clicker";
     }
 
     window.onload = typeWriter;
+
+const button = document.getElementById("button");
+
+// Definiere Startpositionen pro Seite
+const page = window.location.pathname;
+
+let startTop = "50px"; // default
+if(page === "/index.html") startTop = "60px";
+if(page === "/otherpage.html") startTop = "80px";
+
+button.style.setProperty('--button-top', startTop);
+button.style.top = startTop;

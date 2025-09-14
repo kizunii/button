@@ -105,6 +105,7 @@
       transform: scale(1.03);
       text-shadow: 0 0 10px #525252;
       box-shadow: 0 0 10px #525252;
+      top: calc(var(--button-top) + 10px); /* Beim Hover 10px runter */
     }
 
     .openBtn:active {
