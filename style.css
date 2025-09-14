@@ -246,7 +246,7 @@
       background: #961b1b;
     }
 
-     .sidebar .auto_clicker {
+     .sidebar .upgrade_button {
       border: none;   
       outline: none;
       font-family: MinecraftRegular;
@@ -263,7 +263,7 @@
       cursor: pointer;
     }
 
-    .sidebar .auto_clicker:before {
+    .sidebar .upgrade_button:before {
   position: absolute;
   pointer-events: none;
   top: 0;
@@ -280,7 +280,7 @@
     4px 0 rgb(59, 59, 59) inset;
 }
 
-.sidebar .auto_clicker:after {
+.sidebar .upgrade_button:after {
   position: absolute;
   pointer-events: none;
   top: 0;
@@ -293,16 +293,16 @@
   transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
 }
 
-.sidebar .auto_clicker:hover:before {
+.sidebar .upgrade_button:hover:before {
   box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(80, 79, 79) inset,
     -4px 0 rgb(80, 79, 79) inset, 4px 0 rgb(0 0 0 / 50%) inset;
 }
 
-.sidebar .auto_clicker:hover:after {
+.sidebar .upgrade_button:hover:after {
   box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
 }
 
- .sidebar .auto_clicker {
+ .sidebar .upgrade_button {
       border: none;   
       outline: none;
       font-family: MinecraftRegular;
@@ -319,7 +319,7 @@
       cursor: pointer;
     }
 
-    .sidebar .auto_clicker:before {
+    .sidebar .upgrade_button:before {
   position: absolute;
   pointer-events: none;
   top: 0;
@@ -349,12 +349,12 @@
   transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
 }
 
-.sidebar .auto_clicker:hover:before {
+.sidebar .upgrade_button:hover:before {
   box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(80, 79, 79) inset,
     -4px 0 rgb(80, 79, 79) inset, 4px 0 rgb(0 0 0 / 50%) inset;
 }
 
-.sidebar .auto_clicker:hover:after {
+.sidebar .upgrade_button:hover:after {
   box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
 }
 
