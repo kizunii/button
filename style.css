@@ -255,6 +255,7 @@
     }
 
 #credits {
+  position: absolute;
    color: #585858;
    font-size: 8px;
    font-family: MinecraftRegular;
