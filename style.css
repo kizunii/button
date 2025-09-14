@@ -223,14 +223,14 @@
       outline: none;
       font-family: MinecraftRegular;
       font-size: 2rem;
-      padding: 20px;
+      padding: 10px;
       transition: transform 0.3s ease, filter 0.2s ease;
       position: absolute;
       filter: brightness(1.1);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      bottom: 80;
+      bottom: 80px;
       left: 35px;
       cursor: pointer;
     }
@@ -338,6 +338,14 @@
   box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
 }
 
+.sidebar .upgrade_button:active {
+  transform: translateY(4px);
+}
+
+.sidebar .upgrade_button:active:after {
+  box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
+}
+
         .sidebar .auto_clicker {
       border: none;   
       outline: none;
@@ -392,6 +400,14 @@
 
 .sidebar .auto_clicker:hover:after {
   box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+}
+
+.sidebar .auto_clicker:active {
+  transform: translateY(4px);
+}
+
+.sidebar .auto_clicker:active:after {
+  box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
 }
 
 #credits {
