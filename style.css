@@ -195,10 +195,7 @@
     .sidebar button {
       display: absolute;
       width: 80%;
-      padding: 12px;
-      font-size: 16px;
-      color: rgb(187, 187, 187);
-      background: #414141;
+      font-size: 16px;      
       cursor: pointer;
       transition: 0.2s;
      }
@@ -211,13 +208,9 @@
     .sidebar button:not(.closeBtn) {
       display: block;        /* Block für margin auto */
       width: 80%;
-      padding: 12px;
       font-size: 16px;
-      color: rgb(187, 187, 187);
-      background: #414141;
       cursor: pointer;
       transition: 0.2s;
-      border-radius: 10px;
       position: absolute;      /* unbedingt! damit margin auto funktioniert */
    }
 
@@ -225,7 +218,6 @@
       font-family: MinecraftRegular;
       font-size: 1rem;
       background: #30302e;
-      border: 3px solid #ffffff;
       display: block;
       padding: 5px;
       color: #ffffff;
