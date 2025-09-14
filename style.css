@@ -165,7 +165,7 @@
       margin: 0;
       padding: 5px;
       color: #ffffff;
-      box-shadow: 0 0 2px #414141;
+      box-shadow: 0 0 2px #f25252;
       transition: transform 0.3s ease, filter 0.2s ease;
       filter: brightness(1.1);
       position: absolute;
@@ -176,10 +176,10 @@
     .sidebar .reset:hover {
       cursor: pointer;
       transform: scale(1.03);
-      text-shadow: 0 0 10px #9b111e;
-      box-shadow: 0 0 15px #9b111e;
+      text-shadow: 0 0 10px #ffffff;
+      box-shadow: 0 0 15px #ee2323;
       background: #f25252;
-      border: 2px solid #f25252;
+      border: 2px solid #ee2323;
     }
 
     .sidebar .reset:active {
