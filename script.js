@@ -81,11 +81,11 @@ button.addEventListener("click", (e) => {
   particle.innerText = "+1";
 
   // Position relativ zum Button
-  const rect = btn.getBoundingClientRect();
+  const rect = button.getBoundingClientRect();
   particle.style.left = (e.clientX - rect.left - 10) + "px";
   particle.style.top = (e.clientY - rect.top - 20) + "px";
 
-  btn.appendChild(particle);
+  button.appendChild(particle);
 
   // Nach Animation wieder löschen
   setTimeout(() => {
