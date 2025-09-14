@@ -10,20 +10,26 @@
       color: #fff;
     }
 
-    .effect {
+    .particle {
       position: absolute;
-      color: white;
+      color: gold;
       font-weight: bold;
-      pointer-events: none;
+      font-size: 16px;
       animation: floatUp 1s ease-out forwards;
-      z-index: 9999;
+      pointer-events: none;
     }
 
     @keyframes floatUp {
-      0%   { opacity: 1; transform: translateY(0) scale(0); }
-      100% { opacity: 0; transform: translateY(-50px) scale(1.5); }
+    0% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+     }
+    100% {
+      opacity: 0;
+      transform: translateY(-80px) scale(1.5);
+     }
     }
-
+    
     .test {
       position: absolute;
       top: 20px;
