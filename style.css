@@ -151,6 +151,20 @@
       cursor: pointer;
     }
 
+ /* Close-Button */
+    .sidebar .closeBtn {
+      position: absolute;
+      top: -10px;
+      right: 50px;
+      font-size: 30px;
+      cursor: pointer;
+      color: white;
+      background: none;
+      border: none;
+      width: 2px;
+      height: 2px;
+    }
+
     /* Sidebar */
     .sidebar {
       height: 100%;
@@ -197,16 +211,4 @@
       border-radius: 10px;
     }
 
-    /* Close-Button */
-    .sidebar .closeBtn {
-      position: absolute;
-      top: -10px;
-      right: 10px;
-      font-size: 30px;
-      cursor: pointer;
-      color: white;
-      background: none;
-      border: none;
-      width: 2px;
-      height: 2px;
-    }
+   
