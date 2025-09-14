@@ -186,8 +186,6 @@
     .sidebar button:not(.closeBtn) {
       margin: 10px auto;
       position: relative;
-      top: 10px;
-      right: 35px;
     }
 
     /* Close-Button */
