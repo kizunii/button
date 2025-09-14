@@ -167,7 +167,7 @@
       filter: brightness(1.1);
       position: absolute;
       left: 35px;
-      bottom: 40px;
+      bottom: 90px;
       z-index: 10;
     }
 
@@ -194,7 +194,7 @@
       transition: transform 0.3s ease, filter 0.2s ease;
       filter: brightness(1.1);
       position: absolute;
-      top: 90px;
+      top: 130px;
       left: 35px;
     }
 
@@ -219,7 +219,7 @@
       transition: transform 0.3s ease, filter 0.2s ease;
       filter: brightness(1.1);
       position: absolute;
-      top: 40px;
+      top: 50px;
       left: 35px;
     }
       
