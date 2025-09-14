@@ -184,7 +184,8 @@
     }
 
     .sidebar button:not(.closeBtn) {
-      margin-top: 50px; 
+      display: block;
+      margin-top: 50px auto; 
     }
 
     /* Close-Button */
