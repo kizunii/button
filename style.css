@@ -181,14 +181,14 @@ body {
 .sidebar {
   font-size: 2rem;
   height: 100%;
-  width: 0px;
+  width: 300px;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
   background: rgba(17, 17, 17, 0.9);
   overflow-x: hidden;
-  transition: 0.3s;
+  transition: left 0.3s ease;
   padding-top: 50px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
