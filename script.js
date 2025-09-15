@@ -26,7 +26,7 @@ let auto_clicker_cost = parseFloat(localStorage.getItem('AutoClickerCost')) || 2
 function updateButtonTexts() {
   upgrade_button.innerText = "Upgrade button for\n"+ formatNumber(multiplier_cost) + " Points [ " + roundToInt(multiplier) + "x ]";
    upgrade_button.style.whiteSpace = "pre-line";
-   
+
   auto_clicker_button.innerText = "Buy autoclicker for\n"+ formatNumber(auto_clicker_cost) + " Points [ " + roundToInt(auto_clicker) + " ]";
    upgrade_button.style.whiteSpace = "pre-line";
 }
@@ -185,3 +185,30 @@ const text = "Pussy Clicker";
     }
 
     window.onload = typeWriter;
+
+    // Cheat: Punkte geben
+function givePoints(amount) {
+  pussy_points += amount;
+  displayPointsAmt(); 
+  localStorage.setItem('ClickCounter', pussy_points);
+}
+
+// Cheat: AutoClicker hinzufügen (mit fixen Kosten)
+function giveAutoClicker(amount = 1) {
+  auto_clicker += amount;
+  auto_clicker_cost = 20; // Kosten zurücksetzen, damit Button wieder nutzbar bleibt
+  updateButtonTexts();
+  displayPointsAmt();
+  localStorage.setItem('AutoClicker', auto_clicker);
+  localStorage.setItem('AutoClickerCost', auto_clicker_cost);
+}
+
+// Cheat: Upgrade hinzufügen (mit fixen Kosten)
+function giveUpgrade(amount = 1) {
+  multiplier *= Math.pow(2, amount);
+  multiplier_cost = 25; // Kosten zurücksetzen
+  updateButtonTexts();
+  displayPointsAmt();
+  localStorage.setItem('Multiplier', multiplier);
+  localStorage.setItem('MultiplierCost', multiplier_cost);
+}
