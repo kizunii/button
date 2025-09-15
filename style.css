@@ -87,9 +87,9 @@ body {
 }
 
 .counter-container {
-  width: 200px;       
-  height: 100px;
-  margin: 0 auto;
+  width: 400px;       
+  height: 50px;
+  margin: 60px auto;
   pointer-events: none;
   display: block;
   content: "";
@@ -99,6 +99,12 @@ body {
   box-shadow: 0 -4px rgb(21 108 0 / 50%) inset,
     0 4px rgb(100 253 31 / 99%) inset, -4px 0 rgb(100 253 31 / 50%) inset,
     4px 0 rgb(21 108 0 / 50%) inset;
+}
+
+.test {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
       /* Button zum Öffnen */
