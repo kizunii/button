@@ -74,7 +74,6 @@
 }
 
 .button {
-  position: absolute;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
   inset: 0;
