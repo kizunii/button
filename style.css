@@ -220,7 +220,7 @@ body {
 
 .sidebar .reset {
   width: 280px;
-  max-height: 40px; 
+  max-height: 80px; 
   background:#cc0000;
   border: none;   
   outline: none;
@@ -288,7 +288,7 @@ body {
 
 .sidebar .upgrade_button {
   width: 280px;
-  max-height: 40px;
+  max-height: 80px;
   border: none;   
   outline: none;
   font-family: MinecraftRegular;
@@ -355,7 +355,7 @@ body {
 
 .sidebar .auto_clicker {
   width: 280px;
-  max-height: 40px;
+  max-height: 80px;
   border: none;   
   outline: none;
   font-family: MinecraftRegular;
