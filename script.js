@@ -184,8 +184,8 @@ const text = "Pussy Clicker";
     }
 
     window.onload = typeWriter;
-/
-/ Cheat: direkt Punkte geben
+  
+// Cheat: direkt Punkte geben
 function givePoints(amount) {
   pussy_points += amount;
   displayPointsAmt(); 
