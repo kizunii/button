@@ -87,9 +87,9 @@ body {
 }
 
 .counter-container {
-  width: 400px;       
+  width: 500px;       
   height: 80px;
-  margin: 40px auto;
+  margin: -20px auto;
   pointer-events: none;
   display: block;
   content: "";
