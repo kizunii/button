@@ -51,6 +51,7 @@ body {
   display: inline-block;
   border: none;
   background: none;
+  margin: 20px auto;
   cursor: pointer;
   padding: 0;
   image-rendering: pixelated;
@@ -89,7 +90,7 @@ body {
 .counter-container {
   width: 500px;       
   height: 80px;
-  margin: -100px auto;
+  margin: -90px auto;
   pointer-events: none;
   display: block;
   content: "";
