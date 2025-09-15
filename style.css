@@ -88,8 +88,8 @@ body {
 
 .counter-container {
   width: 400px;       
-  height: 50px;
-  margin: 60px auto;
+  height: 80px;
+  margin: 40px auto;
   pointer-events: none;
   display: block;
   content: "";
