@@ -184,7 +184,7 @@ body {
   width: 350px;
   position: fixed;
   top: 0;
-  left: 0;
+  left: -300px;
   z-index: 10;
   background: rgba(17, 17, 17, 0.9);
   overflow-x: hidden;
