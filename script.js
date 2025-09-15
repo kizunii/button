@@ -184,8 +184,7 @@ const text = "Pussy Clicker";
     }
 
     window.onload = typeWriter;
-  
-// Cheat: direkt Punkte geben
+
 function givePoints(amount) {
   pussy_points += amount;
   displayPointsAmt(); 
@@ -210,3 +209,4 @@ function giveUpgrade(amount = 1) {
   displayPointsAmt();
   localStorage.setItem('Multiplier', multiplier);
   localStorage.setItem('MultiplierCost', multiplier_cost);
+}
