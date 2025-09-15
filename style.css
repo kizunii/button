@@ -1,23 +1,23 @@
-   @font-face {
+@font-face {
   font-family: 'MinecraftRegular';               
   src: url('Images/MinecraftRegular-Bmg3.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
-    }
+}
     
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column; /* Button + Counter untereinander */
-      background: #404040; /* Hintergrundfarbe */
-      overflow: hidden; /* damit keine Scrollbar beim Ziehen */
-      font-family: MinecraftRegular;
-      color: #fff;
-    
-  }
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Button + Counter untereinander */
+  background: #404040; /* Hintergrundfarbe */
+  overflow: hidden; /* damit keine Scrollbar beim Ziehen */
+  font-family: MinecraftRegular;
+  color: #fff;
+}   
+  
 #button {
   position: relative;
   overflow: visible;
@@ -47,100 +47,44 @@
   }
 }
 
-    /* Größe vom Button-Image */
-    .button img {
-      width: 300px;
-      filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.7)); /* Shadow */
-      transition: transform .6s cubic-bezier(.23,1,.32,1), color .6s cubic-bezier(.23,1,.32,1);
-    }
-
-    /* Hover-Effekt */
-    .button:hover {
-      transform: scale(1.1) rotate(0deg); /* Vergrößerung beim Hover */
-      filter: brightness(1.1); 
-      cursor: pointer;
-    }
-
-    /* Button gedrückt (Reindrücken) */
-    .button:active {
-      transform: scale(0.9) rotate(0deg); /* Kleiner beim Klick */
-    }
-
-    .container {
-  position: relative;
-  width: 220px;
-  height: 80px;
-  perspective: 800px;
-}
-
 .button {
+  display: inline-block;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 12px;
-  background: none;
-  border: none;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
   transition: transform 0.3s ease, filter 0.2s ease;
-}
-  
-
-.canvas {
-  inset: 0;
-  position: absolute;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  transform: rotate(0deg); /* Button leicht gedreht */
 }
 
-.tracker {
-  width: 100%;
-  height: 100%;
+  /* Größe vom Button-Image */
+  .button img {
+  width: 300px;
+  filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.7)); /* Shadow */
+  transition: transform .6s cubic-bezier(.23,1,.32,1), color .6s cubic-bezier(.23,1,.32,1);
 }
 
-.tracker:hover ~ .button {
-  filter: brightness(1.1);
+  /* Hover-Effekt */
+  .button:hover {
+  transform: scale(1.1) rotate(0deg); /* Vergrößerung beim Hover */
+  filter: brightness(1.1); 
+  cursor: pointer;
 }
 
-/* 3D Tilt je nach Feld */
-.tr-1:hover ~ .button { transform: rotateX(20deg) rotateY(-10deg); }
-.tr-2:hover ~ .button { transform: rotateX(20deg) rotateY(-5deg); }
-.tr-3:hover ~ .button { transform: rotateX(20deg) rotateY(0deg); }
-.tr-4:hover ~ .button { transform: rotateX(20deg) rotateY(5deg); }
-.tr-5:hover ~ .button { transform: rotateX(20deg) rotateY(10deg); }
-.tr-6:hover ~ .button { transform: rotateX(10deg) rotateY(-10deg); }
-.tr-7:hover ~ .button { transform: rotateX(10deg) rotateY(-5deg); }
-.tr-8:hover ~ .button { transform: rotateX(10deg) rotateY(0deg); }
-.tr-9:hover ~ .button { transform: rotateX(10deg) rotateY(5deg); }
-.tr-10:hover ~ .button { transform: rotateX(10deg) rotateY(10deg); }
-.tr-11:hover ~ .button { transform: rotateX(0deg) rotateY(-10deg); }
-.tr-12:hover ~ .button { transform: rotateX(0deg) rotateY(-5deg); }
-.tr-13:hover ~ .button { transform: rotateX(0deg) rotateY(0deg); }
-.tr-14:hover ~ .button { transform: rotateX(0deg) rotateY(5deg); }
-.tr-15:hover ~ .button { transform: rotateX(0deg) rotateY(10deg); }
-.tr-16:hover ~ .button { transform: rotateX(-10deg) rotateY(-10deg); }
-.tr-17:hover ~ .button { transform: rotateX(-10deg) rotateY(-5deg); }
-.tr-18:hover ~ .button { transform: rotateX(-10deg) rotateY(0deg); }
-.tr-19:hover ~ .button { transform: rotateX(-10deg) rotateY(5deg); }
-.tr-20:hover ~ .button { transform: rotateX(-10deg) rotateY(10deg); }
-.tr-21:hover ~ .button { transform: rotateX(-20deg) rotateY(-10deg); }
-.tr-22:hover ~ .button { transform: rotateX(-20deg) rotateY(-5deg); }
-.tr-23:hover ~ .button { transform: rotateX(-20deg) rotateY(0deg); }
-.tr-24:hover ~ .button { transform: rotateX(-20deg) rotateY(5deg); }
-.tr-25:hover ~ .button { transform: rotateX(-20deg) rotateY(10deg); }
+    /* Button gedrückt (Reindrücken) */
+.button:active {
+  transform: scale(0.9) rotate(0deg); /* Kleiner beim Klick */
+}
 
     /* Counter-Anzeige unter dem Button */
-  .counter {
+.counter {
   font-family: MinecraftRegular;
   font-size: 3rem;
   margin-top: 20px;
   text-shadow: 0 0 10px #fff;
-    }
+}
 
       /* Button zum Öffnen */
  /* From Uiverse.io by cssbuttons-io */ 
@@ -219,65 +163,65 @@
 }
 
  /* Close-Button */
-    .sidebar .closeBtn {
-      font-family: MinecraftRegular;
-      position: absolute;
-      top: 25px;
-      right: 175px;
-      font-size: 25px;
-      cursor: pointer;
-      color: white;
-      background: none;
-      border: none;
-      width: 2px;
-      height: 2px;
-    }
+.sidebar .closeBtn {
+  font-family: MinecraftRegular;
+  position: absolute;
+  top: 25px;
+  right: 175px;
+  font-size: 25px;
+  cursor: pointer;
+  color: white;
+  background: none;
+  border: none;
+  width: 2px;
+  height: 2px;
+}
 
     /* Sidebar */
-    .sidebar {
-      font-size: 2rem;
-      height: 100%;
-      width: 0px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 10;
-      background: rgba(17, 17, 17, 0.9);
-      overflow-x: hidden;
-      transition: 0.3s;
-      padding-top: 50px;
-      border-top-right-radius: 20px;
-      border-bottom-right-radius: 20px;
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-    }
+.sidebar {
+  font-size: 2rem;
+  height: 100%;
+  width: 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: rgba(17, 17, 17, 0.9);
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 50px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
 
     /* Sidebar Buttons */
-    .sidebar button {
-      width: 80%;
-      font-size: 16px;      
-      cursor: pointer;
-      transition: 0.2s;
-     }
-
-    .sidebar button:not(.closeBtn):not(.reset):hover {
-      background: #575757;
-      cursor: pointer;
-     } 
+.sidebar button {
+  display: absolute;
+  width: 80%;
+  font-size: 16px;      
+  cursor: pointer;
+  transition: 0.2s;
+}
+.sidebar button:not(.closeBtn):not(.reset):hover {
+  background: #575757;
+  cursor: pointer;
+ } 
   
-    .sidebar button:not(.closeBtn) {
-      display: block;        /* Block für margin auto */
-      width: 80%;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.2s;
-      position: absolute;      /* unbedingt! damit margin auto funktioniert */
-   }
+.sidebar button:not(.closeBtn) {
+  display: block;        /* Block für margin auto */
+  width: 80%;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+  position: absolute;      /* unbedingt! damit margin auto funktioniert */
+} 
 
 .sidebar .reset {
   width: 280px;
-  max-height: 40px;
-  background: #cc0000;
+  max-height: 40px; 
+  background:#cc0000;
   border: none;   
   outline: none;
   font-family: MinecraftRegular;
@@ -362,7 +306,7 @@
   cursor: pointer;
 }
 
-.sidebar .upgrade_button:before {
+    .sidebar .upgrade_button:before {
   position: absolute;
   pointer-events: none;
   top: 0;
@@ -427,9 +371,9 @@
   top: 80px;
   left: 35px;
   cursor: pointer;
-}
+ }
 
-    .sidebar .auto_clicker:before {
+.sidebar .auto_clicker:before {
   position: absolute;
   pointer-events: none;
   top: 0;
@@ -444,7 +388,7 @@
   box-shadow: 0 -4px rgb(59, 59, 59) inset,
     0 4px rgb(102, 102, 102) inset, -4px 0 rgb(90, 90, 90) inset,
     4px 0 rgb(59, 59, 59) inset;
-    }
+ }
 
 .sidebar .auto_clicker:after {
   position: absolute;
