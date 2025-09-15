@@ -184,4 +184,22 @@ const text = "Pussy Clicker";
     }
 
     window.onload = typeWriter;
+
+    // Cheat: direkt Punkte geben
+function givePoints(amount) {
+  pussy_points += amount;
+  updateCounter(); // deine Funktion, die den Counter updatet
+}
+
+// Cheat: Auto-Clicker hinzufügen
+function giveAutoClicker(amount = 1) {
+  autoClickers += amount;
+  console.log(`AutoClicker +${amount} (gesamt: ${autoClickers})`);
+}
+
+// Cheat: Upgrade hinzufügen
+function giveUpgrade(amount = 1) {
+  upgrades += amount;
+  console.log(`Upgrade +${amount} (gesamt: ${upgrades})`);
+}
     
