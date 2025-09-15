@@ -47,18 +47,6 @@
   }
 }
 
-  .button {
-      display: inline-block;
-      border: none;
-      background: none;
-      cursor: pointer;
-      padding: 0;
-      image-rendering: pixelated;
-      image-rendering: crisp-edges;
-      transition: transform 0.3s ease, filter 0.2s ease;
-      transform: rotate(0deg); /* Button leicht gedreht */
-    }
-
     /* Größe vom Button-Image */
     .button img {
       width: 300px;
@@ -77,6 +65,75 @@
     .button:active {
       transform: scale(0.9) rotate(0deg); /* Kleiner beim Klick */
     }
+
+    .container {
+  position: relative;
+  width: 220px;
+  height: 80px;
+  perspective: 800px;
+}
+
+.button {
+  position: absolute;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.2s ease;
+}
+  
+
+.canvas {
+  inset: 0;
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.tracker {
+  width: 100%;
+  height: 100%;
+}
+
+.tracker:hover ~ .button {
+  filter: brightness(1.1);
+}
+
+/* 3D Tilt je nach Feld */
+.tr-1:hover ~ .button { transform: rotateX(20deg) rotateY(-10deg); }
+.tr-2:hover ~ .button { transform: rotateX(20deg) rotateY(-5deg); }
+.tr-3:hover ~ .button { transform: rotateX(20deg) rotateY(0deg); }
+.tr-4:hover ~ .button { transform: rotateX(20deg) rotateY(5deg); }
+.tr-5:hover ~ .button { transform: rotateX(20deg) rotateY(10deg); }
+.tr-6:hover ~ .button { transform: rotateX(10deg) rotateY(-10deg); }
+.tr-7:hover ~ .button { transform: rotateX(10deg) rotateY(-5deg); }
+.tr-8:hover ~ .button { transform: rotateX(10deg) rotateY(0deg); }
+.tr-9:hover ~ .button { transform: rotateX(10deg) rotateY(5deg); }
+.tr-10:hover ~ .button { transform: rotateX(10deg) rotateY(10deg); }
+.tr-11:hover ~ .button { transform: rotateX(0deg) rotateY(-10deg); }
+.tr-12:hover ~ .button { transform: rotateX(0deg) rotateY(-5deg); }
+.tr-13:hover ~ .button { transform: rotateX(0deg) rotateY(0deg); }
+.tr-14:hover ~ .button { transform: rotateX(0deg) rotateY(5deg); }
+.tr-15:hover ~ .button { transform: rotateX(0deg) rotateY(10deg); }
+.tr-16:hover ~ .button { transform: rotateX(-10deg) rotateY(-10deg); }
+.tr-17:hover ~ .button { transform: rotateX(-10deg) rotateY(-5deg); }
+.tr-18:hover ~ .button { transform: rotateX(-10deg) rotateY(0deg); }
+.tr-19:hover ~ .button { transform: rotateX(-10deg) rotateY(5deg); }
+.tr-20:hover ~ .button { transform: rotateX(-10deg) rotateY(10deg); }
+.tr-21:hover ~ .button { transform: rotateX(-20deg) rotateY(-10deg); }
+.tr-22:hover ~ .button { transform: rotateX(-20deg) rotateY(-5deg); }
+.tr-23:hover ~ .button { transform: rotateX(-20deg) rotateY(0deg); }
+.tr-24:hover ~ .button { transform: rotateX(-20deg) rotateY(5deg); }
+.tr-25:hover ~ .button { transform: rotateX(-20deg) rotateY(10deg); }
 
     /* Counter-Anzeige unter dem Button */
   .counter {
