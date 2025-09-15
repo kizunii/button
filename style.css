@@ -326,7 +326,7 @@ body {
   transition: transform 0.3s ease, filter 0.2s ease;
   position: absolute;
   filter: brightness(1.1);
-  display: block;
+  display: inline-block;
   align-items: center;
   justify-content: center;
   top: 80px;
