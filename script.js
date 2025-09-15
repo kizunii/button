@@ -103,13 +103,6 @@ button.addEventListener('click', function(e){
   }, 1000);
 });
 
-// Add Points Button (Test)
-add_points_button.addEventListener('click', () => {
-  pussy_points += 100000000000;
-  displayPointsAmt();
-  localStorage.setItem('ClickCounter', pussy_points);
-});
-
 // Upgrade Multiplier
 upgrade_button.addEventListener('click', function(){
   if(pussy_points >= multiplier_cost){
