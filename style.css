@@ -54,6 +54,7 @@ body {
   margin: 87px auto;
   cursor: pointer;
   padding: 0;
+  z-index: 4;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
   transition: transform 0.3s ease, filter 0.2s ease;
@@ -84,6 +85,7 @@ body {
   font-family: MinecraftRegular;
   font-size: 3rem;
   margin-top: 20px;
+  z-index: 6;
   text-shadow: 0 0 10px #fff;
   user-select: none;          /* Standard */
   -webkit-user-select: none;  /* Safari/Chrome */
@@ -93,13 +95,13 @@ body {
 
 .counter-container {
   width: 500px;       
-  height: 80px;
+  height: 80px; 
   margin: -90px auto;
   pointer-events: none;
   display: block;
   content: "";
   transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
-  z-index: -1;
+  z-index: 5;
   filter: drop-shadow(5px 0px 10px rgba(0,0,0,0.7));
   background-color: #008542 !important;
   box-shadow: 0 -4px rgb(21 108 0 / 50%) inset,
