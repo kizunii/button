@@ -51,7 +51,7 @@ body {
   display: inline-block;
   border: none;
   background: none;
-  margin: 88px auto;
+  margin: 87px auto;
   cursor: pointer;
   padding: 0;
   image-rendering: pixelated;
@@ -85,6 +85,10 @@ body {
   font-size: 3rem;
   margin-top: 20px;
   text-shadow: 0 0 10px #fff;
+  user-select: none;          /* Standard */
+  -webkit-user-select: none;  /* Safari/Chrome */
+  -moz-user-select: none;     /* Firefox */
+  -ms-user-select: none;      /* IE/Edge */
 }
 
 .counter-container {
