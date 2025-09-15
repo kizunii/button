@@ -26,6 +26,7 @@ let auto_clicker_cost = parseFloat(localStorage.getItem('AutoClickerCost')) || 2
 function updateButtonTexts() {
   upgrade_button.innerText = "Upgrade button for\n"+ formatNumber(multiplier_cost) + " Points [ " + roundToInt(multiplier) + "x ]";
    upgrade_button.style.whiteSpace = "pre-line";
+   
   auto_clicker_button.innerText = "Buy autoclicker for\n"+ formatNumber(auto_clicker_cost) + " Points [ " + roundToInt(auto_clicker) + " ]";
    upgrade_button.style.whiteSpace = "pre-line";
 }
