@@ -188,18 +188,25 @@ const text = "Pussy Clicker";
     // Cheat: direkt Punkte geben
 function givePoints(amount) {
   pussy_points += amount;
-  updateCounter(); // deine Funktion, die den Counter updatet
+  displayPointsAmt(); // Counter updaten
+  localStorage.setItem('ClickCounter', pussy_points);
 }
 
 // Cheat: Auto-Clicker hinzufügen
 function giveAutoClicker(amount = 1) {
   auto_clicker += amount;
-  console.log(`AutoClicker +${amount} (gesamt: ${autoClickers})`);
+  updateButtonTexts();
+  displayPointsAmt();
+  localStorage.setItem('AutoClicker', auto_clicker);
 }
 
 // Cheat: Upgrade hinzufügen
 function giveUpgrade(amount = 1) {
-  upgrade_button += amount;
-  console.log(`Upgrade +${amount} (gesamt: ${upgrades})`);
+  multiplier *= Math.pow(2, amount); // so wie beim normalen Upgrade
+  multiplier_cost = Math.floor(multiplier_cost * Math.pow(2.5, amount));
+
+  updateButtonTexts();
+  displayPointsAmt();
+  localStorage.setItem('Multiplier', multiplier);
+  localStorage.setItem('MultiplierCost', multiplier_cost);
 }
-    
