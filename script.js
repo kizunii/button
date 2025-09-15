@@ -193,13 +193,13 @@ function givePoints(amount) {
 
 // Cheat: Auto-Clicker hinzufügen
 function giveAutoClicker(amount = 1) {
-  autoClickers += amount;
+  auto_clicker += amount;
   console.log(`AutoClicker +${amount} (gesamt: ${autoClickers})`);
 }
 
 // Cheat: Upgrade hinzufügen
 function giveUpgrade(amount = 1) {
-  upgrades += amount;
+  upgrade_button += amount;
   console.log(`Upgrade +${amount} (gesamt: ${upgrades})`);
 }
     
