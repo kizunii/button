@@ -86,6 +86,21 @@ body {
   text-shadow: 0 0 10px #fff;
 }
 
+.counter-container {
+  width: 200px;       
+  height: 100px;
+  margin: 0 auto;
+  pointer-events: none;
+  display: block;
+  content: "";
+  transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+  z-index: -1;
+  background-color: #008542 !important;
+  box-shadow: 0 -4px rgb(21 108 0 / 50%) inset,
+    0 4px rgb(100 253 31 / 99%) inset, -4px 0 rgb(100 253 31 / 50%) inset,
+    4px 0 rgb(21 108 0 / 50%) inset;
+}
+
       /* Button zum Öffnen */
  /* From Uiverse.io by cssbuttons-io */ 
 /* From Uiverse.io by cssbuttons-io */ 
