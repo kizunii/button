@@ -254,7 +254,6 @@
 
     /* Sidebar Buttons */
     .sidebar button {
-      display: absolute;
       width: 80%;
       font-size: 16px;      
       cursor: pointer;
@@ -275,24 +274,26 @@
       position: absolute;      /* unbedingt! damit margin auto funktioniert */
    }
 
-   .sidebar .reset {
-      background:#cc0000;
-      border: none;   
-      outline: none;
-      font-family: MinecraftRegular;
-      font-size: 2rem;
-      color: #fff;
-      padding: 10px;
-      transition: transform 0.3s ease, filter 0.2s ease;
-      position: absolute;
-      filter: brightness(1.1);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      bottom: 80px;
-      left: 35px;
-      cursor: pointer;
-    }
+.sidebar .reset {
+  width: 280px;
+  max-height: 40px;
+  background: #cc0000;
+  border: none;   
+  outline: none;
+  font-family: MinecraftRegular;
+  font-size: 2rem;
+  color: #fff;
+  padding: 10px;
+  transition: transform 0.3s ease, filter 0.2s ease;
+  position: absolute;
+  filter: brightness(1.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 80px;
+  left: 35px;
+  cursor: pointer;
+}
 
 .sidebar .reset:before {
   position: absolute;
@@ -341,25 +342,27 @@
   box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
 }
 
-     .sidebar .upgrade_button {
-      border: none;   
-      outline: none;
-      font-family: MinecraftRegular;
-      font-size: 2rem;
-      color: #fff;
-      padding: 20px;
-      transition: transform 0.3s ease, filter 0.2s ease;
-      position: absolute;
-      filter: brightness(1.1);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      top: 175px;
-      left: 35px;
-      cursor: pointer;
-    }
+.sidebar .upgrade_button {
+  width: 280px;
+  max-height: 40px;
+  border: none;   
+  outline: none;
+  font-family: MinecraftRegular;
+  font-size: 2rem;
+  color: #fff;
+  padding: 20px;
+  transition: transform 0.3s ease, filter 0.2s ease;
+  position: absolute;
+  filter: brightness(1.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  top: 175px;
+  left: 35px;
+  cursor: pointer;
+}
 
-    .sidebar .upgrade_button:before {
+.sidebar .upgrade_button:before {
   position: absolute;
   pointer-events: none;
   top: 0;
@@ -406,23 +409,25 @@
   box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
 }
 
-        .sidebar .auto_clicker {
-      border: none;   
-      outline: none;
-      font-family: MinecraftRegular;
-      color: #fff;
-      font-size: 2rem;
-      padding: 20px;
-      transition: transform 0.3s ease, filter 0.2s ease;
-      position: absolute;
-      filter: brightness(1.1);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      top: 80px;
-      left: 35px;
-      cursor: pointer;
-    }
+.sidebar .auto_clicker {
+  width: 280px;
+  max-height: 40px;
+  border: none;   
+  outline: none;
+  font-family: MinecraftRegular;
+  color: #fff;
+  font-size: 2rem;
+  padding: 20px;
+  transition: transform 0.3s ease, filter 0.2s ease;
+  position: absolute;
+  filter: brightness(1.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  top: 80px;
+  left: 35px;
+  cursor: pointer;
+}
 
     .sidebar .auto_clicker:before {
   position: absolute;
