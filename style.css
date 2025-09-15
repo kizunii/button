@@ -51,7 +51,7 @@ body {
   display: inline-block;
   border: none;
   background: none;
-  margin: 65px auto;
+  margin: 64px auto;
   cursor: pointer;
   padding: 0;
   z-index: 4;
@@ -84,7 +84,7 @@ body {
 .counter {
   font-family: MinecraftRegular;
   font-size: 3rem;
-  margin-top: 20px;
+  margin: 18px auto;
   z-index: 6;
   text-shadow: 0 0 10px #fff;
   user-select: none;          /* Standard */
