@@ -184,29 +184,29 @@ const text = "Pussy Clicker";
     }
 
     window.onload = typeWriter;
-
-    // Cheat: direkt Punkte geben
+/
+/ Cheat: direkt Punkte geben
 function givePoints(amount) {
   pussy_points += amount;
-  displayPointsAmt(); // Counter updaten
+  displayPointsAmt(); 
   localStorage.setItem('ClickCounter', pussy_points);
 }
 
 // Cheat: Auto-Clicker hinzufügen
 function giveAutoClicker(amount = 1) {
   auto_clicker += amount;
+  auto_clicker_cost = roundToInt(auto_clicker_cost * Math.pow(1.25, amount));
   updateButtonTexts();
   displayPointsAmt();
   localStorage.setItem('AutoClicker', auto_clicker);
+  localStorage.setItem('AutoClickerCost', auto_clicker_cost);
 }
 
 // Cheat: Upgrade hinzufügen
 function giveUpgrade(amount = 1) {
-  multiplier *= Math.pow(2, amount); // so wie beim normalen Upgrade
+  multiplier *= Math.pow(2, amount);
   multiplier_cost = Math.floor(multiplier_cost * Math.pow(2.5, amount));
-
   updateButtonTexts();
   displayPointsAmt();
   localStorage.setItem('Multiplier', multiplier);
   localStorage.setItem('MultiplierCost', multiplier_cost);
-}
