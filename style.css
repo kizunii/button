@@ -63,7 +63,7 @@ body {
   /* Größe vom Button-Image */
   .button img {
   width: 300px;
-  filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.7)); /* Shadow */
+  filter: drop-shadow(5px 0px 10px rgba(0,0,0,0.7)); /* Shadow */
   transition: transform .6s cubic-bezier(.23,1,.32,1), color .6s cubic-bezier(.23,1,.32,1);
 }
 
@@ -100,6 +100,7 @@ body {
   content: "";
   transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
   z-index: -1;
+  filter: drop-shadow(5px 0px 10px rgba(0,0,0,0.7));
   background-color: #008542 !important;
   box-shadow: 0 -4px rgb(21 108 0 / 50%) inset,
     0 4px rgb(100 253 31 / 99%) inset, -4px 0 rgb(100 253 31 / 50%) inset,
